@@ -21,107 +21,18 @@
           <div class="Workslist">
             <div class="worklistdate">
               <div class="Old_Query">
-                <div ng-show="$root.userInfo.userType != 1" class="col-4 col-md-3">
-                  <label class="change-label-color">Valan</label>
+                <div class="col-4 col-md-3">
+                  <label for="cmbValan" class="change-label-color">Valan</label>
+                    <select id="valan" [(ngModel)]="selectedValan" class="form-select form-control" data-placeholder="Valan">
+                      <option value="" disabled></option>
+                      <option *ngFor="let valan of valans" [value]="valan.value">{{ valan.label }}</option>
+                    </select>
 
-                  <div class="select2-container ng-pristine ng-untouched ng-valid select2-allowclear" id="s2id_valan" style="width: 100%;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span></span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen37"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="valan" ui-select2="{allowClear: true}" data-placeholder="Valan" ng-model="valna" style="width: 100%" class="ng-pristine ng-untouched ng-valid select2-offscreen" tabindex="-1">
-                    <!-- ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="789" class="ng-binding ng-scope">
-                      30SEP-04OCT
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="783" class="ng-binding ng-scope">
-                      23SEP-27SEP
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="777" class="ng-binding ng-scope">
-                      16SEP-20SEP
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="771" class="ng-binding ng-scope">
-                      09SEP-13SEP
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="765" class="ng-binding ng-scope">
-                      02SEP-06SEP
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="759" class="ng-binding ng-scope">
-                      26AUG-30AUG
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="753" class="ng-binding ng-scope">
-                      19AUG-23AUG
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="747" class="ng-binding ng-scope">
-                      12AUG-16AUG
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="741" class="ng-binding ng-scope">
-                      05AUG-09AUG
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="735" class="ng-binding ng-scope">
-                      29JUL-02AUG
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="729" class="ng-binding ng-scope">
-                      22JUL-26JUL
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="726" class="ng-binding ng-scope">
-                      15JUL-19JUL
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="720" class="ng-binding ng-scope">
-                      08JUL-12JUL
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="711" class="ng-binding ng-scope">
-                      01JUL-05JUL
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="697" class="ng-binding ng-scope">
-                      24JUN-28JUN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="691" class="ng-binding ng-scope">
-                      17JUN-21JUN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="685" class="ng-binding ng-scope">
-                      10JUN-14JUN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="679" class="ng-binding ng-scope">
-                      03JUN-07JUN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="673" class="ng-binding ng-scope">
-                      27MAY-31MAY
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="667" class="ng-binding ng-scope">
-                      18MAY-24MAY
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="661" class="ng-binding ng-scope">
-                      13MAY-17MAY
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="655" class="ng-binding ng-scope">
-                      06MAY-10MAY
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="649" class="ng-binding ng-scope">
-                      29APR-03MAY
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="644" class="ng-binding ng-scope">
-                      22APR-26APR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="639" class="ng-binding ng-scope">
-                      15APR-19APR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="634" class="ng-binding ng-scope">
-                      08APR-12APR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="629" class="ng-binding ng-scope">
-                      01APR-05APR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="609" class="ng-binding ng-scope">
-                      25MAR-28MAR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="604" class="ng-binding ng-scope">
-                      18MAR-22MAR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="599" class="ng-binding ng-scope">
-                      11MAR-15MAR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="594" class="ng-binding ng-scope">
-                      02MAR-08MAR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="589" class="ng-binding ng-scope">
-                      26FEB-01MAR
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="584" class="ng-binding ng-scope">
-                      19FEB-23FEB
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="579" class="ng-binding ng-scope">
-                      12FEB-16FEB
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="574" class="ng-binding ng-scope">
-                      05FEB-09FEB
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="569" class="ng-binding ng-scope">
-                      29JAN-02FEB
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="564" class="ng-binding ng-scope">
-                      20JAN-26JAN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="559" class="ng-binding ng-scope">
-                      15JAN-19JAN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="554" class="ng-binding ng-scope">
-                      08JAN-12JAN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="549" class="ng-binding ng-scope">
-                      01JAN-05JAN
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="544" class="ng-binding ng-scope">
-                      25DEC-29DEC
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="539" class="ng-binding ng-scope">
-                      18DEC-22DEC
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="534" class="ng-binding ng-scope">
-                      11DEC-15DEC
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="529" class="ng-binding ng-scope">
-                      04DEC-09DEC
-                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="520" class="ng-binding ng-scope">
-                      30OCT-03NOV
-                    </option><!-- end ngRepeat: valan in valans -->
-                  </select>
                 </div>
                 <div class="col-4 col-md-1 mt_center">
                   <label class="change-label-color"></label>
 
-                  <button ng-click="getSameIPDifferentUserFun()" class="common_buttonn button_height" tabindex="6">
+                  <button ng-click="getSameIPDifferentUserFun()" class="common_buttonn button_height btn" style="height: 35px !important;" tabindex="6">
                     Search
                   </button>
                 </div>
@@ -137,14 +48,14 @@
           <div class="panel-title">
             <div class="">
               <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
-                <i class="hvr-buzz-out fa fa-reorder"></i>
+               <i class="bi bi-menu-button"></i>
               </button>
             </div>
           </div>
         </div>
         <div class="panel-body" style="padding: 10px">
           <div class="table-responsive">
-            <table style="width: 99%" id="load_data" class="table table-hover table-striped table-condensed reports-table">
+            <table style="width: 99%" id="example" class="table table-hover table-striped table-condensed reports-table">
               <thead>
                 <tr>
                   <th style="text-align: left">User Name</th>
@@ -157,7 +68,7 @@
 
               <tbody>
                 <tr>
-                  <td colspan="4" class="dataTables_empty" style="text-align: center">
+                  <td colspan="4" class="dataTables_empty " style="text-align: center ">
                     Loading data...
                   </td>
                 </tr>

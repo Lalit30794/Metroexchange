@@ -1,11 +1,9 @@
-
-
-
 <section class="marqueeStyle-header ng-scope">
   <div class="header-title">
     <p class="pageTitle ng-binding">Short Trade Report</p>
 
-    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
       MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
       CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
     </marquee>
@@ -15,68 +13,120 @@
 <!-- Short Trade Report -->
 <section class="content ng-scope">
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="7ZsdTZIhwu">
-      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="7ZsdTZIhwu" data-index="0">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable filter-section-mobile"
+      data-lobipanel-child-inner-id="7ZsdTZIhwu">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="7ZsdTZIhwu"
+        data-index="0">
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
               <div class="col-lg-2 col-sm-4 col-xs-4 ng-hide" ng-show="false">
                 <label>Trade Date</label>
 
-                <input type="date" name="trade_date" class="form-control ng-pristine ng-untouched ng-valid" ng-model="trade_date" id="trade_date">
+                <input type="date" name="trade_date" class="form-control ng-pristine ng-untouched ng-valid"
+                  ng-model="trade_date" id="trade_date">
               </div>
-
+              <!-- Market -->
               <div class="col-lg-2 col-sm-4 col-xs-4">
-                <label>Market</label>
-
-                <div class="select2-container w-100 ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_segment" style="width: 24px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Market</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen38"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="segment" ui-select2="{ allowClear: true}" data-placeholder="Market" class="w-100 ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" ng-model="selectMarket" tabindex="-1">
-                  <option value=""></option>
-
-                  <!-- ngRepeat: market in markets --><option ng-repeat="market in markets" value="2" class="ng-binding ng-scope">
-                    NSE
-                  </option><!-- end ngRepeat: market in markets --><option ng-repeat="market in markets" value="1" class="ng-binding ng-scope">
-                    MCX
-                  </option><!-- end ngRepeat: market in markets -->
-                </select>
+                  <div class="form-group">
+                    <label for="marketSelect">Market</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </div>
               </div>
-
+             <!-- Script -->
               <div class="col-lg-2 col-sm-4 col-xs-4">
-                <label>Script</label>
-
-                <div class="select2-container w-100 ng-untouched ng-valid ng-dirty ng-valid-parse" id="s2id_script" style="width: 24px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Script Name</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen39"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="script" ui-select2="{ allowClear: true}" data-placeholder="Script Name" class="w-100 ng-untouched ng-valid select2-offscreen ng-dirty ng-valid-parse" ng-model="selectScript" tabindex="-1">
-                  <option value=""></option>
-
-                  <!-- ngRepeat: script in scripts[selectMarket] -->
-                </select>
+                  <div class="form-group">
+                    <label for="marketSelect">Script</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </div>
               </div>
 
               <div class="col-lg-2 col-sm-4 col-xs-4" ng-show="$root.userInfo.userType != 1">
-                <label>Client</label>
-
-                <div class="select2-container w-100 ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Client</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen40"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="client" ui-select2="select2Options" class="w-100 ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" ng-model="selectUser" data-placeholder="Select Client" tabindex="-1" style="">
+                <div class="form-group">
+                    <label for="marketSelect">Client</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </div>
               </div>
 
-              <div class="col-lg-2 col-sm-4 col-xs-4" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
-                <label>Broker</label>
+              <div class="col-lg-2 col-sm-4 col-xs-4"
+                ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
 
-                <div class="select2-container w-100 ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_broker" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Broker</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen41"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="broker" ui-select2="select2BOptions" class="w-100 ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" ng-model="selectBroker" data-placeholder="Select Broker" tabindex="-1" style="">
+                  <div class="form-group">
+                    <label for="marketSelect">Broker</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </div>
               </div>
 
-              <div class="col-lg-2 col-sm-4 col-xs-4" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
-                <label>Master</label>
-
-                <div class="select2-container w-100 ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_master" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Master</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen42"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="master" ui-select2="select2MOptions" class="w-100 ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" ng-model="selectMaster" data-placeholder="Select Master" tabindex="-1" style="">
+              <div class="col-lg-2 col-sm-4 col-xs-4"
+                ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+                  <div class="form-group">
+                    <label for="marketSelect">Master</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </div>
               </div>
 
               <div class="pl-2 pt-2 filterBtn" style="width: auto; display: flex; gap: 6px">
-                <button ng-click="findOrders()" style="margin-top: 22px" class="btn common_buttonn button_height" tabindex="6" title="Search Trades">
+                <button ng-click="findOrders()" style="margin-top: 22px" class="btn common_buttonn button_height"
+                  tabindex="6" title="Search Trades">
                   Find Trade
                 </button>
 
-                <button style="border-bottom: 3px solid red; margin-top: 22px" ng-click="clearFilter()" class="btn common_buttonn button_height" tabindex="7" title="Clear Search">
+                <button style="border-bottom: 3px solid red; margin-top: 22px" ng-click="clearFilter()"
+                  class="btn common_buttonn button_height" tabindex="7" title="Clear Search">
                   Clear Search
                 </button>
-                <button style="border-bottom: 3px solid red; margin-top: 22px" ng-click="ExportTrade()" class="btn common_buttonn button_height" tabindex="8" title="Clear Search">
+                <button style="border-bottom: 3px solid red; margin-top: 22px" ng-click="ExportTrade()"
+                  class="btn common_buttonn button_height" tabindex="8" title="Clear Search">
                   Export
                 </button>
               </div>
@@ -85,18 +135,23 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="m5zC7qNAVA">
-      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="m5zC7qNAVA" data-index="0">
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable filter-section-mobile"
+      data-lobipanel-child-inner-id="m5zC7qNAVA">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="m5zC7qNAVA"
+        data-index="0">
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
               <div class="col-lg-2 col-sm-4 col-xs-4">
                 <label>Trade Minute</label>
 
-                <input type="number" placeholder="Trade Minute" name="trade_minute" class="form-control ng-pristine ng-untouched ng-valid" ng-model="trade_minute" id="trade_minute">
+                <input type="number" placeholder="Trade Minute" name="trade_minute"
+                  class="form-control ng-pristine ng-untouched ng-valid" ng-model="trade_minute" id="trade_minute">
               </div>
               <div class="pl-2 pt-2 filterBtn" style="width: auto; display: flex; gap: 6px">
-                <button ng-click="SubmitMinute()" class="btn common_buttonn button_height" tabindex="6" style="margin-top: 22px" title="Search Trades">
+                <button ng-click="SubmitMinute()" class="btn common_buttonn button_height" tabindex="6"
+                  style="margin-top: 22px" title="Search Trades">
                   Submit
                 </button>
               </div>
@@ -105,28 +160,100 @@
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="szNQQ9XNoi">
+
+
+
+
+    <!-- Short trade report Table -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="szNQQ9XNoi">
       <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="szNQQ9XNoi" data-index="0">
         <div class="panel-heading ui-sortable-handle">
           <div class="panel-title" style="max-width: calc(100% - 90px);">
             <div class="">
-              <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
-                <i class="hvr-buzz-out fa fa-reorder"></i>
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true"
+                onclick="$('.filter-section-mobile').toggle();">
+                <i class="bi bi-menu-button"></i>
               </button>
             </div>
           </div>
-        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
         <div class="panel-body">
           <div class="table-responsive">
-            <div id="load_data1_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="load_data1_length"><label>Show <select name="load_data1_length" aria-controls="load_data1" class=""><option value="10">10</option><option value="50">50</option><option value="100">100</option><option value="200">200</option><option value="500">500</option><option value="1000">1,000</option><option value="-1">All</option></select> entries</label></div><div id="load_data1_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data1"></label></div><table style="width: 99%;" id="load_data1" class="table table-striped table-condensed reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data1_info">
-              <thead>
-                <tr role="row"><th style="text-align: left; width: 105px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending">Client</th><th style="text-align: left; width: 128px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Symbol: activate to sort column ascending">Symbol</th><th style="text-align: left; width: 242px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="First Trade Type: activate to sort column ascending">First Trade Type</th><th style="text-align: left; width: 87px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Rate: activate to sort column ascending">Rate</th><th style="text-align: left; width: 73px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Qty: activate to sort column ascending">Qty</th><th style="text-align: left; width: 243px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="First Trade Time: activate to sort column ascending">First Trade Time</th><th style="text-align: left; width: 284px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Second Trade Type: activate to sort column ascending">Second Trade Type</th><th style="text-align: left; width: 87px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Rate: activate to sort column ascending">Rate</th><th style="text-align: left; width: 73px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Qty: activate to sort column ascending">Qty</th><th style="text-align: left; width: 272px;" class="sorting_desc" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-sort="descending" aria-label="Second Trade Time: activate to sort column ascending">Second Trade Time</th></tr>
-              </thead>
+            <div id="load_data1_wrapper" class="dataTables_wrapper no-footer">
+              <div class="dataTables_length" id="load_data1_length"><label>Show <select name="load_data1_length"
+                    aria-controls="load_data1" class="">
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                    <option value="500">500</option>
+                    <option value="1000">1,000</option>
+                    <option value="-1">All</option>
+                  </select> entries</label></div>
+              <div id="load_data1_filter" class="dataTables_filter"><label>Search:<input type="search" class=""
+                    placeholder="" aria-controls="load_data1"></label></div>
+              <table style="width: 99%;" id="load_data1"
+                class="table table-striped table-condensed reports-table dataTable no-footer ng-scope" role="grid"
+                aria-describedby="load_data1_info">
+                <thead>
+                  <tr role="row">
+                    <th style="text-align: left; width: 105px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending">Client</th>
+                    <th style="text-align: left; width: 128px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="Symbol: activate to sort column ascending">Symbol</th>
+                    <th style="text-align: left; width: 242px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="First Trade Type: activate to sort column ascending">First
+                      Trade Type</th>
+                    <th style="text-align: left; width: 87px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="Rate: activate to sort column ascending">Rate</th>
+                    <th style="text-align: left; width: 73px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="Qty: activate to sort column ascending">Qty</th>
+                    <th style="text-align: left; width: 243px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="First Trade Time: activate to sort column ascending">First
+                      Trade Time</th>
+                    <th style="text-align: left; width: 284px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="Second Trade Type: activate to sort column ascending">Second
+                      Trade Type</th>
+                    <th style="text-align: left; width: 87px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="Rate: activate to sort column ascending">Rate</th>
+                    <th style="text-align: left; width: 73px;" class="sorting" tabindex="0" aria-controls="load_data1"
+                      rowspan="1" colspan="1" aria-label="Qty: activate to sort column ascending">Qty</th>
+                    <th style="text-align: left; width: 272px;" class="sorting_desc" tabindex="0"
+                      aria-controls="load_data1" rowspan="1" colspan="1" aria-sort="descending"
+                      aria-label="Second Trade Time: activate to sort column ascending">Second Trade Time</th>
+                  </tr>
+                </thead>
 
-              <tbody style="color: white">
+                <tbody style="color: white">
 
-              <tr class="odd"><td valign="top" colspan="10" class="dataTables_empty">No data available in table</td></tr></tbody>
-            </table><div class="dataTables_info" id="load_data1_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data1_paginate"><a class="paginate_button previous disabled" aria-controls="load_data1" data-dt-idx="0" tabindex="-1" id="load_data1_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data1" data-dt-idx="1" tabindex="-1" id="load_data1_next">Next</a></div></div>
+                  <tr class="odd">
+                    <td valign="top" colspan="10" class="dataTables_empty">No data available in table</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="dataTables_info" id="load_data1_info" role="status" aria-live="polite">Showing 0 to 0 of 0
+                entries</div>
+              <div class="dataTables_paginate paging_simple_numbers" id="load_data1_paginate"><a
+                  class="paginate_button previous disabled" aria-controls="load_data1" data-dt-idx="0" tabindex="-1"
+                  id="load_data1_previous">Previous</a><span></span><a class="paginate_button next disabled"
+                  aria-controls="load_data1" data-dt-idx="1" tabindex="-1" id="load_data1_next">Next</a></div>
+            </div>
           </div>
         </div>
       </div>
