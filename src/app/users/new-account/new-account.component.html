@@ -1,0 +1,511 @@
+<!-- Header Ti -->
+<section class="marqueeStyle-header ng-scope" ng-if="$root.userInfo.navMenu">
+  <div class="header-title" ng-show="$root.userInfo.pageTitle">
+    <p class="pageTitle ng-binding">Add user</p>
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
+      NSE(FNO), NIFTY &amp; GIFT NIFTY ALL WILL EXPIRES TODAY(26SEP,THU)...
+    </marquee>
+  </div>
+</section>
+<!-- T -->
+<section class="content">
+  <div class="row">
+    <form [formGroup]="accountFormGroup"
+      class="validation-wizard wizard-circle wizard form-horizontal ng-valid ng-valid-maxlength ng-dirty ng-valid-parse clearfix ng-pristine ng-valid-min ng-valid-max"
+      id="steps-uid-7" novalidate="novalidate">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable"
+        data-lobipanel-child-inner-id="VKIC2s7FAZ">
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="VKIC2s7FAZ" data-index="0">
+          <div class="panel-heading ui-sortable-handle" style="padding: 5px">
+            <div class="panel-title" style="max-width: calc(100% - 90px);">
+              <p class="headingGoldTableBox" style="line-height: 32px">
+                BASIC DETAILS
+              </p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+                <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+                <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown"><span
+                  class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+            </div>
+          </div>
+          <div class="panel-body" style="padding: 10px">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="">
+                  <label class="">Account Type<span class="comp-field-color"> *</span></label>
+                  <!-- app.component.html -->
+                  <select class="fieldBox form-control" data-placeholder="Select Account Type"
+                    formControlName="accountType" (change)="onOptionChange($event)">
+                    <option value="">Select</option>
+                    <option value="1" class="ng-scope">Master</option>
+                    <option value="2" class="ng-scope">Broker</option>
+                    <option value="3" class="ng-scope">Customer</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-md-4" *ngIf="selectedOption === '1' || selectedOption === '2'">
+                <div class="fieldElement">
+                  <label class="">Account Name <span class="comp-field-color"> *</span></label>
+                  <input type="text" placeholder="Enter Account Name" id="partnership"
+                    class="form-control fieldBox ng-pristine ng-untouched ng-valid ng-empty">
+                </div>
+              </div>
+              <div class="col-md-4" *ngIf="selectedOption === '1' || selectedOption === '2'">
+                <div class="fieldElement">
+                  <label class="">Password<span class="comp-field-color"> *</span></label>
+                  <input type="password" placeholder="abcd1234" id="partnership"
+                    class="form-control fieldBox ng-pristine ng-untouched ng-valid ng-empty">
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 10px;" *ngIf="selectedOption === '1' || selectedOption === '2'">
+              <div class="col-md-4" *ngIf="selectedOption === '1'">
+                <div class="fieldElement">
+                  <label class="">My Partnership<span class="comp-field-color"> *</span></label>
+                  <input type="number" placeholder="Enter Partnership %" id="partnership"
+                    class="form-control fieldBox ng-pristine ng-untouched ng-valid ng-empty">
+                </div>
+              </div>
+              <div [ngClass]="selectedOption === '2' ? 'col-8': 'col-md-3'"
+                *ngIf="selectedOption === '1' || selectedOption === '2'">
+                <label class="">Ledger View</label>
+                <div class="radioGroupSection fieldBox" style="display: flex; width: 100%; min-width: 100px">
+                  <div class="custom-radio" style="margin-right: 10px">
+                    <input type="radio" id="onlyManualYes" name="onlyManualYes"
+                      class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                      ng-model="formData['manualTradeAllowed']" value="1">
+                    <label class="custom-control-label" for="onlyManualYes">Yes</label>
+                  </div>
+                  <div class="custom-radio">
+                    <input type="radio" id="onlyManualNo" name="onlyManualNo"
+                      class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                      ng-model="formData['manualTradeAllowed']" value="0">
+                    <label class="custom-control-label" for="onlyManualNo">No</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4" *ngIf="selectedOption === '1'">
+                <label class="">Only View Access</label>
+                <div class="radioGroupSection fieldBox" style="display: flex; width: 40%; min-width: 100px">
+                  <div class="custom-radio" style="margin-right: 10px">
+                    <input type="radio" id="onlyManualYes" name="onlyManualYes"
+                      class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                      ng-model="formData['manualTradeAllowed']" value="1">
+                    <label class="custom-control-label" for="onlyManualYes">Yes</label>
+                  </div>
+                  <div class="custom-radio">
+                    <input type="radio" id="onlyManualNo" name="onlyManualNo"
+                      class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                      ng-model="formData['manualTradeAllowed']" value="0">
+                    <label class="custom-control-label" for="onlyManualNo">No</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-3" *ngIf="selectedOption === '1'">
+                <label class="">Limit/SL Disableds</label>
+                <div class="radioGroupSection fieldBox" style="display: flex; width: 40%; min-width: 100px">
+                  <div class="custom-radio" style="margin-right: 10px">
+                    <input type="radio" id="onlyManualYes" name="onlyManualYes"
+                      class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                      ng-model="formData['manualTradeAllowed']" value="1">
+                    <label class="custom-control-label" for="onlyManualYes">Yes</label>
+                  </div>
+                  <div class="custom-radio">
+                    <input type="radio" id="onlyManualNo" name="onlyManualNo"
+                      class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                      ng-model="formData['manualTradeAllowed']" value="0">
+                    <label class="custom-control-label" for="onlyManualNo">No</label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="row" style="margin-top: 10px;" *ngIf="selectedOption === '1'|| selectedOption === '2'">
+              <div class="col-md-12">
+                <label class="">Summary Post Fix <span class="comp-field-color"> *</span></label>
+                <input type="text" placeholder="Enter Maximum Limit" id="masterAccountLimit"
+                  class="form-control fieldBox ng-pristine ng-untouched ng-valid ng-empty"
+                  ng-model="formData['masterAccountLimit']">
+              </div>
+              <div class="col-md-12">
+                <label class="">Remark <span class="comp-field-color"> *</span></label>
+                <input type="text" placeholder="Enter Maximum Limit" id="masterAccountLimit"
+                  class="form-control fieldBox ng-pristine ng-untouched ng-valid ng-empty"
+                  ng-model="formData['masterAccountLimit']">
+              </div>
+            </div>
+            <div class="col-md-12 m-top-10">
+
+            </div>
+
+            <span style="text-align: center" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ng-scope"
+              ng-if="formData['clienttype'] != 1">
+              <a class="btn common_buttonn" ng-class="disabledActions ? 'disabled' : ''" ng-click="addAccount()"
+                role="menuitem" style="
+                  color: black;
+                  margin-top: 15px;
+                  padding: 10px 40px !important;
+                ">
+                <button class=" btn btn-rounded btn-block submit-btn">Submit</button>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable">
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="4w3IATj60i" data-index="0">
+          <div class="panel-heading ui-sortable-handle" style="padding: 5px">
+            <div class="panel-title" style="max-width: calc(100% - 90px);">
+              <p class="headingGoldTableBox" style="line-height: 32px">
+                MARKET ACCESS
+              </p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+                <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+                <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown"><span
+                  class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div ng-show="formData['clienttype'] != 5" style="
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                padding: 0 25px;
+              ">
+              <div class="col-md-12">
+                <div class="">
+                  <div>
+                    <div class="">
+                      <fieldset>
+                        <div class="popupbuttonsgroup" style="display: flex; flex-wrap: wrap; gap: 15px">
+                          <!-- ngRepeat: market in markets -->
+                          <div ng-repeat="market in markets" class="marketcheckboxgroup ng-scope" style="
+                              display: flex;
+                              flex-wrap: wrap;
+                              align-items: center;
+                              min-width: 140px;
+                            ">
+                            <label title="Please first select account type and after you will be give Market access.">
+                              <div class="toggle-button-cover ng-binding" style="
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 5px;
+                                ">
+                      <div id="button-3-90" class="button-90 " style="display: flex">
+                        <input type="checkbox" id="toggleYesNoNSE" class="toggle-checkbox"
+                          (change)="onToggle($event)" />
+                        <label for="toggleYesNoNSE" class="toggle-label">
+                          <span class="toggle-text">No</span>
+                          <span class="toggle-text">Yes</span>
+                          <div class="toggle-slider"></div>
+                        </label>
+                      </div>
+
+                                NSE
+                              </div>
+                            </label>
+
+                            <!-- ngIf: formData['selectedMarket'][market.id] -->
+
+                            <!-- </label> -->
+                            <!-- <button
+                              id="open{{market.name}}DetailsPopup"
+                              title="{{(formData['clienttype']) ? '': 'Please first select account type and after you will be give Market access.'}}"
+                              class="common_buttonn"
+                              ng-disabled="(formData['selectedMarket'][market.id] && formData['clienttype'])? false:true"
+                            >
+                              {{market.name}} <br />Setting
+                            </button> -->
+                          </div><!-- end ngRepeat: market in markets -->
+                          <div ng-repeat="market in markets" class="marketcheckboxgroup ng-scope" style="
+                              display: flex;
+                              flex-wrap: wrap;
+                              align-items: center;
+                              min-width: 140px;
+                            ">
+                            <label title="Please first select account type and after you will be give Market access.">
+                              <div class="toggle-button-cover ng-binding" style="
+                                  display: flex;
+                                  align-items: center;
+                                  gap: 5px;
+                                ">
+                              <div id="button-3-90" class="button-90 " style="display: flex">
+                                <input type="checkbox" id="toggleYesNoMCX"    class="toggle-checkbox"
+                                  (change)="onToggle($event)" />
+                                <label for="toggleYesNoMCX" class="toggle-label">
+                                  <span class="toggle-text">No</span>
+                                  <span class="toggle-text">Yes</span>
+                                  <div class="toggle-slider"></div>
+                                </label>
+                              </div>
+
+                                MCX
+                              </div>
+                            </label>
+
+                            <!-- ngIf: formData['selectedMarket'][market.id] -->
+
+                            <!-- </label> -->
+                            <!-- <button
+                              id="open{{market.name}}DetailsPopup"
+                              title="{{(formData['clienttype']) ? '': 'Please first select account type and after you will be give Market access.'}}"
+                              class="common_buttonn"
+                              ng-disabled="(formData['selectedMarket'][market.id] && formData['clienttype'])? false:true"
+                            >
+                              {{market.name}} <br />Setting
+                            </button> -->
+                          </div><!-- end ngRepeat: market in markets -->
+                        </div>
+                      </fieldset>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  lobipanel-parent-sortable ui-sortable" *ngIf="selectedOption === '3'">
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable">
+          <div class="panel-heading ui-sortable-handle">
+            <div class="panel-title" style="max-width: calc(100% + 0px);">
+              <p class="headingGoldTableBox">ACCOUNT DETAILS</p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                  <a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                    data-placement="bottom" data-original-title="" title="">
+                    <i class="panel-control-icon ti-move"></i>
+                    <span class="control-title">Unpin</span>
+                  </a>
+                </li>
+                <li>
+                  <a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                    data-placement="bottom" data-original-title="" title="">
+                    <i class="panel-control-icon ti-minus"></i>
+                    <span class="control-title">Minimize</span>
+                  </a>
+                </li>
+                <li>
+                  <a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                    data-placement="bottom" data-original-title="" title="">
+                    <i class="panel-control-icon ti-fullscreen"></i><span class="control-title">
+                      Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown">
+                <span class="panel-control-icon glyphicon glyphicon-cog"></span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="panel-body">
+            <fieldset class="fieldset-border" style="padding: 10px" *ngIf="selectedOption === '3' ">
+
+              <div class="row">
+                <div class="col-md-8">
+                  <!-- ngRepeat: items in checkboxItems -->
+
+                    <div class="col-md-6 mb-4" style="display: flex; justify-content: space-between"
+                      *ngFor="let items of checkboxItems; let i = index">
+                      <div class="col-md-8 mb-2">
+                        <label>{{items.label}}</label>
+                      </div>
+                      <!-- Yes or No -->
+                      <div class="col-md-4">
+                        <div id="button-3-90" class="button-90" style="display: flex">
+                          <input type="checkbox" [id]="'toggleYesNo' + i"
+                            class="toggle-checkbox" (change)="onToggle($event)" />
+                          <label [for]="'toggleYesNo' + i" class="toggle-label">
+                            <span class="toggle-text">No</span>
+                            <span class="toggle-text">Yes</span>
+                            <div class="toggle-slider"></div>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                  <!-- ngIf: false -->
+                  <div class="col-md-12 " style="">
+                    <div class="col-md-6">
+                      <label class="" style="">Alert %</label>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="">
+                        <input placeholder="Alert %" type="number" ng-model="formData['alertPercentage']"
+                          class="fieldBox form-control required amt3 ng-pristine ng-untouched ng-valid" id="alert_per">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 " style="">
+                    <div class="col-md-6">
+                      <label class="" style="">M2M Loss (NSE/MCX/NOPT)</label>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="">
+                        <input placeholder="M2M PL" type="number" ng-model="formData['lossMargin']"
+                          class="fieldBox form-control required amt3 ng-pristine ng-untouched ng-valid"
+                          id="loss_margin">
+                        <p class="digitToLetter ng-binding" style="text-align: left">
+
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+
+                    </div>
+                    <div class="col-md-6">
+                      <!-- ngIf: formData['clienttype'] == 1 -->
+                    </div>
+                  </div>
+                  <div class="col-md-12" style="">
+                    <div class="col-md-6">
+                      <label class="" style="">Order Limit </label>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="col-md-8">
+                        <label class="" style=""><input type="radio" name="isOrderLimitCheckbox" checked=""
+                            ng-click="isOrderLimitType = 'percent'">Percentage</label>
+                      </div>
+
+                      <!-- ngIf: false -->
+                      <div class="col-md-4">
+                        <input ng-if="isOrderLimitType == 'percent'" placeholder="Order Limit Per" type="number"
+                          ng-model="formData['orderLimitPercentage']"
+                          class="fieldBox form-control required amt3 ng-pristine ng-untouched ng-valid ng-scope"
+                          id="alert_per">
+                      </div>
+                    </div>
+                  </div>
+                  <div ng-show="formData['clienttype'] == 1" class="col-md-12" style="">
+                    <div class="col-md-6">
+                      <label class="" style="">Sq. Off disabled in (Minutes)</label>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="">
+                        <input placeholder="Minutes" type="number" ng-model="formData['sq_off_disable_minutes']"
+                          class="fieldBox form-control required amt3 ng-pristine ng-untouched ng-valid"
+                          id="sq_off_disable_minutes">
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- ngIf: false -->
+
+                  <!-- ngIf: false -->
+                  <div ng-show="formData['clienttype'] == 1" class="col-md-12 mb-2" style="">
+                    <div class="col-md-6">
+                      <label class="" style="">M2M Loss (FOREX/COMEX)</label>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="">
+                        <input placeholder="M2M PL" type="number" ng-model="formData['lossMarginForex']"
+                          class="fieldBox form-control required amt3 ng-pristine ng-untouched ng-valid"
+                          id="loss_margin_forex">
+                        <p class="digitToLetter ng-binding" style="text-align: left">
+
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ngIf: formData['clienttype'] == 1 -->
+      <div id="showPopupAlertModal" class="modal fade" style="display: none; background-color: #00000082"
+        aria-modal="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content" style="background-color: #1e2226; border: 3px solid #2a3f54">
+            <div class="modal-header">
+              <!-- ngIf: popupAlertTitle -->
+              <button ng-click="$('#showPopupAlertModal').modal('hide');" type="button" data-dismiss="modal"
+                aria-label="Close" class="close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- ngIf: popupAlertMsgText -->
+            </div>
+            <div class="modal-footer">
+              <button ng-click="$('#showPopupAlertModal').modal('hide');" type="button" data-dismiss="modal"
+                class="common_buttonn btn-sm" style="border-bottom: 3px solid red">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="showAccountErrorPopup" class="modal fade"
+        style="display: none; z-index: 9998; background-color: rgba(0, 0, 0, 0.7);">
+        <div style="
+            max-width: 25% !important;
+            height: auto;
+            max-height: 100% !important;
+          " class="modal-dialog modal-sm modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body" style="
+                max-height: calc(100vh - 100px);
+                overflow-y: auto;
+                display: flex;
+                justify-content: space-between;
+              ">
+              <h4 style="text-align: center">Please Select Account Type</h4>
+              <button onclick="$('#showAccountErrorPopup').hide();" type="button" data-dismiss="modal"
+                aria-label="Close" class="close" style="position: relative; top: -15px; right: -5px">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

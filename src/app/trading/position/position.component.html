@@ -1,0 +1,394 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Position Report</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+
+
+<!-- Trades Component -->
+
+<section class="content ng-scope">
+  <div class="row">
+    <div style="margin-bottom: 2px">
+      <!-- ngIf: $root.userInfo.userType != 1 --><div ng-if="$root.userInfo.userType != 1" class="summary-card ng-scope" style="
+          justify-content: space-around;
+          display: flex;
+          padding: 5px 10px 0px 10px;
+          align-items: center;
+          justify-content: space-between;
+        ">
+        <div>
+          <div>
+            <label class="col-form-label">Total MTM</label>
+            <span id="totalMTM" class="color-lable fixWidthMtm ng-binding blueColor" ng-class="mainUserTotal < 0 ? 'redColor' : 'blueColor'">0.00</span>
+          </div>
+        </div>
+        <div class="">
+          <div>
+            <div class="">
+              <label class="col-form-label">Self MTM</label>
+              <span id="selfMTM" class="color-lable fixWidthMtm ng-binding blueColor" ng-class="mainSelfTotal < 0 ? 'redColor' : 'blueColor'">0.00</span>
+            </div>
+          </div>
+        </div>
+        <div ng-show="$root.userInfo.userType != 5" class="">
+          <div>
+            <div class="">
+              <label class="col-form-label">Downline MTM</label>
+              <span id="downlineMTM" class="color-lable fixWidthMtm ng-binding blueColor" ng-class="mainDownlineTotal < 0 ? 'redColor' : 'blueColor'">0.00</span>
+            </div>
+          </div>
+        </div>
+        <div ng-show="$root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType&nbsp;!=&nbsp;8" class="">
+          <div>
+            <div class="">
+              <label class="col-form-label">Upline MTM</label>
+              <span id="uplineMTM" class="color-lable ng-binding blueColor" ng-class="mainUplineTotal < 0 ? 'redColor' : 'blueColor'">0.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="buyqty">
+            <div class="">
+              <label class="col-form-label">BUY QTY</label>
+              <span id="buyQty" class="color-lable ng-binding blueColor" ng-class="buyQty < 0 ? 'redColor' : 'blueColor'">0.00 (0.00)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="sellqty">
+            <div class="">
+              <label class="col-form-label">SELL QTY</label>
+              <span id="sellQty" class="color-lable ng-binding blueColor" ng-class="sellQty < 0 ? 'redColor' : 'blueColor'">0.00 (0.00)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <div class="totalqty">
+            <div class="">
+              <label class="col-form-label color-lable">TOTAL QTY</label>
+              <span id="totalQty" class="color-lable ng-binding blueColor" ng-class="totalQty < 0 ? 'redColor' : 'blueColor'">0.00 (0.00)</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end ngIf: $root.userInfo.userType != 1 -->
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="Pqdtg2wsdw">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="Pqdtg2wsdw" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div style="
+                  display: flex;
+                  align-items: center;
+                  padding-left: 5px;
+                  flex-wrap: wrap;
+                ">
+              <div class="col-md-6">
+                <div class="flex-gap-px">
+                  <div class="col-6 col-md-2 col-lg-2" style="display: flex; flex-direction: column; gap: 5px">
+                    <label style="margin: 0" class="lable-for-radio">
+                      <input ng-model="filterDataType" name="customRadio" type="radio" value="1" class="ng-pristine ng-untouched ng-valid">
+                      All
+                    </label>
+                    <label style="margin: 0" class="lable-for-radio">
+                      <input ng-model="filterDataType" name="customRadio" type="radio" value="0" class="ng-pristine ng-untouched ng-valid">
+                      Outstanding
+                    </label>
+                  </div>
+
+                  <div class="col-6 col-md-2 col-lg-2" style="display: flex; flex-direction: column; gap: 5px">
+                    <label style="margin: 0" class="lable-for-radio">
+                      <input ng-model="reportType" type="radio" name="client_day_wise" value="0" class="ng-pristine ng-untouched ng-valid">
+                      Client Wise
+                    </label>
+                    <label style="margin: 0" class="lable-for-radio">
+                      <input ng-model="reportType" type="radio" name="client_day_wise" value="1" class="ng-pristine ng-untouched ng-valid">
+                      Script Wise
+                    </label>
+                  </div>
+                  <div class="col-6 col-md-2 col-lg-2" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType != 5 &amp;&amp; $root.userInfo.userType != 8">
+                    <div>
+                      <label>User</label>
+                      <select class="form-control ng-pristine ng-untouched ng-valid" style="height: 33px !important;" ng-model="selectDirect"><option value="? undefined:undefined ?"></option>
+                        <option value="1">
+                        My user
+                        </option>
+                        <option value="0">
+                      All user
+                      </option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-3 col-lg-3">
+                    <label>Market</label>
+                    <div class="select2-container select2-container-multi closeAll ng-pristine ng-untouched ng-valid" id="s2id_segment" style="width: 8px;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen70" style="width: 224px;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li></ul></div></div><select multiple="" id="segment" ui-select2="" class="closeAll ng-pristine ng-untouched ng-valid select2-offscreen" data-placeholder="Market" ng-model="selectMarket" tabindex="-1">
+                      <!-- ngRepeat: market in markets --><!-- ngIf: market.id != 7 --><option ng-repeat="market in markets" value="2" ng-if="market.id != 7" class="ng-binding ng-scope">
+                        NSE
+                      </option><!-- end ngIf: market.id != 7 --><!-- end ngRepeat: market in markets --><!-- ngIf: market.id != 7 --><option ng-repeat="market in markets" value="1" ng-if="market.id != 7" class="ng-binding ng-scope">
+                        MCX
+                      </option><!-- end ngIf: market.id != 7 --><!-- end ngRepeat: market in markets -->
+                    </select>
+                  </div>
+
+
+                  <div class="col-6 col-md-3 col-lg-3">
+                    <label>Script</label>
+                    <div class="select2-container select2-container-multi closeAll ng-pristine ng-untouched ng-valid" id="s2id_script" style="width: 8px;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen71" style="width: 224px;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li></ul></div></div><select multiple="" id="script" ui-select2="{ allowClear: true}" data-placeholder="Script Name" class="closeAll ng-pristine ng-untouched ng-valid select2-offscreen" ng-model="selectScript" tabindex="-1">
+                      <!-- ngRepeat: script in scripts -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+                <div class="col-md-6">
+                  <div class="">
+                    <div class="col-6 col-md-3 col-lg-3" ng-show="$root.userInfo.userType != 1">
+                      <label>Client</label>
+                      <div class="select2-container select2-container-multi closeAll ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen72" style="width: 224px;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li></ul></div></div><input type="hidden" id="client" class="closeAll ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" ui-select2="select2Options" ng-model="selectUser" data-placeholder="Select Client" tabindex="-1" value="" style="">
+                    </div>
+
+                    <div class="col-6 col-md-3 col-lg-3" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+                      <label>Broker</label>
+                      <div class="select2-container select2-container-multi ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_broker" style="width: 0px;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen73" style="width: 224px;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li></ul></div></div><input type="hidden" id="broker" ui-select2="select2BOptions" ng-model="selectBroker" data-placeholder="Select Broker" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" value="" style="">
+                    </div>
+
+                    <div class="col-6 col-md-3 col-lg-3">
+                      <label>Expiry Date</label>
+                      <input ng-model="expiryDate" id="expiryDate" type="date" value="" class="form-control ng-pristine ng-untouched ng-valid custom-form-control" style="padding: 4px; border-radius: 2px">
+                    </div>
+
+                    <div class="col-6 col-md-3 col-lg-3">
+                      <div ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+                        <label>Master</label>
+                        <div class="select2-container select2-container-multi closeAll ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_master" style="width: 0px;">    <ul class="select2-choices">  <li class="select2-search-field">    <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen74" style="width: 224px;">  </li></ul><div class="select2-drop select2-drop-multi select2-display-none">   <ul class="select2-results">   <li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li><li class="select2-no-results">No matches found</li></ul></div></div><input type="hidden" id="master" class="closeAll ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" ui-select2="select2MOptions" ng-model="selectMaster" data-placeholder="Select Master" tabindex="-1" value="" style="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="" style="margin-top: 10px">
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <button ng-click="getListing()" style="
+                          min-width: 120px;
+
+                          color: #374767 !important;
+                        " class="btn common_buttonn button_height text-upper" tabindex="6">
+                        Get Position
+                      </button>
+                    </div>
+
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <button ng-click="rolloverAll()" style="
+                          min-width: 120px;
+
+                          color: #374767 !important;
+                        " class="btn common_buttonn button_height text-upper" tabindex="7">
+                        Rollover
+                      </button>
+                    </div>
+
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <button ng-click="closeAll()" style="
+                          min-width: 120px;
+
+                          color: #374767 !important;
+                        " class="btn common_buttonn button_height text-upper" tabindex="7">
+                        Exit Position
+                      </button>
+                    </div>
+
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <button ng-click="clearFilter()" style="
+                          min-width: 120px;
+
+                          color: #374767 !important;
+                        " class="btn common_buttonn button_height text-upper" tabindex="7">
+                        Clear Filter
+                      </button>
+                    </div>
+                    <div class="col-2 col-md-2 col-lg-2">
+                      <button ng-click="openAllinOne()" ng-show="hideshow.length !=0 " style="
+                          min-width: 120px;
+
+                          color: #374767 !important;
+                        " class="btn common_buttonn button_height text-upper ng-hide" tabindex="7">
+                        Open All
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-12" style="padding: 0px" ng-init="hideshow=[]">
+      <!-- ngRepeat: new in new_arrayData1 track by $index -->
+    </div>
+  </div>
+
+  <div ng-show="closeSinglePopup" class="modal fade show ng-hide" style="display: block" aria-modal="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" style="max-width: 30%">
+      <div class="modal-content" style="">
+        <div class="modal-header">
+          <h5 class="modal-title">Close Position</h5>
+          <button ng-click="closeTradePopup()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding" style="
+              padding-right: 0px;
+              padding-right: 0px;
+              font-weight: 300;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 13px;
+            ">
+            <div style="margin-bottom: 0px" class="form-group row">
+              <div class="col-sm-12">
+                <label>Client Name : <span class="ng-binding"></span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding" style="
+              padding-right: 0px;
+              padding-right: 0px;
+              font-weight: 300;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 13px;
+            ">
+            <div style="margin-bottom: 0px" class="form-group row">
+              <div class="col-sm-12">
+                <label>Script Name : <span class="ng-binding"></span></label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding" style="
+              padding-right: 0px;
+              padding-right: 0px;
+              font-weight: 300;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 13px;
+            ">
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <div style="display: flex; justify-content: space-between">
+                  <div class="tradeTypeSection">
+                    <div class="custom-control custom-radio" style="float: left; margin-right: 10px">
+                      <input ng-model="selectTradeType" type="radio" id="market" value="0" name="trade_typr" class="custom-control-input ng-pristine ng-untouched ng-valid">
+                      <label class="custom-control-label" for="market">Market</label>
+                    </div>
+
+                    <div class="custom-control custom-radio">
+                      <input ng-model="selectTradeType" type="radio" id="limit" value="1" name="trade_typr" class="custom-control-input ng-pristine ng-untouched ng-valid">
+                      <label class="custom-control-label" for="limit">Limit</label>
+                    </div>
+                  </div>
+                  <div class="highLowSection" style="display: flex; gap: 11px">
+                    <label style="margin-right: 5px">High :
+                      <span style="display: block" class="ng-binding"></span></label>
+                    <label>Low :
+                      <span style="display: block" class="ng-binding"></span></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding" style="
+              padding-right: 0px;
+              padding-right: 0px;
+              font-weight: 300;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 13px;
+            ">
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label style="padding-top: 0px; padding-bottom: 0px; font-size: 10px" class="col-form-label">
+                  Lot
+                </label>
+                <input ng-change="lotChange()" style="height: 30px; font-size: 14px" ng-model="selectTradeLotSize" type="number" pattern="" id="user_loss_percentage_alert1" class="form-control ng-pristine ng-valid ng-valid-pattern ng-touched ng-untouched">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding" style="
+              padding-right: 0px;
+              padding-right: 0px;
+              font-weight: 300;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 13px;
+            ">
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label style="padding-top: 0px; padding-bottom: 0px; font-size: 10px" class="col-form-label">
+                  Qty
+                </label>
+                <input ng-change="qtyChange()" style="height: 30px; font-size: 14px" ng-model="selectTradeQtySize" pattern="" ng-disabled="selectMarketTrade == 1 || selectMarketTrade == 5" type="number" id="user_loss_percentage_alert1" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding ng-scope" style="
+              padding-right: 0px;
+              padding-right: 0px;
+              font-weight: 300;
+              font-size: 12px;
+              font-weight: 500;
+              font-size: 13px;
+            ">
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label style="padding-top: 0px; padding-bottom: 0px; font-size: 10px" class="col-form-label">
+                  Price
+                </label>
+                <input style="height: 30px; font-size: 14px" ng-model="selectTradePrice" ng-value="selectTradePrice" type="number" ng-disabled="selectTradeType == 0" id="user_loss_percentage_alert" class="form-control ng-pristine ng-untouched ng-valid">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding ng-scope">
+            <div class="form-group row">
+              <div class="col-sm-12" style="padding: 0px; margin-top: 10px">
+                <button ng-show="buyRadio == 0" ng-disabled="disableActions" style="
+                    float: right;
+                    width: 80px;
+                    padding: 9px;
+                    border-radius: 4px;
+                  " ng-click="placeTrade()" type="button" class="btn common_buttonn ng-hide">
+                  Buy
+                </button>
+                <button ng-show="buyRadio == 1" ng-disabled="disableActions" style="
+                    float: right;
+                    width: 80px;
+                    padding: 9px;
+                    border-radius: 4px;
+                    border-bottom: 3px solid red;
+                  " ng-click="placeTrade()" type="button" class="btn common_buttonn ng-hide">
+                  Sell
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,404 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Dashboard</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+
+<section class="content ng-scope">
+<div id="ajax-targ" ui-view="" class="ng-scope">
+  <section class="content ng-scope"cdkDropList (cdkDropListDropped)="drop($event)">
+    <div class="row">
+      <div [ngClass]="isFullScreen ? 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'col-xs-12 col-sm-6 col-md-6 col-lg-6'" cdkDrag>
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable">
+          <div class="panel-heading ui-sortable-handle">
+            <div class="panel-title" style="max-width: calc(100% - 90px);">
+              <p class="headingGoldTableBox">
+                Latest Orders
+                <i class="bi bi-chevron-double-right"></i>
+              </p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li>
+                  <a data-placement="bottom" data-original-title="" title="" cdkDropList (cdkDropListDropped)="drop($event)">
+                    <i class="panel-control-icon bi bi-arrows-move"></i><span class="control-title">Unpin</span></a></li>
+                <li>
+                  <a data-func="minimize" data-tooltip="Minimize" data-title="Minimize"
+                    (click)="minimize()"
+                    data-placement="bottom" data-original-title="" title="">
+                    <i class="panel-control-icon bi bi-dash"></i><span class="control-title">Minimize</span></a>
+                </li>
+                <li>
+                  <a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  (click)="fullscreen()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-fullscreen" ></i><span class="control-title">Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown"><span
+                  class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+            </div>
+          </div>
+
+          <div class="panel-body orderBoxScroll" style="max-height: 375px; overflow: scroll" *ngIf="!isMinimize">
+            <div class="Workslist">
+              <div class="worklistdate overflow-auto">
+                <!-- ngIf: dashData.tradeData -->
+                <table  class="table nowrap lh0 ng-scope dataTable" ui-jq="dataTable"
+                  ui-options="orderDataTableOpt" id="exampal" role="grid" style="width: 100%">
+                  <thead style="border-bottom: 2px solid #2a3f54">
+                    <tr role="row">
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div></div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Time</div>
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1">
+                        <div>Client</div>
+                      </th>
+                      <!--<th class="text-left sorting_disabled" rowspan="1" colspan="1">
+															<div>Master</div>
+														</th>-->
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1">
+                        <div>Script</div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Type</div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Lot</div>
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1">
+                        <div>Qty</div>
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1">
+                        <div>Rate</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- ngRepeat: data in dashData.tradeData -->
+                    <!-- ngIf: dashData.tradeData.length == 0 -->
+                    <tr ng-if="dashData.tradeData.length == 0" class="ng-scope">
+                      <td colspan="8" style="text-align: center">
+                        No data available in table
+                      </td>
+                    </tr><!-- end ngIf: dashData.tradeData.length == 0 -->
+                  </tbody>
+                </table><!-- end ngIf: dashData.tradeData -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div [ngClass]="isFullScreen ? 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'col-xs-12 col-sm-6 col-md-6 col-lg-6'" cdkDrag>
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" style="" data-inner-id="n48VmrFo4j"
+          data-index="0">
+          <div class="panel-heading ui-sortable-handle">
+            <div class="panel-title" style="max-width: calc(100% - 90px);">
+              <p class="headingGoldTableBox" ng-click="change('trades1')">
+                Pending Orders
+                <i class="bi bi-chevron-double-right"></i>
+              </p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-move"></i><span class="control-title">Unpin</span></a></li>
+                <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  (click)="minimize()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-dash"></i><span class="control-title">Minimize</span></a></li>
+                <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  (click)="fullscreen()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-fullscreen"></i><span class="control-title">Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown"><span
+                  class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+            </div>
+          </div>
+          <div class="panel-body orderBoxScroll" style="max-height: 375px; overflow: scroll" *ngIf="!isMinimize">
+            <div class="Workslist">
+              <div class="worklistdate overflow-auto">
+                <!-- ngIf: dashData.orderData -->
+                <table  class="table nowrap lh0 ng-scope dataTable" ui-jq="dataTable"
+                  ui-options="orderDataTableOpt" id="exampal" role="grid" style="width: 100%">
+                  <thead style="border-bottom: 2px solid #2a3f54">
+                    <tr role="row" style="height: 0px">
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div></div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Time</div>
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1">
+                        <div>Client</div>
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1">
+                        <div>Script</div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Type</div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Lot</div>
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1">
+                        <div>Qty</div>
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1">
+                        <div>Rate</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- ngRepeat: data in dashData.orderData -->
+                    <!-- ngIf: dashData.orderData.length == 0 -->
+                    <tr ng-if="dashData.orderData.length == 0" class="ng-scope">
+                      <td colspan="8" style="text-align: center">
+                        No data available in table
+                      </td>
+                    </tr><!-- end ngIf: dashData.orderData.length == 0 -->
+                  </tbody>
+                </table><!-- end ngIf: dashData.orderData -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- Rejection Logs section  -->
+      <div [ngClass]="isFullScreen ? 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'col-xs-12 col-sm-6 col-md-12 col-lg-12'" cdkDrag>
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="42ECnafnXn" data-index="0">
+          <div class="panel-heading ui-sortable-handle">
+            <div class="panel-title" style="max-width: calc(100% - 90px);">
+              <p class="headingGoldTableBox" ng-click="change('rejectionLog')">
+                Rejection Logs
+                <i class="bi bi-chevron-double-right"></i>
+              </p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-move"></i><span class="control-title">Unpin</span></a></li>
+                <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  (click)="minimize()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-dash"></i><span class="control-title">Minimize</span></a></li>
+                <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  (click)="fullscreen()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-fullscreen"></i><span class="control-title">Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown"><span
+                  class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+            </div>
+          </div>
+
+          <!-- Rejection Logs Table -->
+          <div class="panel-body orderBoxScroll" style="max-height: 220px; overflow: scroll" *ngIf="!isMinimize">
+            <div class="Workslist">
+              <div class="worklistdate overflow-auto">
+                <!-- ngIf: dashData.errorData -->
+                <table  class="table nowrap lh0 ng-scope dataTable"
+                  id="example" role="grid" style="width: 100%">
+                  <thead>
+                    <tr role="row" style="height: 0px">
+                      <th class="text-center " rowspan="1" colspan="1">
+                        <div>D</div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Date</div>
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1">
+                        <div>Client</div>
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1">
+                        <div>Script</div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Type</div>
+                      </th>
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1">
+                        <div>Lot</div>
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1">
+                        <div>Qty</div>
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1">
+                        <div>Rate</div>
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1">
+                        <div>Reason</div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- ngRepeat: data in dashData.errorData -->
+                    <!-- ngIf: dashData.errorData.length == 0 -->
+                    <tr ng-if="dashData.errorData.length == 0" class="ng-scope">
+                      <td colspan="10" style="text-align: center">
+                        No data available in table
+                      </td>
+                    </tr><!-- end ngIf: dashData.errorData.length == 0 -->
+                  </tbody>
+                </table><!-- end ngIf: dashData.errorData -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div [ngClass]="isFullScreen ? 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'col-xs-12 col-sm-6 col-md-6 col-lg-6'" cdkDrag
+        ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5"
+        data-lobipanel-child-inner-id="PJJfr0NrKq">
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" style="" data-inner-id="PJJfr0NrKq"
+          data-index="0">
+          <div class="panel-heading ui-sortable-handle">
+            <div class="panel-title" style="max-width: calc(100% - 90px);">
+              <p class="headingGoldTableBox">
+                M2M Alerts <i class="bi bi-chevron-double-right"></i>
+              </p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-move"></i><span class="control-title">Unpin</span></a></li>
+                <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  (click)="minimize()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-dash"></i><span class="control-title">Minimize</span></a></li>
+                <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  (click)="fullscreen()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-fullscreen"></i><span class="control-title">Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown"><span
+                  class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+            </div>
+          </div>
+          <div class="panel-body orderBoxScroll" style="max-height: 480px; overflow: scroll" *ngIf="!isMinimize">
+            <div class="Workslist">
+              <div class="worklistdate overflow-auto">
+                <table class="table nowrap lh0 ng-scope dataTable" ui-jq="dataTable" ui-options="orderDataTableOpt"
+                  id="exampal" role="grid" style="width: 100%">
+                  <thead>
+                    <tr role="row">
+                      <th class="text-center sorting_disabled" rowspan="1" colspan="1" style="width: 51.2784px">
+                        Code
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1" style="width: 51.2784px">
+                        Ledger Balance
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1" style="width: 41.2784px">
+                        Loss Alert (%)
+                      </th>
+                      <th class="text-left sorting_disabled" rowspan="1" colspan="1" style="width: 167.642px">
+                        M2M
+                      </th>
+                      <th class="text-right sorting_disabled" rowspan="1" colspan="1" style="width: 68.5511px">
+                        Ledger + M2M
+                      </th>
+                    </tr>
+                  </thead>
+                  <!-- ngIf: dashData.m2mData -->
+                  <tbody ng-if="dashData.m2mData" class="ng-scope">
+                    <!-- ngRepeat: data in dashData.m2mData -->
+                  </tbody><!-- end ngIf: dashData.m2mData -->
+
+                  <!-- ngIf: !dashData.m2mData || dashData.m2mData.length == 0 -->
+                  <tbody ng-if="!dashData.m2mData || dashData.m2mData.length == 0" class="ng-scope">
+                    <tr>
+                      <td colspan="10" style="text-align: center">
+                        No data available in table
+                      </td>
+                    </tr>
+                  </tbody><!-- end ngIf: !dashData.m2mData || dashData.m2mData.length == 0 -->
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div [ngClass]="isFullScreen ? 'col-xs-12 col-sm-12 col-md-12 col-lg-12' : 'col-xs-12 col-sm-6 col-md-6 col-lg-6'"
+        ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5" cdkDrag>
+        <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable"  data-inner-id="zj9VRP6jSx"
+          data-index="0">
+          <div class="panel-heading ui-sortable-handle">
+            <div class="panel-title" style="max-width: calc(100% - 90px);">
+              <p class="headingGoldTableBox" ng-click="change('autoSquareOff')">
+                Auto Square Off List
+                <i class="bi bi-chevron-double-right"></i>
+              </p>
+            </div>
+            <div class="dropdown">
+              <ul class="dropdown-menu dropdown-menu-right">
+                <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-move"></i><span class="control-title">Unpin</span></a></li>
+                <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  (click)="minimize()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-dash"></i><span class="control-title">Minimize</span></a></li>
+                <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  (click)="fullscreen()"
+                    data-placement="bottom" data-original-title="" title=""><i
+                      class="panel-control-icon bi bi-arrows-fullscreen"></i><span class="control-title">Fullscreen</span></a>
+                </li>
+              </ul>
+              <div class="dropdown-toggle" data-toggle="dropdown"><span
+                  class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+            </div>
+          </div>
+          <div class="panel-body orderBoxScroll" style="max-height: 480px; overflow: scroll" *ngIf="!isMinimize">
+            <div class="Workslist">
+              <div class="worklistdate overflow-auto">
+                <table class="table nowrap lh0 ng-scope dataTable" ui-jq="dataTable" ui-options="orderDataTableOpt"
+                  id="DataTables_Table_0" role="grid" style="width: 100%">
+                  <thead>
+                    <tr role="row">
+                      <th class="">User</th>
+                      <th class="">Ledger Balance</th>
+                      <th class="">Date Time</th>
+                    </tr>
+                  </thead>
+                  <!-- ngIf: dashData.autoSquareOffData -->
+                  <tbody ng-if="dashData.autoSquareOffData" class="ng-scope">
+                    <!-- ngRepeat: data in dashData.autoSquareOffData -->
+                  </tbody><!-- end ngIf: dashData.autoSquareOffData -->
+
+                  <!-- ngIf: !dashData.autoSquareOffData || dashData.autoSquareOffData.length == 0 -->
+                  <tbody ng-if="!dashData.autoSquareOffData || dashData.autoSquareOffData.length == 0" class="ng-scope">
+                    <tr>
+                      <td colspan="10" style="text-align: center">
+                        No data available in table
+                      </td>
+                    </tr>
+                  </tbody><!-- end ngIf: !dashData.autoSquareOffData || dashData.autoSquareOffData.length == 0 -->
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngIf: false -->
+  </section>
+
+</div>
+</section>

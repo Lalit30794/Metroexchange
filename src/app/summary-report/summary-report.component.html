@@ -1,0 +1,377 @@
+<section class="marqueeStyle-header ng-scope" ng-if="$root.userInfo.navMenu">
+          <div class="header-title" ng-show="$root.userInfo.pageTitle">
+            <p class="pageTitle ng-binding">Summary Report</p>
+            <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+              NSE(FNO), NIFTY &amp; GIFT NIFTY ALL WILL EXPIRES TODAY(26SEP,THU)...
+            </marquee>
+          </div>
+</section>
+
+
+
+<!-- Summary Report -->
+
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="5BvgPwjYga">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="5BvgPwjYga" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div style="
+                  display: flex;
+                  align-items: end;
+                  padding-left: 5px;
+                  flex-wrap: wrap;
+                ">
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <label class="change-label-color">Market</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_segment" style="width: 100%;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen51"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="segment" ui-select2="{ allowClear: true}" data-placeholder="Segment" ng-model="selectMarket" style="width: 100%" placeholder="Select" class="ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" tabindex="-1">
+                    <option value=""></option>
+                    <!-- ngRepeat: market in markets --><!-- ngIf: market.market_type_id != 6 && market.market_type_id != 7 --><option ng-repeat="market in markets" value="2" ng-if="market.market_type_id != 6 &amp;&amp; market.market_type_id != 7 " class="ng-binding ng-scope">
+                      NSE
+                    </option><!-- end ngIf: market.market_type_id != 6 && market.market_type_id != 7 --><!-- end ngRepeat: market in markets --><!-- ngIf: market.market_type_id != 6 && market.market_type_id != 7 --><option ng-repeat="market in markets" value="1" ng-if="market.market_type_id != 6 &amp;&amp; market.market_type_id != 7 " class="ng-binding ng-scope">
+                      MCX
+                    </option><!-- end ngIf: market.market_type_id != 6 && market.market_type_id != 7 --><!-- end ngRepeat: market in markets -->
+                  </select>
+                </div>
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <label class="change-label-color">Script Name</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_script" style="width: 100%;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Script Name</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen52"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="script" ui-select2="{ allowClear: true}" data-placeholder="Script Name" ng-model="selectScript" style="width: 100%" class="ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" tabindex="-1">
+                    <option value=""></option>
+                    <!-- ngRepeat: script in scripts[selectMarket] -->
+                  </select>
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <label for="cmbValan" class="change-label-color">Valan</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_valan" style="width: 100%;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Valan</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen53"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="valan" ui-select2="{allowClear: true}" data-placeholder="Valan" ng-model="valan" style="width: 100%" class="ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" tabindex="-1">
+                    <option value=""></option>
+                    <!-- ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="789" class="ng-binding ng-scope">
+                      30SEP-04OCT
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="783" class="ng-binding ng-scope">
+                      23SEP-27SEP
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="777" class="ng-binding ng-scope">
+                      16SEP-20SEP
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="771" class="ng-binding ng-scope">
+                      09SEP-13SEP
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="765" class="ng-binding ng-scope">
+                      02SEP-06SEP
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="759" class="ng-binding ng-scope">
+                      26AUG-30AUG
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="753" class="ng-binding ng-scope">
+                      19AUG-23AUG
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="747" class="ng-binding ng-scope">
+                      12AUG-16AUG
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="741" class="ng-binding ng-scope">
+                      05AUG-09AUG
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="735" class="ng-binding ng-scope">
+                      29JUL-02AUG
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="729" class="ng-binding ng-scope">
+                      22JUL-26JUL
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="726" class="ng-binding ng-scope">
+                      15JUL-19JUL
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="720" class="ng-binding ng-scope">
+                      08JUL-12JUL
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="711" class="ng-binding ng-scope">
+                      01JUL-05JUL
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="697" class="ng-binding ng-scope">
+                      24JUN-28JUN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="691" class="ng-binding ng-scope">
+                      17JUN-21JUN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="685" class="ng-binding ng-scope">
+                      10JUN-14JUN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="679" class="ng-binding ng-scope">
+                      03JUN-07JUN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="673" class="ng-binding ng-scope">
+                      27MAY-31MAY
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="667" class="ng-binding ng-scope">
+                      18MAY-24MAY
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="661" class="ng-binding ng-scope">
+                      13MAY-17MAY
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="655" class="ng-binding ng-scope">
+                      06MAY-10MAY
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="649" class="ng-binding ng-scope">
+                      29APR-03MAY
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="644" class="ng-binding ng-scope">
+                      22APR-26APR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="639" class="ng-binding ng-scope">
+                      15APR-19APR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="634" class="ng-binding ng-scope">
+                      08APR-12APR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="629" class="ng-binding ng-scope">
+                      01APR-05APR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="609" class="ng-binding ng-scope">
+                      25MAR-28MAR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="604" class="ng-binding ng-scope">
+                      18MAR-22MAR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="599" class="ng-binding ng-scope">
+                      11MAR-15MAR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="594" class="ng-binding ng-scope">
+                      02MAR-08MAR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="589" class="ng-binding ng-scope">
+                      26FEB-01MAR
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="584" class="ng-binding ng-scope">
+                      19FEB-23FEB
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="579" class="ng-binding ng-scope">
+                      12FEB-16FEB
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="574" class="ng-binding ng-scope">
+                      05FEB-09FEB
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="569" class="ng-binding ng-scope">
+                      29JAN-02FEB
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="564" class="ng-binding ng-scope">
+                      20JAN-26JAN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="559" class="ng-binding ng-scope">
+                      15JAN-19JAN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="554" class="ng-binding ng-scope">
+                      08JAN-12JAN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="549" class="ng-binding ng-scope">
+                      01JAN-05JAN
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="544" class="ng-binding ng-scope">
+                      25DEC-29DEC
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="539" class="ng-binding ng-scope">
+                      18DEC-22DEC
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="534" class="ng-binding ng-scope">
+                      11DEC-15DEC
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="529" class="ng-binding ng-scope">
+                      04DEC-09DEC
+                    </option><!-- end ngRepeat: valan in valans --><option ng-repeat="valan in valans" value="520" class="ng-binding ng-scope">
+                      30OCT-03NOV
+                    </option><!-- end ngRepeat: valan in valans -->
+                  </select>
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-2 p-1 col-xs-4">
+                  <label class="change-label-color">Master</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_master" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Master</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen54"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="master" ui-select2="select2MOptions" ng-model="master" data-placeholder="Select Master" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-2 p-1 col-xs-4">
+                  <label class="change-label-color">Broker</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Broker</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen55"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="client" ui-select2="select2BOptions" ng-model="broker" data-placeholder="Select Broker" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+                </div>
+                <div class="col-4 col-lg-2 col-xl-2 p-1 col-xs-4">
+                  <label class="change-label-color">Client</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Client</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen56"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="client" ui-select2="select2Options" ng-model="user" data-placeholder="Select Client" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <label class="change-label-color">Start Date</label>
+                  <input ng-change="dateChanged()" onkeydown="preventDatePickerOnEnter(event)" ng-model="startDate" id="startDate" type="datetime-local" value="" class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <label class="change-label-color">End Date</label>
+                  <input ng-change="dateChanged()" onkeydown="preventDatePickerOnEnter(event)" ng-model="endDate" id="endDate" type="datetime-local" value="" class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-1 col-xs-4" style="
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: left;
+                    align-items: end;
+                    gap: 4px;
+                  ">
+                  <button ng-click="getSummaryReport()" class="common_buttonn button_height responsive_long_btn" tabindex="6">
+                    Submit / Refresh
+                  </button>
+                </div>
+
+                <div class="col-12 col-sm-4 col-lg-2 col-xl-1 col-xs-4" style="
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: left;
+                    align-items: end;
+                    gap: 4px;
+                  ">
+                  <button ng-disabled="disableActions" ng-click="scriptWise()" type="button" class="common_buttonn button_height responsive_long_btn" style="">
+                    Script Wise Summary
+                  </button>
+
+                  <button ng-click="resetForm()" type="reset" class="common_buttonn button_height" tabindex="6" style="border-bottom: 3px solid red">
+                    Reset
+                  </button>
+
+                  <!-- ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 --><button ng-disabled="disableActions" ng-if="$root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType&nbsp;!=&nbsp;8" ng-click="selfNetPosition()" type="button" class="btn common_buttonn button_height responsive_long_btn ng-scope" style="">
+                    Net Position
+                  </button><!-- end ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="Izn7XJmPDK">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="Izn7XJmPDK" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
+                <i class="hvr-buzz-out fa fa-reorder"></i>
+              </button>
+              <!-- <button
+                class="btn btn-secondary btn-sm dropdown-toggle"
+                data-toggle="dropdown"
+              >
+                <i class="fa fa-file-text"></i>
+              </button>
+              <ul class="dropdown-menu exp-drop" role="menu">
+                <li>
+                  <a
+                    href="#"
+                    onclick="$('#load_data1').tableExport({type:'excel',escape:'false'});"
+                  >
+                    <img src="assets/dist/img/xls.png" width="24" alt="logo" />
+                    XLS</a
+                  >
+                </li>
+
+                <li class="divider"></li>
+                <li>
+                  <a
+                    href="#"
+                    onclick="$('#load_data1').tableExport({type:'csv',escape:'false'});"
+                  >
+                    <img src="assets/dist/img/csv.png" width="24" alt="logo" />
+                    CSV</a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    href="#"
+                    target="_blank"
+                    onclick="$('#load_data1').tableExport({type:'pdf',pdfFontSize:'7',escape:'false'});"
+                  >
+                    <img src="assets/dist/img/pdf.png" width="24" alt="logo" />
+                    PDF</a
+                  >
+                </li>
+              </ul> -->
+            </div>
+          </div>
+        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+        <div class="panel-body">
+          <!-- ngIf: dataList1 --><div class="d-sm-block market-desk ng-scope" ng-if="dataList1" ng-class="$index > 0 ? 'margin-top-15px' : ''">
+            <div class="" id="account_details">
+              <!-- ngIf: dataList1 --><div style="padding: 0rem" class="card-body ng-scope" ng-if="dataList1">
+                <div class="header sticky">
+                  <div class="table-responsive" style="padding: 10px">
+                    <div id="load_data1_wrapper" class="dataTables_wrapper no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="load_data1_length"><label>Show <select name="load_data1_length" aria-controls="load_data1" class=""><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="200">200</option><option value="500">500</option><option value="1000">1,000</option><option value="-1">All</option></select> entries</label></div></div><div class="col-sm-4 text-center"><div class="dt-buttons"> <button class="dt-button buttons-csv buttons-html5" tabindex="0" aria-controls="load_data1"><span>CSV</span></button> <button class="dt-button buttons-pdf buttons-html5" tabindex="0" aria-controls="load_data1"><span>PDF</span></button> </div></div><div class="col-sm-4"><div id="load_data1_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data1"></label></div></div></div><table class="table dataTable no-footer" id="load_data1" role="grid" aria-describedby="load_data1_info">
+                      <thead style="border-bottom: 2px solid #2a3f54">
+                        <tr style="letter-spacing: 1px" role="row"><th style="text-align: center; width: 63px;" class="sorting_asc" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="NO.: activate to sort column descending">NO.</th><th style="text-align: left; width: 292px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="NAME: activate to sort column ascending">NAME</th><th ng-if="$root.userInfo.userType != 8" style="text-align: right; width: 47px;" class="ng-scope sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="
+                            ALL
+                          : activate to sort column ascending">
+                            ALL
+                          </th><th style="text-align: right; width: 75px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Outst.: activate to sort column ascending">Outst.</th><th style="text-align: center; width: 207px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Valan: activate to sort column ascending">Valan</th><th style="text-align: right; width: 71px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Gross: activate to sort column ascending">Gross</th><th style="text-align: right; width: 108px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Clt.Brok.: activate to sort column ascending">Clt.Brok.</th><th style="text-align: right; width: 68px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Bill: activate to sort column ascending">Bill</th><th style="text-align: right; width: 68px;" ng-if="$root.userInfo.userType != 5" class="ng-scope sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="
+                            Brok
+                          : activate to sort column ascending">
+                            Brok
+                          </th><th style="text-align: right; width: 68px;" ng-if="$root.userInfo.userType != 5" class="ng-scope sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="
+                            SB1.
+                          : activate to sort column ascending">
+                            SB1.
+                          </th><th style="text-align: right; width: 68px;" ng-if="$root.userInfo.userType != 5" class="ng-scope sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="
+                            SB2.
+                          : activate to sort column ascending">
+                            SB2.
+                          </th><th style="text-align: right; width: 131px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Total.MTM: activate to sort column ascending">Total.MTM</th><th style="text-align: right; width: 122px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Self.Brok.: activate to sort column ascending">Self.Brok.</th><th style="text-align: right; width: 87px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Brok.M: activate to sort column ascending">Brok.M</th><th style="text-align: right; width: 112px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Downline: activate to sort column ascending">Downline</th><th style="text-align: center; width: 78px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Upline: activate to sort column ascending">Upline</th><th style="text-align: center; width: 68px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="Self: activate to sort column ascending">Self</th><th style="text-align: center; width: 52px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="N.B.: activate to sort column ascending">N.B.</th><th style="text-align: center; width: 47px;" class="sorting" tabindex="0" aria-controls="load_data1" rowspan="1" colspan="1" aria-label="N.P: activate to sort column ascending">N.P</th></tr>
+                      </thead>
+                      <tbody>
+                        <!-- ngRepeat: x in dataList1 track by $index --><!-- end ngRepeat: x in dataList1 track by $index -->
+                      <tr ng-repeat="x in dataList1 track by $index" class="summary_tr ng-scope odd" style="background-color: #4442685c; color: #fff;" role="row">
+                          <!-- style="background: {{(x.user_type == 6) ? '#ffff' : (x.user_type == 1) ? '#ffffff' : (x.user_type == 2) ? '#ffc3c3' : (x.user_type == 3) ? '#fee87982' : (x.user_type == 4) ? '#9fe9e5' : (x.user_type == 7) ? '#ffff' : (x.user_type == 5) ? '#52c1ac' : '#dbebf782'}}; {{(!x.user_type) ? 'color: #fff;':''}}" -->
+                          <td style="text-align: center; width: 51px" class="sorting_1">
+                            <span title="ZZZZZZZZ-Total" data-toggle="tooltip" data-placement="top" tooltip="" class="ng-binding">1</span>
+                          </td>
+                          <td style="
+                              text-align: left;
+                              cursor: pointer;
+                              min-width: 160px;
+                            " ng-click="getSummaryReportPopup(x.user_id);" class="ng-binding">
+                            ZZZZZZZZ-Total
+                          </td>
+                          <td style="text-align: center" ng-click="goToLink(x.mcx_pdf)">
+                            <i class="fa fa-file-pdf-o" style="font-weight: bold"></i>
+                          </td>
+                          <td style="text-align: center" ng-click="goToLink(x.nse_pdf)">
+                            <i class="fa fa-file-pdf-o" style="font-weight: bold"></i>
+                          </td>
+                          <td style="text-align: center; min-width: 110px" class="ng-binding">
+                            30SEP-04OCT
+                          </td>
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+
+                          <!-- ngIf: $root.userInfo.userType != 5 --><td style="text-align: right" ng-if="$root.userInfo.userType != 5" class="ng-binding ng-scope">
+                            0.00
+                          </td><!-- end ngIf: $root.userInfo.userType != 5 -->
+                          <!-- ngIf: $root.userInfo.userType != 5 --><td style="text-align: right" ng-if="$root.userInfo.userType != 5" class="ng-binding ng-scope">
+                            0.00
+                          </td><!-- end ngIf: $root.userInfo.userType != 5 -->
+                          <!-- ngIf: $root.userInfo.userType != 5 --><td style="text-align: right" ng-if="$root.userInfo.userType != 5" class="ng-binding ng-scope">
+                            0.00
+                          </td><!-- end ngIf: $root.userInfo.userType != 5 -->
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+                          <!-- ngIf: $root.userInfo.userType != 8 --><td ng-if="$root.userInfo.userType != 8" style="text-align: right" class="ng-binding ng-scope">
+                            0.00
+                          </td><!-- end ngIf: $root.userInfo.userType != 8 -->
+                          <td style="text-align: right" class="ng-binding">
+                            0.00
+                          </td>
+                          <td style="text-align: center" ng-click="goToLink(x.withoutBrokerage_pdf)">
+                            <i class="fa fa-file-pdf-o" style="font-weight: bold"></i>
+                          </td>
+
+                          <td style="text-align: center" ng-click="goToLink(x.net_pdf)">
+                            <i class="fa fa-file-pdf-o" style="font-weight: bold"></i>
+                          </td>
+                        </tr></tbody>
+                    </table><div class="dataTables_info" id="load_data1_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data1_paginate"><a class="paginate_button previous disabled" aria-controls="load_data1" data-dt-idx="0" tabindex="-1" id="load_data1_previous">Previous</a><span><a class="paginate_button current" aria-controls="load_data1" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="load_data1" data-dt-idx="2" tabindex="-1" id="load_data1_next">Next</a></div></div>
+                  </div>
+                </div>
+              </div><!-- end ngIf: dataList1 -->
+            </div>
+          </div><!-- end ngIf: dataList1 -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="summaryReportPopup" class="modal fade" style="display: none; background-color: #00000082" aria-modal="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 90%">
+      <div class="modal-content" style="background-color: #1e2226">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title">Summary Report</h5> -->
+          <!-- ngIf: parent_id -->
+          <button ng-click="$('#summaryReportPopup').modal('show');" type="button" data-dismiss="modal" aria-label="Close" class="close" style="color: red">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- ngIf: loaderSummaryReportPopup -->
+          <!-- ngIf: dataListPopup && !loaderSummaryReportPopup -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

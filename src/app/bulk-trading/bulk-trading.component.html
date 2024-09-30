@@ -1,0 +1,135 @@
+
+
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Bulk Trading</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+<!-- Bulk Trading -->
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable" style="display: none;" data-lobipanel-child-inner-id="cmrR2QAX74">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="cmrR2QAX74" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Overlay_class">
+                <div ng-show="$root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType&nbsp;!=&nbsp;8" class="col-12 col-lg-2 col-xl-2">
+                  <div class="">
+                    <div class="col-sm-12">
+                      <label>Select User</label>
+                      <div class="select2-container form-controlll ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_selectUser" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Select User</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen43"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select ng-model="selectUser" ui-select2="{ allowClear: true}" data-placeholder="selectUser" class="form-controlll ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" id="selectUser" tabindex="-1">
+                        <option value="">Select User</option>
+                        <option value="all">All</option>
+                        <!-- ngRepeat: user in users1 -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-2 col-xl-2">
+                  <div class="">
+                    <div class="col-sm-12">
+                      <label>Select Master</label>
+                      <div class="select2-container form-controlll ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_selectMaster" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Select Master</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen44"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select ng-model="selectMaster" ui-select2="{ allowClear: true}" data-placeholder="selectMaster" class="form-controlll ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" id="selectMaster" tabindex="-1">
+                        <option value="">Select Master</option>
+                        <option value="all">All</option>
+                        <!-- ngRepeat: user in masters1 -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-2 col-xl-2">
+                  <div class="">
+                    <div class="col-sm-12">
+                      <label>Select Market</label>
+                      <div class="select2-container form-controlll ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_selectMarket" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Select Market</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen45"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select ng-model="selectMarket" ui-select2="{ allowClear: true}" data-placeholder="selectMarket" class="form-controlll ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" id="selectMarket" tabindex="-1">
+                        <option value="">Select Market</option>
+                        <!-- ngRepeat: market in markets --><option ng-repeat="market in markets" value="2" class="ng-binding ng-scope">
+                          NSEFUT
+                        </option><!-- end ngRepeat: market in markets --><option ng-repeat="market in markets" value="1" class="ng-binding ng-scope">
+                          MCXFUT
+                        </option><!-- end ngRepeat: market in markets --><option ng-repeat="market in markets" value="3" class="ng-binding ng-scope">
+                          NOPT
+                        </option><!-- end ngRepeat: market in markets -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12 col-lg-2 col-xl-2">
+                  <div class="">
+                    <div class="col-sm-12">
+                      <label>Select Script</label>
+                      <div class="select2-container form-controlll ng-untouched ng-valid ng-dirty ng-valid-parse" id="s2id_selectScript" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice" tabindex="-1">   <span>Select Script</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen46"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select ng-model="selectScript" ui-select2="{ allowClear: true}" data-placeholder="selectScript" class="form-controlll ng-untouched ng-valid select2-offscreen ng-dirty ng-valid-parse" uib-typeahead="script in scripts[selectMarket] for script in scripts[selectMarket] | filter:selectScript | limitTo:5" id="selectScript" tabindex="-1">
+                        <option value="">Select Script</option>
+                        <option value="all">All</option>
+                        <!-- ngRepeat: script in scripts[selectMarket] | filter:query -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: space-between">
+                  <div class="col-6 col-lg-1 col-xl-1" style="display: flex; flex-wrap: wrap; align-items: center">
+                    <div class="mb-1">
+                      <div class="col-sm-12">
+                        <button ng-disabled="disableActions" ng-click="addBlock()" type="button" class="common_buttonn button_height m-1" style="width: 100px">
+                          <i class="fa fa-plus"></i>
+                          <span> Add </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-lg-1 col-xl-1" style="
+                      display: flex;
+                      flex-wrap: wrap;
+                      align-items: center;
+                      width: 100px;
+                    ">
+                    <div class="mb-1">
+                      <div class="col-sm-12">
+                        <button ng-disabled="disableActions" ng-click="removeBlockAll()" type="button" class="common_buttonn button_height m-1" style="border-bottom: 3px solid red">
+                          <i class="fa fa-minus"></i>
+                          <span> Remove </span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="ZuPYhDgd03">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="ZuPYhDgd03" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();" style="background-color: #fff; color: rgb(14, 119, 14)">
+                <i class="hvr-buzz-out fa fa-reorder"></i>
+              </button>
+            </div>
+          </div>
+        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+
+        <div class="table-responsive" style="padding: 10px">
+          <div id="load_data_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length" aria-controls="load_data" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data"></label></div><table id="load_data" class="table table-bordered table-hover table-striped table-condensed reports-table dataTable no-footer" style="color: #fff !important" role="grid" aria-describedby="load_data_info">
+            <thead style="border-bottom: 2px solid #2a3f54">
+              <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Client Name: activate to sort column descending" style="width: 486px;">Client Name</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Market: activate to sort column ascending" style="width: 320px;">Market</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Script: activate to sort column ascending" style="width: 281px;">Script</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Time: activate to sort column ascending" style="width: 252px;">Time</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Remove: activate to sort column ascending" style="width: 353px;">Remove</th></tr>
+            </thead>
+            <tbody>
+              <!-- ngRepeat: data in dataList1 -->
+            <tr class="odd"><td valign="top" colspan="5" class="dataTables_empty">No data available in table</td></tr></tbody>
+          </table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

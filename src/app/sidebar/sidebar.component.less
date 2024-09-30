@@ -1,0 +1,239 @@
+/* Main Sidebar Container */
+aside {
+  background-color: #1d384f;
+  height: 100%;
+  position: relative;
+  top: 0.2%;
+
+  /* Full-width sidebar when expanded */
+  &.sidebar-expanded {
+    width: 250px;
+
+  }
+
+  /* Collapsed sidebar */
+  &.sidebar-collapsed {
+    width: 90px;
+  /* Sliding out of view */
+  }
+}
+
+/* Sidebar menu styling */
+.sidebar-menu,
+.sidebar-menu-collapsed {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    .icon {
+      color: #1d384f;
+      font-weight: bold;
+      background-color: #fff;
+      padding: 4px;
+      border-bottom: 4px solid #009688;
+      font-size: 12px;
+    }
+
+    .nav-link {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #082440;
+      }
+
+      .nav-label {
+        margin-left: 10px;
+      }
+
+      .submenu-icon {
+        margin-left: auto;
+        font-size: 12px;
+      }
+    }
+  }
+
+  .is-open ul.dropdown {
+    display: block;
+  }
+
+  ul.dropdown {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+
+    li {
+      a {
+        background-color: #495057;
+
+        &:hover {
+          background-color: #082440;
+        }
+      }
+    }
+  }
+
+  .treeview-menu {
+    background-color: #1d384f;
+    font-size: 20px;
+  }
+
+  .treeview-menu::before {
+    background-color: #fffaafa6;
+  }
+  .treeList:hover {
+    background-color: #082440;
+  }
+
+  .treeList::before {
+    border: 1px solid #fffaafa6 !important;
+  }
+
+  .treeList {
+    margin-left: 33px !important;
+    cursor: pointer;
+  }
+
+  .treeList>a {
+    font-size: 15px;
+  }
+}
+
+
+
+
+/* Collapsed Sidebar Icon Styles */
+.sidebar-collapsed {
+  background-color: #22354b;
+  height: 100%;
+  padding: 10px;
+
+  .sidebar-menu-collapsed {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        position: relative;
+
+        .nav-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-decoration: none;
+          color: #fff;
+          padding: 10px;
+          position: relative;
+
+          &:hover {
+            background-color: #082440;
+          }
+
+          .icon {
+            font-weight: bold;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f0f0f0;
+            color: black;
+            border-bottom: 4px solid #009688;
+            /* Green underline */
+            cursor: pointer;
+          }
+
+          .tooltip {
+            width: auto;
+            font-size: 16px;
+            font-weight: bold;
+            visibility:hidden;
+            opacity: 0;
+            background-color: #082440;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 18px;
+            position: absolute;
+            left: 60px;
+            top: 54%;
+            transform: translateY(-50%);
+            white-space: nowrap;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+          }
+
+          &:hover .tooltip {
+            text-align: center;
+            visibility: visible;
+            opacity: 1;
+          }
+
+        }
+      }
+    }
+  }
+
+  .submenu-icon {
+    margin-left: auto;
+    font-size: 50px;
+  }
+
+  .nav-label {
+    display: flex;
+    justify-content: space-between;
+
+    margin-left: 10px;
+  }
+
+
+  .treeview-menu {
+    background-color: #082440;
+    font-size: 20px;
+  }
+  .treeList:hover {
+    background-color: #3e3f3f;
+  }
+
+
+  .treeview-menu::before {
+    background-color: #fffaafa6;
+  }
+
+  .treeList::before {
+    border: 1px solid #fffaafa6 !important;
+  }
+
+  .treeList {
+    margin-left: 33px !important;
+    cursor: pointer;
+  }
+
+  .treeList>a {
+    font-size: 15px;
+    text-align: left;
+  }
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+
+  .sidebar-expanded {
+    transition: width 0.5s ease, display 0.5s ease;
+    width: 220px !important;
+  }
+
+  /* Collapsed sidebar */
+  .sidebar-collapsed {
+    display: none;
+  }
+}

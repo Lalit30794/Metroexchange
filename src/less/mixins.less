@@ -1,0 +1,26 @@
+// Mixins
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hover-effect(@color) {
+  &:hover {
+    color: @color;
+  }
+}
+
+.border-radius(@radius) {
+  border-radius: @radius;
+}
+
+
+
+

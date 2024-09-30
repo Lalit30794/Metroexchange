@@ -1,0 +1,45 @@
+
+<nav class="navbar  toolbar-app">
+</nav>
+
+
+
+
+<p>
+  Start editing to see some magic happen
+</p>
+
+<br>
+<br>
+
+<table id="example" class="display" style="width:98%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let comp of myComponent">
+                <td>{{comp.name}}</td>
+                <td>{{comp.position}}</td>
+                <td>{{comp.office}}</td>
+                <td>{{comp.startDate}}</td>
+                <td>{{comp.salary}}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+</table>
+
+

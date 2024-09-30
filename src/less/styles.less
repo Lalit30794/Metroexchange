@@ -1,0 +1,201 @@
+
+
+
+@import '../assets/dist/css/stylecrm.css';
+@import '../assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css';
+@import '../assets/bootstrap/css/bootstrap.min.css';
+
+@import '../less/varibale.less';
+@import '../less/mixins.less';
+
+*{
+  font-family: sans-serif !important;
+}
+
+body {
+  margin: 0;
+}
+
+.content-header {
+    margin-bottom: 1px;
+    padding: 2px 10px;
+}
+
+.content-header .header-title {
+    margin-left: 0px;
+}
+.pageTitle {
+    font-weight: bold;
+    margin: 0px;
+    font-size: 16px;
+    z-index: 2;
+    position: absolute;
+    padding-right: 10px;
+    color: #000;
+    background-color: #ffffff;
+
+}
+
+.main-filter {
+  background-color: aliceblue;
+  padding: 10px;
+}
+.filter-elementtt {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5px;
+}
+.select2-container{
+  width: 60px;
+  background-color: bisque;
+}
+.special_width {
+    width: 100px;
+
+}
+
+// ====================  Marquee  ======================================================================
+.marqueeStyle{
+    color: red;
+    font-weight: bold;
+}
+.marqueeStyle-header {
+    margin-bottom: 1px;
+    padding: 2px 10px;
+    border-bottom: 1px solid @light-grey;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 3px @shadow-color, 0 1px 2px @shadow-color;
+    background-color: @white;
+}
+
+.marqueeStyle-header .header-title {
+    margin-left: 0px;
+}
+
+.pageTitle {
+    font-weight: bold;
+    margin: 0px;
+    font-size: 16px;
+    z-index: 2;
+    position: absolute;
+    padding-right: 10px;
+    color: #000;
+    background-color: #ffffff;
+
+}
+
+
+// ==================   Container Classes  ==========================================================>
+// ==================================================================================================>
+
+.content {
+  min-height: 250px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 7px 10px;
+  padding-top: 3px;
+}
+
+
+.content-header {
+  position: relative;
+  padding: 12px 30px;
+  background-color: @white;
+  border-bottom: 1px solid @light-grey;
+  margin-bottom: 5px;
+  box-shadow: 0 1px 3px @shadow-color, 0 1px 2px @shadow-color;
+
+  hr {
+    border-top: 1px solid @border-color;
+  }
+
+  .header-icon {
+    font-size: 48px;
+
+    width: 68px;
+    float: left;
+    margin-top: -4px;
+    line-height: 0;
+  }
+
+  .header-title {
+    margin-left: 68px;
+
+    h1 {
+      margin: 0;
+      font-size: @font-size-medium;
+      color: @dark-grey;
+      font-weight: 600;
+    }
+
+    small {
+      font-size: @font-size-small;
+      display: inline-block;
+      padding-left: 4px;
+      font-weight: 600;
+      color: @dark-grey;
+    }
+  }
+}
+
+
+// Panel header
+.panel-bd > .panel-heading {
+    color: @white;
+    font-weight: bold ;
+    background-color:@primary-bg-color;
+    border-color: @light-grey;
+    position: relative;
+}
+
+
+
+
+.toolbar-app{
+  margin-bottom: 50px;
+  background-color: #e5edf3;
+}
+
+
+
+
+
+
+
+.table tr th {
+    background-color: #696969;
+    color: #2a3f54 !important;
+  }
+  .table th,
+  .table thead th {
+    background-color: white !important;
+  }
+  tr.summary_tr:hover {
+    background: #63b2f14f !important;
+  }
+  .table-hover tbody tr:hover {
+    color: #ffffff;
+    background: #a7c5e266;
+  }
+  .Old_Query {
+    display: flex;
+    align-items: end;
+    padding-left: 5px;
+    flex-wrap: wrap;
+  }
+  .buyTradeRow2 {
+    background-color: #ccf !important ;
+  }
+  .sellTradeRow2 {
+    background-color: #ffcccc !important;
+  }
+
+  .last_updated {
+    display: contents;
+  }
+  .select2-dropdown-open .select2-choice {
+    background-color: white !important;
+  }
+  .width_full {
+    width: 100% !important;
+  }
