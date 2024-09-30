@@ -1,0 +1,292 @@
+<section class="marqueeStyle-header ng-scope" ng-if="$root.userInfo.navMenu">
+  <div class="header-title" ng-show="$root.userInfo.pageTitle">
+    <p class="pageTitle ng-binding">Summary Report</p>
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
+      NSE(FNO), NIFTY &amp; GIFT NIFTY ALL WILL EXPIRES TODAY(26SEP,THU)...
+    </marquee>
+  </div>
+</section>
+
+
+
+<!-- Summary Report -->
+
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="5BvgPwjYga">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="5BvgPwjYga"
+        data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div style="
+                  display: flex;
+                  align-items: end;
+                  padding-left: 5px;
+                  flex-wrap: wrap;
+                ">
+
+                <!-- Market -->
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label for="marketSelect">Market Name</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label for="marketSelect">Script Name</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label for="cmbValan" class="change-label-color">Valan</label>
+                    <select id="valan" [(ngModel)]="selectedValan" class="form-select form-control"
+                      data-placeholder="Valan">
+                      <option value="" disabled></option>
+                      <option *ngFor="let valan of valans" [value]="valan.value">{{ valan.label }}</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-2 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label for="marketSelect">Master</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-4 col-lg-2 col-xl-2 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label for="marketSelect">Broker</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-2 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label for="marketSelect">Client</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label class="change-label-color">Start Date</label>
+                    <input ng-change="dateChanged()" onkeydown="preventDatePickerOnEnter(event)" ng-model="startDate"
+                      id="startDate" type="datetime-local" value=""
+                      class="form-control ng-pristine ng-untouched ng-valid">
+                  </div>
+                </div>
+
+                <div class="col-4 col-lg-2 col-xl-1 p-1 col-xs-4">
+                  <div class="form-group">
+                    <label class="change-label-color">End Date</label>
+                    <input ng-change="dateChanged()" onkeydown="preventDatePickerOnEnter(event)" ng-model="endDate"
+                      id="endDate" type="datetime-local" value=""
+                      class="form-control ng-pristine ng-untouched ng-valid">
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="col-12 col-sm-4 col-lg-4 col-xl-1 col-xs-4" style="
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: left;
+                    align-items: end;
+                    gap: 4px;
+                  ">
+                <button ng-click="getSummaryReport()" class="common_buttonn button_height responsive_long_btn "
+                  tabindex="6">
+                  Submit
+                </button>
+
+                <button ng-disabled="disableActions" ng-click="scriptWise()" type="button"
+                  class="common_buttonn button_height responsive_long_btn" style="">
+                  Script
+                </button>
+
+                <button ng-click="resetForm()" type="reset" class="common_buttonn button_height" tabindex="6"
+                  style="border-bottom: 3px solid red">
+                  Reset
+                </button>
+
+                <!-- ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 --><button
+                  ng-disabled="disableActions"
+                  ng-if="$root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType&nbsp;!=&nbsp;8"
+                  ng-click="selfNetPosition()" type="button"
+                  class="btn common_buttonn button_height responsive_long_btn ng-scope" style="">
+                  Net Position
+                </button><!-- end ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="Izn7XJmPDK">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="Izn7XJmPDK" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true"
+                onclick="$('.filter-section-mobile').toggle();">
+                <i class="bi bi-menu-button"></i>
+              </button>
+            </div>
+          </div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
+        <!-- Data Table Section -->
+        <div class="panel-body">
+          <div class="table-responsive" style="margin: 10px">
+            <div id="load_data_filter" class="dataTables_filter">
+              <table data-dsd="1" style="text-align: center; width: 100%;" id="example"
+                class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid"
+                aria-describedby="load_data_info">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>All</th>
+                    <th>Outst.</th>
+                    <th>Valan</th>
+                    <th>Gross</th>
+                    <th>Clt.Brok.</th>
+                    <th>Bill</th>
+                    <th>Brok</th>
+                    <th>SB1</th>
+                    <th>SB2</th>
+                    <th>Total.MTM</th>
+                    <th>Self.Brok.</th>
+                    <th>Other Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of filteredData; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.all }}</td>
+                    <td>{{ item.outst }}</td>
+                    <td>{{ item.valan }}</td>
+                    <td>{{ item.gross }}</td>
+                    <td>{{ item.cltBrok }}</td>
+                    <td>{{ item.bill }}</td>
+                    <td>{{ item.brok }}</td>
+                    <td>{{ item.sb1 }}</td>
+                    <td>{{ item.sb2 }}</td>
+                    <td>{{ item.totalMTM }}</td>
+                    <td>{{ item.selfBrok }}</td>
+                    <td>{{ item.otherData }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0
+                entries</div>
+              <div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a
+                  class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1"
+                  id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled"
+                  aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="summaryReportPopup" class="modal fade" style="display: none; background-color: #00000082" aria-modal="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 90%">
+      <div class="modal-content" style="background-color: #1e2226">
+        <div class="modal-header">
+          <!-- <h5 class="modal-title">Summary Report</h5> -->
+          <!-- ngIf: parent_id -->
+          <button ng-click="$('#summaryReportPopup').modal('show');" type="button" data-dismiss="modal"
+            aria-label="Close" class="close" style="color: red">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- ngIf: loaderSummaryReportPopup -->
+          <!-- ngIf: dataListPopup && !loaderSummaryReportPopup -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

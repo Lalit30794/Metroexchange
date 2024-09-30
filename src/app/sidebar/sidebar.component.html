@@ -1,0 +1,56 @@
+<!-- Sidebar for expanded view -->
+<aside *ngIf="isSideNavOpen" class="sidebar-expanded">
+  <!-- Sidebar container -->
+
+  <ul class="sidebar-menu">
+    <li *ngFor="let menu of menus" class="treeview">
+      <!-- Main navigation link (e.g., Dashboard) -->
+      <a (click)="toggleDropdown(menu)" class="nav-link" (click)= "change(menu.path)">
+        <span class="icon">{{ menu.tag }}</span>
+        <span class="nav-label">{{ menu.name }}</span>
+        <!-- Icon for submenu indicator -->
+        <span class="submenu-icon" *ngIf="menu.submenus">
+          <i [ngClass]="menu.open ? 'bi bi-chevron-down' : 'bi bi-chevron-up'"></i>
+        </span>
+      </a>
+      <!-- Submenu -->
+      <ul *ngIf="menu.submenus && menu.open" class="treeview-menu" style="display: block;">
+        <li *ngFor="let menuItems of menu.submenus" class="treeList" (click)= "change(menuItems.path)">
+          <a class="submenu-links">{{ menuItems.name }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+<!-- Sidebar for collapsed view -->
+<aside *ngIf="!isSideNavOpen" class="sidebar-collapsed">
+  <!-- Sidebar container -->
+  <div class="sidebar-menu-collapsed">
+    <ul class="sidebar-menu">
+      <li *ngFor="let menu of menus">
+        <!-- Collapsed main navigation link -->
+        <div class="nav-link hover:bg-gray-700">
+          <span class="icon" (click)= "change(menu.path)">{{ menu.tag }}</span>
+
+          <!-- Show the tooltip with menu name on hover -->
+          <div class ="tooltip" (click)="toggleDropdown(menu)">
+            <span class="nav-label" (click)= "change(menu.path)">{{ menu.name }}
+              <!-- Icon for submenu indicator -->
+              <span class="submenu-icon" *ngIf="menu.submenus">
+                <i class='bi bi-chevron-down' ></i>
+              </span>
+            </span>
+            <!-- Submenu -->
+            <ul *ngIf="menu.submenus" class="treeview-menu" style="display: block;" >
+              <li *ngFor="let menuItems of menu.submenus" class="treeList" (click)= "change(menuItems.path)">
+                <a class="submenu-links">{{ menuItems.name }}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</aside>
+

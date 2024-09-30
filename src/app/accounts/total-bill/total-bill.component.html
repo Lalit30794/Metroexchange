@@ -1,0 +1,143 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Valan Bill</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="5Ur07QYSKj">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="5Ur07QYSKj" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Overlay_class">
+                <!-- ngIf: false -->
+                <div class="col-3 col-md-1">
+                  <label class="is_client">Segment</label>
+                  <div class="select2-container ng-pristine ng-untouched ng-valid" id="s2id_segment" style="width: 24px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Segment</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen120"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="segment" ui-select2="" data-placeholder="Segment" ng-model="selectMarket" class="ng-pristine ng-untouched ng-valid select2-offscreen" tabindex="-1">
+                    <option value=""></option>
+                    <!-- ngRepeat: market in markets --><option ng-repeat="market in markets" value="2" class="ng-binding ng-scope">
+                      NSE
+                    </option><!-- end ngRepeat: market in markets --><option ng-repeat="market in markets" value="1" class="ng-binding ng-scope">
+                      MCX
+                    </option><!-- end ngRepeat: market in markets -->
+                  </select>
+                </div>
+
+                <div class="col-3 col-md-1">
+                  <label class="">Start Date</label>
+                  <input type="date" id="start_date" ng-model="start_date" class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-3 col-md-1">
+                  <label class="">End Date</label>
+                  <input type="date" id="end_date" ng-model="end_date" class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+
+                <div class="col-6 col-md-4 modified_classs" style="display: flex; flex-wrap: wrap; align-items: end">
+                  <button ng-click="listing()" type="button" class="common_buttonn button_height">
+                    Find</button>&nbsp;
+                  <button style="border-bottom: 3px solid red" ng-click="clearMarketWiseScript()" type="button" class="common_buttonn button_height">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="J7xNHIYdjP">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="J7xNHIYdjP" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
+                <i class="hvr-buzz-out fa fa-reorder"></i>
+              </button>
+              <span style="margin-left: 20px; color: white; font-weight: 700" class="ng-binding">
+                0.000</span>
+            </div>
+          </div>
+        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <div id="load_data_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length" aria-controls="load_data" class=""><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data"></label></div><table style="text-align: left" id="load_data" class="table table-bordered table-hover table-striped table-condensed reports-table dataTable no-footer" role="grid" aria-describedby="load_data_info">
+              <thead style="border-bottom: 2px solid #2a3f54">
+                <tr role="row"><th style="width: 50px;" class="sorting_asc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-sort="ascending" aria-label="SR: activate to sort column descending">SR</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="VAlAN NAME: activate to sort column ascending" style="width: 589px;">VAlAN NAME</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="MARKET NAME: activate to sort column ascending" style="width: 654px;">MARKET NAME</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="AMOUNT: activate to sort column ascending" style="width: 448px;">AMOUNT</th></tr>
+              </thead>
+              <tbody>
+                <!-- ngRepeat: scrip in scripData -->
+              <tr class="odd"><td valign="top" colspan="4" class="dataTables_empty">No data available in table</td></tr></tbody>
+            </table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="smallsizemodal" ng-show="updateEntryPopup" class="modal fade show ng-hide" style="display: block; background: #00000087" aria-modal="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content" style="background-color: #1e2226">
+          <div class="modal-header">
+            <h5 class="modal-title" style="">Scrip Update</h5>
+            <button ng-click="updateEntryPopup = false" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12 col-md-12">
+              <label class="" style="">Scrip Name</label>
+              <input type="text" id="scriptname" ng-model="popupscriptname" class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+
+            <div class="col-12 col-md-12 mt-3">
+              <label class="" style="">New Scrip Name</label>
+              <input type="text" id="popupnewscriptname" ng-model="popupnewscriptname" class="form-control ng-pristine ng-untouched ng-valid" placeholder="Enter New Script Name">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button ng-click="updateEntryPopup = false" type="button" data-dismiss="modal" class="common_buttonn btn-sm" style="border-bottom: 3px solid red">
+              Close
+            </button>
+            <button ng-click="updateEntry()" type="button" class="common_buttonn btn-sm">
+              Update
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="smallsizemodal" ng-show="deleteEntryPopup" class="modal fade show ng-hide" style="display: block; background: #00000087" aria-modal="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content" style="background-color: #1e2226">
+          <div class="modal-header">
+            <h5 class="modal-title" style="">Delete Script</h5>
+            <button ng-click="deleteEntryPopup = false" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-12 col-md-12 mt-1">
+              <p style="">Are you sure you want to delete this Script ?</p>
+              <label class="" style="">Password</label>
+              <input type="text" id="deletePassword" ng-model="deletePassword" class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button ng-click="deleteEntryPopup = false" type="button" data-dismiss="modal" class="common_buttonn btn-sm">
+              Close
+            </button>
+            <button ng-click="deleteEntryConf()" type="button" class="common_buttonn btn-sm" style="border-bottom: 3px solid red">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

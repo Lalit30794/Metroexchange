@@ -1,0 +1,214 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Brokerage Report</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+<!-- Brokerage Report -->
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="cN80WBPXbL">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="cN80WBPXbL"
+        data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Overlay_class">
+                <div class="col-12 col-lg-2">
+                  <label class="change-label-color">Market</label>
+                  <select ng-model="selectMarket" id="user_type"
+                    class="form-control user_type ng-pristine ng-untouched ng-valid">
+                    <option value="">Select Market</option>
+                    <!-- ngRepeat: market in markets -->
+                    <option ng-selected="selectMarket == market.market_type_id" ng-repeat="market in markets" value="2"
+                      class="ng-binding ng-scope">
+                      NSEFUT
+                    </option><!-- end ngRepeat: market in markets -->
+                    <option ng-selected="selectMarket == market.market_type_id" ng-repeat="market in markets" value="1"
+                      class="ng-binding ng-scope">
+                      MCXFUT
+                    </option><!-- end ngRepeat: market in markets -->
+                    <option ng-selected="selectMarket == market.market_type_id" ng-repeat="market in markets" value="5"
+                      class="ng-binding ng-scope">
+                      NSEOPT
+                    </option><!-- end ngRepeat: market in markets -->
+                    <option ng-selected="selectMarket == market.market_type_id" ng-repeat="market in markets" value="4"
+                      class="ng-binding ng-scope">
+                      GLOBAL FUTURES
+                    </option><!-- end ngRepeat: market in markets -->
+                  </select>
+                </div>
+                <div class="col-12 col-lg-2">
+                  <label class="change-label-color">Script</label>
+                  <select ng-model="selectScript" id="user_type"
+                    class="form-control user_type ng-pristine ng-untouched ng-valid">
+                    <option value="">Select Script</option>
+                  </select>
+                </div>
+                <div class="col-12 col-lg-2">
+                  <label for="cmbValan" class="change-label-color">Valan</label>
+                    <select id="valan" [(ngModel)]="selectedValan" class="form-select form-control" data-placeholder="Valan">
+                      <option value="" >Select Valan</option>
+                      <option *ngFor="let valan of valans" [value]="valan.value">{{ valan.label }}</option>
+                    </select>
+
+                </div>
+                <div class="col-12 col-lg-2">
+                  <label class="change-label-color">Trade After</label>
+                  <input ng-model="tradeBefore" id="tradeBefore" type="date" value=""
+                    class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+
+                <div class="col-12 col-lg-2">
+                  <label class="change-label-color">Trade Before</label>
+
+                  <input ng-model="tradeAfter" id="tradeAfter" type="date" value=""
+                    class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+
+                <div class="col-12 col-lg-2">
+                  <label class="change-label-color">Client</label>
+                  <select ng-model="selectUser1" id="user_id"
+                    class="form-control user_type ng-pristine ng-untouched ng-valid">
+                    <option value="">Select Client</option>
+                    <!-- ngRepeat: user in users -->
+                  </select>
+                </div>
+
+                <div class="col-12 col-lg-4 sub_center mt-5">
+                  <button ng-click="getListing()" type="button" class="common_buttonn button_height">
+                    Submit
+                  </button>
+                  <button ng-click="resetForm()" type="reset" class="common_buttonn button_height" tabindex="6"
+                    style="border-bottom: 3px solid red; height: 34px">
+                    Reset
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Total My Brokerage table -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" id="account_details"
+      data-lobipanel-child-inner-id="FvNgNdkZsL">
+      <div style="padding: 0rem" class="panel panel-bd lobidisable lobipanel lobipanel-sortable"
+        data-inner-id="FvNgNdkZsL" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true"
+                onclick="$('.filter-section-mobile').toggle();">
+                <i class="bi bi-menu-button"></i>
+              </button>
+              <label class="" style="color: white; margin-left: 10px ; margin-bottom: 0;">Total My Brokerage</label>
+              <span id="totalB" style="color: white">0.00</span>
+            </div>
+          </div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive" style="width: 100%; padding: 10px">
+            <div id="load_data_wrapper" class="dataTables_wrapper no-footer">
+              <div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length"
+                    aria-controls="load_data" class="">
+                    <option value="15">15</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="200">200</option>
+                  </select> entries</label></div>
+              <div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class=""
+                    placeholder="" aria-controls="load_data"></label></div>
+              <div id="load_data_processing" class="dataTables_processing" style="display: none;">Processing...</div>
+              <table id="load_data"
+                class="table table-bordered table-hover table-striped table-condensed reports-table dataTable no-footer"
+                style="width: 100%;" role="grid" aria-describedby="load_data_info">
+                <thead style="border-bottom: 2px solid #2a3f54">
+                  <tr role="row">
+                    <th class="sorting_desc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-sort="descending" aria-label="Trade Time: activate to sort column ascending"
+                      style="width: 242px;">Trade Time</th>
+                    <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-label="Client: activate to sort column ascending" style="width: 163px;">Client</th>
+                    <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-label="Script: activate to sort column ascending" style="width: 162px;">Script</th>
+                    <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-label="Trade Type: activate to sort column ascending" style="width: 264px;">Trade Type</th>
+                    <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-label="Trade Rate: activate to sort column ascending" style="width: 257px;">Trade Rate</th>
+                    <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-label="Qty: activate to sort column ascending" style="width: 117px;">Qty</th>
+                    <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-label="Lot: activate to sort column ascending" style="width: 105px;">Lot</th>
+                    <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                      aria-label="My Brokerage: activate to sort column ascending" style="width: 316px;">My Brokerage
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr class="odd">
+                    <td valign="top" colspan="8" class="dataTables_empty">No data available in table</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0
+                entries</div>
+              <div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a
+                  class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1"
+                  id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled"
+                  aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="smallsizemodal" ng-show="newAccountPopup" class="modal fade show ng-hide" style="display: block"
+      aria-modal="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">New Account</h5>
+            <button ng-click="closeNewAccount()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>New Broker created.</p>
+            <p>
+              Login ID of New Broker is
+              <span style="font-weight: 700" class="ng-binding"></span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button ng-click="closeNewAccount()" type="button" data-dismiss="modal" class="btn btn-light btn-sm">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

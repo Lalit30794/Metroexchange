@@ -1,0 +1,197 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Bulk Trading</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+<!-- Bulk Trading -->
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="eCa35OhemG">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" style="background: #2a3f54"
+        data-inner-id="eCa35OhemG" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div style="
+                  display: flex;
+                  align-items: end;
+                  padding-left: 5px;
+                  flex-wrap: wrap;
+                ">
+                <div class="col-6 col-lg-2 custom-col-size m-0">
+                  <label style="color: white">No of Trades</label>
+                  <input ng-model="noOfTrades" id="user_mobile" type="number" value="" placeholder="No of Trades"
+                    class="form-control ng-pristine ng-valid ng-touched">
+                </div>
+
+                <div class="col-6 col-lg-1 custom-col-size m-0" style="
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: flex-end;
+                  ">
+                  <button ng-disabled="disableActions" ng-click="changeTradeValue()" type="button"
+                    class="common_buttonn" style="border-radius: 3px">
+                    <i class="fa fa-plus"></i>
+                    <span> Submit </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="UfhdVfdhZ7">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="UfhdVfdhZ7" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true"
+                onclick="$('.filter-section-mobile').toggle();">
+                <i class="bi bi-menu-button"></i>
+              </button>
+            </div>
+          </div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive" style="padding: 10px">
+            <div id="load_data1_wrapper" class="dataTables_wrapper no-footer">
+              <div class="dataTables_length" id="load_data1_length"><label>Show <select name="load_data1_length"
+                    aria-controls="load_data1" class="">
+                    <option value="10">10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select> entries</label></div>
+              <div id="load_data1_filter" class="dataTables_filter"><label>Search:<input type="search" class=""
+                    placeholder="" aria-controls="load_data1"></label></div>
+              <table style="text-align: center; color: #fff" id="load_data1"
+                class="table table-bordered table-hover table-striped table-condensed reports-table dataTable no-footer"
+                role="grid" aria-describedby="load_data1_info">
+                <thead style="border-bottom: 2px solid #2a3f54">
+                  <tr style="text-align: center" role="row">
+                    <th style="text-align: center; width: 309px;" class="sorting" tabindex="0"
+                      aria-controls="load_data1" rowspan="1" colspan="1"
+                      aria-label="Script: activate to sort column ascending">Script</th>
+                    <th style="text-align: center; width: 532px;" class="sorting" tabindex="0"
+                      aria-controls="load_data1" rowspan="1" colspan="1"
+                      aria-label="No of Trades: activate to sort column ascending">No of Trades</th>
+                    <th style="text-align: center; width: 461px;" class="sorting" tabindex="0"
+                      aria-controls="load_data1" rowspan="1" colspan="1"
+                      aria-label="Start Time: activate to sort column ascending">Start Time</th>
+                    <th style="text-align: center; width: 418px;" class="sorting_desc" tabindex="0"
+                      aria-controls="load_data1" rowspan="1" colspan="1" aria-sort="descending"
+                      aria-label="End Time: activate to sort column ascending">End Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ngRepeat: data in dataList1 -->
+                  <tr class="odd">
+                    <td valign="top" colspan="4" class="dataTables_empty">No data available in table</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="dataTables_info" id="load_data1_info" role="status" aria-live="polite">Showing 0 to 0 of 0
+                entries</div>
+              <div class="dataTables_paginate paging_simple_numbers" id="load_data1_paginate"><a
+                  class="paginate_button previous disabled" aria-controls="load_data1" data-dt-idx="0" tabindex="-1"
+                  id="load_data1_previous">Previous</a><span></span><a class="paginate_button next disabled"
+                  aria-controls="load_data1" data-dt-idx="1" tabindex="-1" id="load_data1_next">Next</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="largesizemodal" ng-show="openTradePopup" class="modal fade show ng-hide"
+      style="display: block; z-index: 9998; background: #00000085" aria-modal="true">
+      <div class="modal-dialog modal-xl modal-dialog-centered" style="max-width: 90%">
+        <div class="modal-content" style="background-color: #1e2226; color: #d6d4d4">
+          <div class="modal-header">
+            <h5 class="modal-title" style="color: black">Trades</h5>
+            <button ng-click="closeTrades()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType == 8 -->
+            <!-- ngIf: $root.userInfo.userType == 2 || $root.userInfo.userType == 3 || $root.userInfo.userType == 4 -->
+            <div ng-if="$root.userInfo.userType == 2 || $root.userInfo.userType == 3 || $root.userInfo.userType == 4"
+              class="table-responsive ng-scope">
+              <!-- ngRepeat: order in orders -->
+              <table ng-show="!isMobile" style="width: 100%; text-align: center" id="load_data"
+                class="table table-bordered table-hover table-striped table-condensed reports-table">
+                <thead style="border-bottom: 2px solid #2a3f54">
+                  <tr>
+                    <th style="text-align: center">D</th>
+                    <th>Time</th>
+                    <th ng-show="$root.userInfo.userType != 1">Client</th>
+                    <th>Market</th>
+                    <th>Script</th>
+                    <th>B/S</th>
+                    <th>Order Type</th>
+                    <th>Lot</th>
+                    <th>Qty</th>
+                    <th>Order Price</th>
+                    <th>Status</th>
+                    <th
+                      ng-show="$root.userInfo.userType == 2 || $root.userInfo.userType == 3 || $root.userInfo.userType == 4">
+                      User IP
+                    </th>
+                    <th>O. Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td ng-show="$root.userInfo.userType == 1" colspan="13" class="dataTables_empty ng-hide"
+                      style="text-align: center">
+                      Loading data...
+                    </td>
+                    <td ng-show="$root.userInfo.userType == 2" colspan="12" class="dataTables_empty ng-hide"
+                      style="text-align: center">
+                      Loading data...
+                    </td>
+                    <td ng-show="$root.userInfo.userType == 3" colspan="15" class="dataTables_empty"
+                      style="text-align: center">
+                      Loading data...
+                    </td>
+                    <td ng-show="$root.userInfo.userType == 4" colspan="16" class="dataTables_empty ng-hide"
+                      style="text-align: center">
+                      Loading data...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- end ngIf: $root.userInfo.userType == 2 || $root.userInfo.userType == 3 || $root.userInfo.userType == 4 -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

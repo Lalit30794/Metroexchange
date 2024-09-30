@@ -1,0 +1,264 @@
+
+
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Cash Ledger Log</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+
+
+
+
+
+
+<!-- Cash-ledger-log w -->
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable" style="" data-lobipanel-child-inner-id="LIhpJq95f3">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="LIhpJq95f3" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Old_Query">
+                <div class="col-4 col-md-1">
+                  <label>From Date</label>
+                  <input type="date" ng-model="start_date" name="start_date" class="form-control width_full ng-pristine ng-untouched ng-valid" id="start_date">
+                </div>
+                <div class="col-4 col-md-1">
+                  <label>To Date</label>
+                  <input type="date" ng-model="end_date" name="end_date" class="form-control width_full ng-pristine ng-untouched ng-valid" id="end_date">
+                </div>
+                <div ng-show="$root.userInfo.userType != 1" class="col-4 col-md-1" style="padding: 1px">
+                  <label>Client</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Client</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen100"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="client" ui-select2="select2Options" ng-model="selectUser" data-placeholder="Select Client" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+                </div>
+                <!-- <div ng-show="$root.userInfo.userType == 6 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3" class="col-4 col-md-1" style="padding:1px;"> -->
+                <!-- <label>Master</label> -->
+                <!-- <input type="hidden" id="client" ui-select2="select2MOptions" ng-model="selectMaster" data-placeholder="Select Master" /> -->
+                <!-- </div> -->
+                <div class="col-4 col-md-1 btnedit">
+                  <button ng-click="findLogs()" style="width: 100px; margin: 0 13px; padding: 10px" class="common_buttonn button_height" tabindex="6">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="fkVOV9d859">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="fkVOV9d859" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
+                <i class="hvr-buzz-out fa fa-reorder"></i>
+              </button>
+            </div>
+          </div>
+        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+        <div class="panel-body">
+          <div class="table-responsive" style="padding: 10px">
+            <div id="load_data_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length" aria-controls="load_data" class=""><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="200">200</option></select> entries</label></div><div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data"></label></div><div id="load_data_processing" class="dataTables_processing" style="display: none;">Processing...</div><table style="text-align: left; color: rgb(216, 215, 215); width: 1838px;" id="load_data" class="table table-hover table-striped table-condensed reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
+              <thead style="border-bottom: 2px solid #2a3f54">
+                <tr role="row"><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Client: activate to sort column ascending" style="width: 127px;">Client</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Old Amount: activate to sort column ascending" style="width: 223px;">Old Amount</th><th class="sorting_desc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-sort="descending" aria-label="New Amount: activate to sort column ascending" style="width: 221px;">New Amount</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Old Remark: activate to sort column ascending" style="width: 219px;">Old Remark</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="New Remark: activate to sort column ascending" style="width: 234px;">New Remark</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Log Type: activate to sort column ascending" style="width: 172px;">Log Type</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="IP: activate to sort column ascending" style="width: 61px;">IP</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Edit Time: activate to sort column ascending" style="width: 178px;">Edit Time</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Add Time: activate to sort column ascending" style="width: 183px;">Add Time</th></tr>
+              </thead>
+              <tbody>
+
+              <tr class="odd"><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr></tbody>
+            </table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="largesizemodal" ng-show="openBasicPopup" class="modal fade show ng-hide" style="
+        display: block;
+        z-index: 10000;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+      " aria-modal="true">
+      <div style="
+          max-width: 97% !important;
+          height: auto;
+          max-height: 100% !important;
+        " class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Basic Changes</h5>
+            <button ng-click="closePopups()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: calc(100vh - 210px); overflow-y: auto">
+            <div class="table-responsive">
+              <table style="text-align: left; color: white" id="load_dataBroker" class="table table-bordered table-hover table-striped table-condensed reports-table">
+                <thead style="border-bottom: 2px solid #2a3f54">
+                  <tr>
+                    <th>Log</th>
+                    <th>Alert %</th>
+                    <th>MTM Limit</th>
+                    <th>M2M Linked Ledger</th>
+                    <th ng-show="log_user_type != 1">P</th>
+                    <th ng-show="log_user_type == 1" class="ng-hide">Broker</th>
+                    <th>H/L</th>
+                    <th>Auto Square</th>
+                    <th>I. Auto Square</th>
+                    <th>Square Off</th>
+
+                    <th>NSE First Sell</th>
+                    <th>MSE Unmatched</th>
+                    <th>NSE Script L</th>
+
+                    <th>MCX FirstSell</th>
+                    <th>MCX Unmatched</th>
+                    <th>MCX Script L</th>
+
+                    <th>NSE Margin</th>
+                    <th>MCX Margin</th>
+                    <th>NSEOPT Margin</th>
+                    <th>FOREX Margin</th>
+                    <th>COMEX Margin</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ngRepeat: basic in basicPopupData -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="largesizemodal" ng-show="openBrokeragePopup" class="modal fade show ng-hide" style="
+        display: block;
+        z-index: 10000;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+      " aria-modal="true">
+      <div style="
+          max-width: 97% !important;
+          height: auto;
+          max-height: 100% !important;
+        " class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Brokerage Changes</h5>
+            <button ng-click="closePopups()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: calc(100vh - 210px); overflow-y: auto">
+            <div class="table-responsive">
+              <table style="text-align: left; color: white" id="load_dataBroker" class="table table-bordered table-hover table-striped table-condensed reports-table">
+                <thead style="border-bottom: 2px solid #2a3f54">
+                  <tr>
+                    <th>Log</th>
+                    <th>Market</th>
+                    <th>Comm Type</th>
+                    <th>Comm %</th>
+                    <th>Script</th>
+                    <th>U Del Comm</th>
+                    <th>U Intra Comm</th>
+                    <th>B1 Del Comm</th>
+                    <th>B1 Intra Comm</th>
+                    <th>B2 Del Comm</th>
+                    <th>B2 Intra Comm</th>
+                    <th>B3 Del Comm</th>
+                    <th>B3 Intra Comm</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ngRepeat: basic in brokeragePopupData -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="largesizemodal" ng-show="openMarketPopup" class="modal fade show ng-hide" style="
+        display: block;
+        z-index: 10000;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+      " aria-modal="true">
+      <div style="
+          max-width: 97% !important;
+          height: auto;
+          max-height: 100% !important;
+        " class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Market Changes</h5>
+            <button ng-click="closePopups()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: calc(100vh - 210px); overflow-y: auto">
+            <div class="table-responsive">
+              <table style="text-align: left; color: white" id="load_dataBroker" class="table table-bordered table-hover table-striped table-condensed reports-table">
+                <thead style="border-bottom: 2px solid #2a3f54">
+                  <tr>
+                    <th>Log</th>
+                    <th>Market</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ngRepeat: basic in marketPopupData -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="largesizemodal" ng-show="openQtyPopup" class="modal fade show ng-hide" style="
+        display: block;
+        z-index: 10000;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.7);
+      " aria-modal="true">
+      <div style="
+          max-width: 97% !important;
+          height: auto;
+          max-height: 100% !important;
+        " class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Qty Changes</h5>
+            <button ng-click="closePopups()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" style="max-height: calc(100vh - 210px); overflow-y: auto">
+            <div class="table-responsive">
+              <table style="text-align: left; color: white" id="load_dataBroker" class="table table-bordered table-hover table-striped table-condensed reports-table">
+                <thead style="border-bottom: 2px solid #2a3f54">
+                  <tr>
+                    <th>Log</th>
+                    <th>Market</th>
+                    <th>Script</th>
+                    <th>Max Order Lot</th>
+                    <th>Position Lot</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- ngRepeat: basic in qtyPopupData -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

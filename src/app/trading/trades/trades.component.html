@@ -1,0 +1,213 @@
+
+<!-- Headings Component -->
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Trades</p>
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+
+
+<!-- Trades Component -->
+<section class="content ng-scope">
+	<div class="row">
+
+					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="jMtDZ5vl6t">
+					  <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="jMtDZ5vl6t" data-index="0">
+						<div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+						  <div class="Workslist">
+							<div class="worklistdate">
+							  <div style="
+								  display: flex;
+								  align-items: center;
+								  padding-left: 5px;
+								  flex-wrap: wrap;
+								">
+
+							<div class="col-4 col-xl-1 col-xs-12">
+								<label class="col-12 col-md-12 m-0 p-0 pt-1" style="white-space: nowrap;">
+									<input type="checkbox" class="pendingTrades" id="pendingTrades" value="1"> Pending Orders
+								</label>
+								<label class="col-12 col-md-12 m-0 p-0 pt-1" style="white-space: nowrap;">
+									<input type="checkbox" class="executedTrades" id="executedTrades" value="1"> Executed Orders
+								</label>
+
+							</div>
+							<div class="col-4 col-xl-1 col-xs-12" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5 ">
+
+								<label class="col-12 col-md-12 m-0 p-0 pt-1" style="white-space: nowrap;" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+									<input type="checkbox" class="admindeletedTrades" id="admindeletedTrades" value="1">Admin Delete Trade
+								</label>
+								<label class="col-12 col-md-12 m-0 p-0 pt-1 ng-hide" style="white-space: nowrap;" ng-show="$root.userInfo.userType == 6 || $root.userInfo.userType&nbsp;==&nbsp;8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 8">
+									<input type="checkbox" class="manualTradeOrders" id="manualTradeOrders" value="1"> Manual Trade
+								</label>
+								</div>
+								<div class="col-4 col-xl-1 col-xs-4 col-md-3 ng-hide" ng-show="$root.userInfo.userType == 6 || $root.userInfo.userType&nbsp;==&nbsp;8 ">
+									<label>Recode From</label>
+									<div class="select2-container ng-untouched ng-valid ng-dirty ng-valid-parse" id="s2id_script" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Order Type</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen63"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="script" ui-select2="{ allowClear: true}" data-placeholder="Order Type" ng-model="BackupData" class="ng-untouched ng-valid select2-offscreen ng-dirty ng-valid-parse" tabindex="-1">
+										<option value=""></option>
+										<option value="1">Backup Data</option>
+										<option value="0">Live Data</option>
+
+									</select>
+								</div>
+							<div class="col-4 col-xl-1 col-xs-4">
+								<label>Trade After</label>
+								<input type="date" name="tradeAfter" class="form-control ng-pristine ng-untouched ng-valid" ng-model="tradeAfter" id="tradeAfter">
+							</div>
+
+							<div class="col-4 col-xl-1 col-xs-4">
+								<label>Trade Before</label>
+								<input type="date" name="tradeBefore" class="form-control ng-pristine ng-untouched ng-valid" ng-model="tradeBefore" id="tradeBefore">
+							</div>
+
+							<div class="col-4 col-xl-1 col-xs-4">
+								<label>Market</label>
+								<div class="select2-container ng-untouched ng-valid ng-valid-parse ng-pristine" id="s2id_segment" style="width: 24px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Market</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen64"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="segment" ui-select2="{ allowClear: true}" data-placeholder="Market" ng-model="selectMarket" class="ng-untouched ng-valid select2-offscreen ng-valid-parse ng-pristine" tabindex="-1">
+									<option value=""></option>
+									<!-- ngRepeat: market in markets --><option ng-repeat="market in markets" value="2" class="ng-binding ng-scope">
+										NSE
+									</option><!-- end ngRepeat: market in markets --><option ng-repeat="market in markets" value="1" class="ng-binding ng-scope">
+										MCX
+									</option><!-- end ngRepeat: market in markets -->
+								</select>
+							</div>
+
+							<div class="col-4 col-xl-1 col-xs-4">
+								<label>Script</label>
+								<div class="select2-container ng-untouched ng-valid ng-dirty ng-valid-parse" id="s2id_script" style="width: 24px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Script Name</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen65"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="script" ui-select2="{ allowClear: true}" data-placeholder="Script Name" ng-model="selectScript" class="ng-untouched ng-valid select2-offscreen ng-dirty ng-valid-parse" tabindex="-1">
+									<option value=""></option>
+									<!-- ngRepeat: script in scripts[selectMarket] -->
+								</select>
+							</div>
+
+							<div class="col-4 col-xl-1 col-xs-4" ng-show="$root.userInfo.userType != 1">
+								<label>Client</label>
+								<div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Client</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen66"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="client" ui-select2="select2Options" ng-model="selectUser" data-placeholder="Select Client" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+							</div>
+
+							<div class="col-4 col-xl-1 col-xs-4" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+								<label>Broker</label>
+								<div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_broker" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Broker</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen67"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="broker" ui-select2="select2BOptions" ng-model="selectBroker" data-placeholder="Select Broker" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+							</div>
+
+							<div class="col-4 col-xl-1 col-xs-4" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+								<label>Master</label>
+								<div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_master" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Master</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen68"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="master" ui-select2="select2MOptions" ng-model="selectMaster" data-placeholder="Select Master" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+							</div>
+
+							<div class="col-4 col-xl-1 col-xs-4">
+								<label>Order Type</label>
+								<div class="select2-container ng-untouched ng-valid ng-dirty ng-valid-parse" id="s2id_script" style="width: 72px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Order Type</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen69"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><select id="script" ui-select2="{ allowClear: true}" data-placeholder="Order Type" ng-model="orderType" class="ng-untouched ng-valid select2-offscreen ng-dirty ng-valid-parse" tabindex="-1">
+									<option value=""></option>
+									<option value="0">Market</option>
+									<option value="1">Limit</option>
+
+								</select>
+							</div>
+
+							<div class="pl-2 pt-2 filterBtn" style="width: auto;display: flex;gap: 6px; margin-top: 22px;">
+								<button style="min-width: 58px;padding: 0px;
+   " ng-click="findOrders()" class="btn common_buttonn button_height" tabindex="6" title="Search Trades"><i class="hvr-buzz-out fa fa-search"></i></button>
+								<button style="min-width: 58px;padding: 0px;
+   " ng-click="clearFilter()" class="btn common_buttonn button_height" tabindex="7" title="Clear Search">
+									<i class="hvr-buzz-out fa fa-eraser"></i>
+								</button>
+								<a style="min-width: 58px;padding: 4px;color: #374767;
+   " ng-click="export1()" class="btn common_buttonn button_height" tabindex="8" title="Export Excel">
+									<i class="hvr-buzz-out fa fa-download"></i>
+								</a>
+								<a style="min-width: 58px;padding: 4px;color: red;
+								" ng-click="exportPDF()" class="btn common_buttonn button_height" tabindex="8" title="Export PDF">
+																 <i class="fa fa-file-pdf-o"></i>
+															 </a>
+							</div>
+
+						</div>
+					</div>
+				</div></div>
+				</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="Oi6zajImOk">
+
+					<div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="Oi6zajImOk" data-index="0">
+						<div class="panel-heading ui-sortable-handle">
+						  <div class="panel-title" style="max-width: calc(100% - 90px);">
+							<div class="">
+								<button class="btn btn-success  btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
+									<i class="hvr-buzz-out fa fa-reorder"></i>
+								</button>
+							</div>
+						  </div>
+						<div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+						<div class="panel-body">
+							<div class="table-responsive" style="padding: 10px;">
+								<div id="load_data_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length" aria-controls="load_data" class=""><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="200">200</option><option value="500">500</option><option value="1000">1,000</option><option value="-1">All</option></select> entries</label></div><div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data"></label></div><table style="width: 100%;" id="load_data" class="table table-hover table-striped table-condensed reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
+									<thead style="border-bottom: 2px solid #2a3f54;">
+										<tr role="row"><th style="text-align: left; width: 27px;" class="sorting_disabled" rowspan="1" colspan="1" aria-label="D">D</th><th style="text-align: left; width: 130px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Trade By: activate to sort column ascending">Trade By</th><th style="text-align: left; width: 72px;" class="sorting_desc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-sort="descending" aria-label="Time: activate to sort column ascending">Time</th><th style="text-align: left; width: 116px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="O-Time: activate to sort column ascending">O-Time</th><th style="text-align: left; width: 96px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Name</th><th style="text-align: left; width: 110px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Market: activate to sort column ascending">Market</th><th style="text-align: left; width: 116px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Symbol: activate to sort column ascending">Symbol</th><th style="text-align: left; width: 82px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Type: activate to sort column ascending">Type</th><th style="text-align: right; width: 57px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Lot: activate to sort column ascending">Lot</th><th style="text-align: right; width: 65px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Qty: activate to sort column ascending">Qty</th><th style="text-align: right; width: 160px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Order Price: activate to sort column ascending">Order Price</th><th style="text-align: right; width: 121px;" class="sorting_disabled" rowspan="1" colspan="1" aria-label="Net Price">Net Price</th><th style="text-align: left; width: 102px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending">Status</th><th style="text-align: center; width: 96px;" class="sorting_disabled" rowspan="1" colspan="1" aria-label="Modify">Modify</th><th style="text-align: center; width: 99px;" class="sorting_disabled" rowspan="1" colspan="1" aria-label="Cancel">Cancel</th><th style="text-align: center; width: 43px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="IP: activate to sort column ascending">IP</th></tr>
+									</thead>
+									<tbody>
+
+
+									<tr class="odd"><td valign="top" colspan="16" class="dataTables_empty">No data available in table</td></tr></tbody>
+								</table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+							</div>
+						</div>
+					  </div>
+
+
+
+</div>
+
+				<div id="formemodal" ng-show="tradeEditOpen" class="modal fade show ng-hide" aria-modal="true" style="display: block; padding-left: 0px;">
+					<div class="modal-dialog modal-sm modal-dialog-centered">
+						<div class="modal-content" style="background-color:#1e2226;">
+							<div class="modal-header">
+								<h5 class="modal-title">Edit Trade</h5>
+								<button type="button" ng-click="closeTradeEdit()" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+							</div>
+							<div class="modal-body ng-binding">
+								<span ng-show="$root.userInfo.userType != 1" class="ng-binding">Name : <br></span>
+								Script : <br>
+								High : <br>
+								Low : <br>
+								<form novalidate="" class="ng-untouched ng-pristine ng-valid">
+									<div class="form-group"><label for="input-1">Lot</label><input ng-change="lotChange()" ng-disabled="marketEdit == 'NSE'" ng-model="lotEdit" type="number" id="input-1" placeholder="Enter Lot" class="form-control ng-pristine ng-untouched ng-valid">
+									</div>
+									<div class="form-group"><label for="input-2">Qty</label><input ng-change="qtyChange()" ng-disabled="marketEdit != 'NSE'" ng-model="qtyEdit" type="number" id="input-2" placeholder="Enter Qty" class="form-control ng-pristine ng-untouched ng-valid" disabled="disabled">
+									</div>
+									<div class="form-group"><label for="input-3">Price</label><input ng-model="priceEdit" type="number" id="input-3" placeholder="Enter Price" class="form-control ng-pristine ng-untouched ng-valid"></div>
+									<button ng-click="editTrade()" type="submit" class="btn common_buttonn  m-1">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div ng-show="tradeEditDelete" class="modal fade show ng-hide" style="display: block; background-color : #00000082;" aria-modal="true">
+					<div class="modal-dialog modal-sm modal-dialog-centered">
+						<div class="modal-content" style="background-color:#1e2226;">
+							<div class="modal-header">
+								<h5 class="modal-title">Delete Trade</h5>
+								<button ng-click="closeDeleteTrade()" type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+							</div>
+							<div class="modal-body">
+								<p>Are you sure you want to delete this trade?</p>
+								<div ng-show="$root.userInfo.userType == 6 || $root.userInfo.userType&nbsp;==&nbsp;8" class="ng-hide">
+									<label>Transaction Password</label>
+									<input ng-model="confirmPasswordDelete" type="password" id="confirmPasswordDelete" class="form-control ng-pristine ng-untouched ng-valid" placeholder="Enter Password" style="
+    padding: 10px;">
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button ng-click="closeDeleteTrade()" type="button" data-dismiss="modal" class="btn common_buttonn btn-sm" style="border-bottom:3px solid red ;">Close</button>
+								<button ng-click="deleteTradeConfirm()" type="button" class="btn common_buttonn  btn-sm">Delete</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+</div>
+</section>

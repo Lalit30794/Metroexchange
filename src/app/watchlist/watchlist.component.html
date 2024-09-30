@@ -1,0 +1,1497 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Market Watch</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
+      ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+
+
+<section class="content ng-scope">
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="Z50LAcs2Tj">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="Z50LAcs2Tj"
+        data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="filter-elementtt">
+                <div class="col-4 col-lg-1">
+                  <div class="form-group">
+                    <label for="marketSelect">Market</label>
+                    <div class="dropdown">
+
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-1" style="min-width: 145px !important;">
+                  <div class="form-group">
+                    <label for="marketSelect">Script Name</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterMarketOptions()"
+                        id="marketSelect" aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarket.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarket">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market.name)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="col-4 col-lg-1">
+                  <div class="form-group">
+                    <label for="marketSelect">Expiry</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-1">
+                  <div class="form-group">
+                    <label for="marketSelect">CE/PE</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4 col-lg-1">
+                  <div class="form-group">
+                    <label for="marketSelect">Strike</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="">
+                  <label></label>
+                  <button class="common_buttonn button_height add-script-btn mt-5" ng-disabled="disableActions"
+                    ng-click="addToMarket()" tabindex="6">
+                    Add To Watchlist
+                  </button>
+                </div>
+                <div class="col-4 col-lg-1">
+                  <div class="form-group">
+                    <label for="txtFocusScript">Search</label>
+                    <input name="search" style=" height: 30px" id="txtFocusScript" type="text"
+                      class="form-control ng-pristine ng-valid ng-empty ng-touched ng-untouched" placeholder="Search..."
+                      ng-model="searchText" autocomplete="off">
+                  </div>
+                </div>
+                <div class="">
+                  <label></label>
+                  <button class="common_buttonn button_height add-new-expiry-btn mt-5" ng-disabled="disableExpiryAction"
+                    ng-click="addNewExpiry()" tabindex="7">
+                    New
+                    Expiry
+                  </button>
+                </div>
+                <!-- ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
+                <div class="ng-scope"
+                  ng-if="$root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8">
+                  <label></label>
+                  <button class="common_buttonn button_height add-new-expiry-btn mt-5" ng-disabled="allDisableActions"
+                    ng-click="addAllScriptMarket()" tabindex="7">
+                    Add All Scripts
+                  </button>
+                </div>
+                <!-- end ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
+                <!-- ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
+                <div class="ng-scope"
+                  ng-if="$root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8">
+                  <label></label>
+                  <button class="common_buttonn  button_height add-new-expiry-btn mt-5"
+                    style="border-bottom: 3px solid red" ng-disabled="allDisableActions"
+                    ng-click="RemoveAllScriptMarket()" tabindex="7">
+                    Remove All S.
+                  </button>
+                </div>
+                <!-- end ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
+                <div class="">
+                  <label></label>
+                  <button class="common_buttonn button_height add-new-expiry-btn mt-5" ng-click="closeColumn()">
+                    Column
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ngRepeat: m in markets track by $index --><!-- ngIf: marketWatchList[m.market_type_name] --><!-- end ngRepeat: m in markets track by $index --><!-- ngIf: marketWatchList[m.market_type_name] -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ng-scope lobipanel-parent-sortable ui-sortable"
+      ng-repeat="m in markets track by $index" style="padding-top:0px !important ;padding-bottom: 0px !important;"
+      ng-if="marketWatchList[m.market_type_name]" data-lobipanel-child-inner-id="BYUwmwUVWY">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="BYUwmwUVWY" data-index="0">
+
+
+        <div class="header sticky">
+          <table class="Watchlist-table" style="width: 100%; font-size: 12px">
+            <thead>
+              <tr style="
+                    height: 31px !important;
+                    background: #2a3f54;
+                    letter-spacing: 1px;
+                  ">
+                <th style="
+                      font-size: 14px;
+                      text-align: left;
+                      padding-left: 6px !important;
+                      width: 270px;
+                    " scope="col">
+                  <span>
+                    <i ng-click="collapse(m.market_type_id);" ng-show="collapseVar[m.market_type_id]"
+                      class="bi bi-caret-down-fill"></i>
+                    <i ng-click="collapse(m.market_type_id);" ng-show="!collapseVar[m.market_type_id]"
+                      class="bi bi-caret-down-fill ng-hide"></i>
+                  </span>
+                  <span style="" class="ng-binding">MCX</span>
+                </th>
+                <!-- ngIf: hide_column[4] == true -->
+                <th style="font-size: 14px;  min-width: 82px" scope="col" ng-if="hide_column[4] == true"
+                  class="ng-scope">
+                  Change(%)
+                </th><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <th style="
+                      font-size: 14px;
+                      text-align: center;
+                      width: 9% !important;
+                    " scope="col" ng-if="hide_column[1] == true" class="ng-scope">
+                  Bid Rate
+                </th><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <th style="
+                      font-size: 14px;
+                      text-align: center;
+                      width: 9% !important;
+                    " scope="col" ng-if="hide_column[2] == true" class="ng-scope">
+                  Ask Rate
+                </th><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <th style="
+                      font-size: 14px;
+                      text-align: center;
+                      width: 9% !important;
+                    " scope="col" ng-if="hide_column[3] == true" class="ng-scope">
+                  LTP
+                </th><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <th style="font-size: 14px; text-align: right; min-width: 82px" scope="col"
+                  ng-if="hide_column[5] == true" class="ng-scope">
+                  Net Change
+                </th><!-- end ngIf: hide_column[5] == true -->
+                <!-- ngIf: hide_column[6] == true -->
+                <th style="font-size: 14px; text-align: right; min-width: 82px" scope="col"
+                  ng-if="hide_column[6] == true" class="ng-scope">
+                  High
+                </th><!-- end ngIf: hide_column[6] == true -->
+                <!-- ngIf: hide_column[7] == true -->
+                <th style="font-size: 14px; text-align: right; min-width: 82px" scope="col"
+                  ng-if="hide_column[7] == true" class="ng-scope">
+                  Low
+                </th><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <th style="font-size: 14px; text-align: right; min-width: 82px" scope="col"
+                  ng-if="hide_column[8] == true" class="ng-scope">
+                  Open
+                </th><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <th style="font-size: 14px; text-align: right; min-width: 82px" scope="col"
+                  ng-if="hide_column[9] == true" class="ng-scope">
+                  Close
+                </th><!-- end ngIf: hide_column[9] == true -->
+                <th style="font-size: 14px; text-align: center; min-width: 82px" scope="col">
+                  Remove
+                </th>
+              </tr>
+            </thead>
+            <tbody ng-show="collapseVar[m.market_type_id]">
+              <!-- ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_0" market="1" product_name="GOLD 04OCT2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #2a2a2b ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85) !important;
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">GOLD 04OCT2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_1" market="1" product_name="SILVER 05DEC2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">SILVER 05DEC2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_2" market="1" product_name="CRUDEOIL 21OCT2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">CRUDEOIL 21OCT2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_3" market="1" product_name="ALUMINIUM 30SEP2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">ALUMINIUM 30SEP2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_4" market="1" product_name="COPPER 30SEP2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">COPPER 30SEP2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_5" market="1" product_name="GOLDM 04OCT2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">GOLDM 04OCT2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_6" market="1" product_name="LEAD 30SEP2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">LEAD 30SEP2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_7" market="1" product_name="NATURALGAS 28OCT2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">NATURALGAS 28OCT2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_8" market="1" product_name="SILVERM 29NOV2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">SILVERM 29NOV2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_9" market="1" product_name="SILVERMIC 29NOV2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">SILVERMIC 29NOV2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+              <tr id="mid_MCX_10" market="1" product_name="ZINC 30SEP2024" buyprice="" sellprice=""
+                class="market_watch_row  sortable ng-scope" style="
+                    font-size: 15px;
+                    background: #1e2226 ;
+                    border-top: 1px solid hsla(0, 0%, 100%, 0.15);
+                    color: hsla(0, 0%, 100%, 0.85);
+                    letter-spacing: 1px;
+                    /* font-family: 'Nunito Sans',sans-serif; */
+                    font-weight: 500 !important;
+                  "
+                ng-repeat="x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue">
+                <td style="text-align: left; padding-left: 6px !important; font-weight: 500 !important;"
+                  ng-click="highlight($index,m.market_type_name)" class="">
+                  <!-- class="{{x.classTotal2}}" -->
+                  <!-- <span title="{{x.productName}} | Max : {{ x.max }} | Position : {{ x.position }}"
+                      data-toggle="tooltip" data-placement="top" tooltip>{{ x.productName }}</span> -->
+                  <span class="ng-binding">ZINC 30SEP2024</span>
+                </td>
+                <!-- ngIf: hide_column[4] == true -->
+                <td
+                  style="font-weight: 500 !important;padding: 0px 10px; display: flex;justify-content: space-between;     width: 80px;"
+                  ng-if="hide_column[4] == true" class="ng-scope">
+                  <i style="font-size : 20px; color: #00ff2d" class="bi bi-caret-up-fill"></i>
+                  <span class="ng-binding">0.00</span>
+                </td><!-- end ngIf: hide_column[4] == true -->
+                <!-- ngIf: hide_column[1] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('sell',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[1] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[1] == true -->
+                <!-- ngIf: hide_column[2] == true -->
+                <td style="text-align: center; cursor: pointer;font-weight: 500 !important;"
+                  ng-click="tradeOpen('buy',m.market_type_id,x.productName,x.data.SellPrice )" class="red"
+                  ng-if="hide_column[2] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[2] == true -->
+                <!-- ngIf: hide_column[3] == true -->
+                <td style="text-align: center;font-weight: 500 !important;" class="red" ng-if="hide_column[3] == true">
+                  0.00
+                </td><!-- end ngIf: hide_column[3] == true -->
+
+                <!-- ngIf: hide_column[5] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[5] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[5] == true -->
+                <!-- class="{{ x.classTotal2}}" -->
+                <!-- ngIf: hide_column[6] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[6] == true"
+                  ng-class="x.classTotal=='green' ? 'green' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[6] == true -->
+                <!-- class="{{x.classTotal1}}" -->
+                <!-- ngIf: hide_column[7] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[7] == true"
+                  ng-class="x.classTotal=='red' ? 'red' :''" class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[7] == true -->
+                <!-- ngIf: hide_column[8] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[8] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[8] == true -->
+                <!-- ngIf: hide_column[9] == true -->
+                <td style="text-align: right;font-weight: 500 !important;" ng-if="hide_column[9] == true"
+                  class="ng-binding ng-scope">
+                  0.00
+                </td><!-- end ngIf: hide_column[9] == true -->
+                <td ng-show="x.quantity == 0" style="display: flex; justify-content: center">
+                  <button class="btn common_buttonn" ng-click="removeFromWatchList(m.market_type_id,x.productName)"
+                    style="
+                        color: red;
+                        cursor: pointer;
+                        width: 25px;
+                        line-height: 0.5;
+                        display: flex;
+                        justify-content: center;
+                        border-bottom: 3px solid red;
+    margin: 3px;
+    padding: 6px;
+                      ">
+                    ×
+                  </button>
+                </td>
+                <td ng-show="x.quantity != 0" style="text-align: center" class="ng-binding ng-hide">
+                  0
+                </td>
+              </tr>
+              <!-- end ngRepeat: x in marketWatchList[m.market_type_name] | filter : searchText | orderBy : itemSortValue -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><!-- end ngIf: marketWatchList[m.market_type_name] --><!-- end ngRepeat: m in markets track by $index -->
+    <input type="hidden" value="" id="hiddenMarketId">
+  </div>
+
+
+  <div ng-show="tradeShow" id="dashfoot" ng-style="{'background-color': buySellColor}"
+    class="card buy-sell-section ng-hide" style="margin-bottom: 0px; background-color: rgb(161, 51, 41);">
+    <form id="bet" class="form-horizontal ng-valid ng-valid-pattern ng-dirty ng-valid-parse" role="form">
+      <div class="row" style="margin-left : 0px; margin-right : 0px;">
+        <div class="col-12 col-lg-1 col-xl-2" style="padding: 0px !important;">
+          <div class=" ">
+            <div class="col-sm-12">
+              <br>
+              <input ng-model="scriptNameTradeD" type="text" disabled=""
+                class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-1 text-center trade-font-size-other trade-price red" ng-class="dataTrade.buyClass || classR">
+          <label class="col-form-label ">Bid Rate</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+        <div class="col-sm-1 text-center trade-font-size-other trade-price red"
+          ng-class="dataTrade.sellClass || classR">
+          <label class="col-form-label">Ask Rate</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+        <div class="col-sm-1 text-center trade-font-size-other trade-price red" ng-class="dataTrade.ltpClass || classR">
+          <label class="col-form-label">LTP</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+
+        <div class=" col-sm-1 text-center trade-font-size-other trade-price">
+          <label class="col-form-label">Volume</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+
+        <div class=" col-sm-1 text-center trade-font-size-other trade-price">
+          <label class="col-form-label">Change %</label><br>
+          <!-- ngIf: x.priceChangeColor != 'red' --><span ng-if="x.priceChangeColor != 'red'"
+            class="ng-binding ng-scope">0.00</span><!-- end ngIf: x.priceChangeColor != 'red' -->
+          <!-- ngIf: x.priceChangeColor == 'red' -->
+        </div>
+        <div class=" col-sm-1 text-center trade-font-size-other trade-price">
+          <label class="col-form-label">Net Chg</label><br>
+          <!-- ngIf: dataTrade.PriceChange > 0 -->
+          <!-- ngIf: dataTrade.PriceChange < 0 -->
+        </div>
+        <div class=" col-sm-1 text-center trade-font-size-other trade-price">
+          <label class="col-form-label">High</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+        <div class=" col-sm-1 text-center trade-font-size-other trade-price">
+          <label class="col-form-label">Low</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+        <div class=" col-sm-1 text-center trade-font-size-other trade-price">
+          <label class="col-form-label">Open</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+        <div class=" col-sm-1 text-center trade-font-size-other trade-price">
+          <label class="col-form-label">Close</label><br>
+          <span class="ng-binding">0.00</span>
+        </div>
+      </div>
+      <div class="">
+        <div class="col-12 col-lg-1 col-xl-2" style="padding: 0px !important;">
+          <div class=" ">
+            <div class="col-sm-12">
+              <div class="custom-control custom-radio d-block float-left" style="float: left;z-index: 99999999;">
+                <input ng-model="buyRadio" type="radio" value="0" id="gross_partnership" name="net_gross_partner"
+                  class="custom-control-input ng-pristine ng-untouched ng-valid" checked="checked"
+                  style="height: unset !important;">
+                <label for="gross_partnership" class="custom-control-label">Buy</label>
+              </div>
+              <div class="custom-control custom-radio d-block float-right">
+                <input ng-model="buyRadio" type="radio" value="1" id="net_partnership" name="net_gross_partner"
+                  class="custom-control-input ng-pristine ng-untouched ng-valid" style="height: unset !important;">
+                <label for="net_partnership" class="custom-control-label">Sell</label>
+              </div>
+              <select id="type1" ng-model="selectTradeType" _ngcontent-lmp-c162=""
+                class="form-control user_type ng-pristine ng-untouched ng-valid">
+                <option value="? undefined:undefined ?"></option>
+                <option value="0">Market</option>
+                <option value="1">Limit</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-1 col-xl-1" style="padding: 0px;">
+          <div class=" ">
+            <div class="col-sm-12">
+              <label style="padding-top : 0px; padding-bottom : 0px;" class="col-form-label">Lot</label><br>
+              <input ng-keydown="changedType($event)" ng-change="lotChange()" ng-model="selectTradeLotSize"
+                type="number" pattern="^[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*$" id="lot"
+                class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-1 col-xl-2">
+          <div class=" ">
+            <div class="col-sm-12">
+              <label style="padding-top : 0px; padding-bottom : 0px;" class="col-form-label">Qty</label><br>
+              <input ng-keydown="changedType($event)" tabindex="4" ng-change="qtyChange()" ng-model="selectTradeQtySize"
+                pattern="^[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*$"
+                ng-disabled="selectMarketTrade == 1 || selectMarketTrade == 3 || selectMarketTrade == 5" type="number"
+                id="qty" class="form-control ng-pristine ng-untouched ng-valid ng-valid-pattern">
+              <div style="font-size: 13px;font-weight: bold;margin-top: 5px;width: 95%;">
+                <span style="float: left;" class="ng-binding">Max: 0</span>
+                <span style="float: right;" class="ng-binding">Position: 0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ngIf: buyRadio == 1 && selectTradeType == 0 -->
+        <!-- ngIf: buyRadio == 0 && selectTradeType == 0 -->
+        <!-- ngIf: buyRadio == 1 && selectTradeType != 0 -->
+        <!-- ngIf: buyRadio == 0 && selectTradeType != 0 -->
+        <div class="col-12 col-lg-1 col-xl-2">
+          <div class=" ">
+            <div class="col-sm-12">
+
+
+              <label ng-show="$root.userInfo.userType != 1" style="padding-top : 0px; padding-bottom : 0px;"
+                class="col-form-label">Client</label><br>
+              <div ng-show="$root.userInfo.userType != 1" style="text-align: left;" class="selectClient">
+                <div class="select2-container searchClient ng-untouched ng-valid ng-dirty ng-valid-parse"
+                  id="s2id_client" style="width: 250px;"><a href="javascript:void(0)" onclick="return false;"
+                    class="select2-choice select2-default" tabindex="-1"> <span>Select Client</span><abbr
+                      class="select2-search-choice-close"></abbr>
+                    <div><b></b></div>
+                  </a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen62" tabindex="7">
+                  <div class="select2-drop select2-display-none">
+                    <div class="select2-search select2-search-hidden select2-offscreen"> <input type="text"
+                        autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false"
+                        class="select2-input"> </div>
+                    <ul class="select2-results"> </ul>
+                  </div>
+                </div><input tabindex="-1" type="text" id="client" ui-select2="select2Options" ng-model="selectUser"
+                  data-placeholder="Select Client"
+                  class="searchClient ng-untouched ng-valid select2-offscreen ng-dirty ng-valid-parse"
+                  style="width: 250px;height:34px;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 col-xl-3">
+          <div class="">
+            <div class="col-sm-12"><br>
+              <button ng-keydown="changedType($event)" tabindex="4" ng-disabled="disableActions" ng-click="placeTrade()"
+                id="submitForm" _ngcontent-nhg-c161="" type="button" class="btn common_buttonn m-1"
+                style="color: #000;">
+                <i _ngcontent-nhg-c161="" class="fa fa-trade"></i>
+                <span _ngcontent-nhg-c161="">
+                  Place Order
+                </span>
+              </button>
+              <button tabindex="5" ng-click="cancel()" _ngcontent-nhg-c161="" type="button" id="btncancelForm"
+                class="btn common_buttonn m-1" style="border-bottom: 3px solid red; color: #000;">
+                <i _ngcontent-nhg-c161="" class="fa fa-trade"></i>
+                <span _ngcontent-nhg-c161="">
+                  Close
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div ng-show="closeColumnPopup" class="modal fade show ng-hide" style="display: block" aria-modal="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Hide Column</h5>
+          <button ng-click="closeColumnPopup1()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="hideDiv">
+            <label for="BidRate">Bid Rate</label>
+            <input id="BidRate" type="checkbox" ng-model="BidRate" ng-checked="(hide_column[1] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[1]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="AskRate">Ask Rate</label>
+            <input id="AskRate" type="checkbox" ng-model="AskRate" ng-checked="(hide_column[2] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[2]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="LTP">LTP</label>
+            <input id="LTP" type="checkbox" ng-model="LTP" ng-checked="(hide_column[3] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[3]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="ChangeH">Change</label>
+            <input id="ChangeH" type="checkbox" ng-model="ChangeH" ng-checked="(hide_column[4] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[4]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="NetChange">Net Change</label>
+            <input id="Net Change" type="checkbox" ng-model="NetChange"
+              ng-checked="(hide_column[5] == true) ? true : false" ng-click="hideColumnClick('hide_column[5]')"
+              class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="HighH">High</label>
+            <input id="HighH" type="checkbox" ng-model="HighH" ng-checked="(hide_column[6] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[6]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="">Low</label>
+            <input id="LowH" type="checkbox" ng-model="LowH" ng-checked="(hide_column[7] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[7]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="OpenH">Open</label>
+            <input id="OpenH" type="checkbox" ng-model="OpenH" ng-checked="(hide_column[8] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[8]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+          <div class="hideDiv">
+            <label for="Close">Close</label>
+            <input id="CloseH" type="checkbox" ng-model="Close" ng-checked="(hide_column[9] == true) ? true : false"
+              ng-click="hideColumnClick('hide_column[9]')" class="ng-pristine ng-untouched ng-valid" checked="checked">
+          </div>
+
+          <div class="col-12 col-lg-12 col-xl-12 ng-binding ng-scope">
+            <div class="form-group row">
+              <div class="col-sm-12" style="padding: 0px; margin-top: 10px">
+
+                <button ng-disabled="disableActions" style="
+              float: right;
+              width: 80px;
+              padding: 9px;
+              border-radius: 4px;
+            " ng-click="hideColumnSubmit()" type="button" class="btn  common_buttonn">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

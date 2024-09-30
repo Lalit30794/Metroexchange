@@ -1,0 +1,67 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">Auto Square Off</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+
+
+<!-- Auto Square Off -->
+ <section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="JNHzC1wxxN" style="display: block;">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="JNHzC1wxxN" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px; z-index: 1 !important">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Old_Query">
+                <div class="col-4 col-md-2 div-v-align">
+                  <label>From Date</label>
+                  <input type="date" ng-model="searchDate" name="search_date" class="form-control width_full ng-pristine ng-untouched ng-valid" id="search_date">
+                </div>
+                <div ng-show="$root.userInfo.userType != 1" class="col-4 col-md-2 div-v-align" style="padding: 1px">
+                  <label>Select Client</label>
+                  <div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select Client</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen105"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="client" ui-select2="select2Options" ng-model="selectUser" data-placeholder="Select Client" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" style="">
+                </div>
+                <div class="col-4 col-md-2 div-v-align btnedit">
+                  <button ng-click="getAutoSquareOff()" style="width: 100px; margin: 0 13px; padding: 10px" class="common_buttonn button_height" tabindex="6">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="kF09M6ncsW">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="kF09M6ncsW" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="">
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
+                <i class="hvr-buzz-out fa fa-reorder"></i>
+              </button>
+            </div>
+          </div>
+        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+        <div class="panel-body">
+          <div class="table-responsive" style="padding: 10px">
+            <div id="load_data_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length" aria-controls="load_data" class=""><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="200">200</option></select> entries</label></div><div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data"></label></div><table style="text-align: start; color: rgb(216, 215, 215); width: 1833px;" id="load_data" class="table table-hover table-striped table-condensed reports-table dataTable no-footer" role="grid" aria-describedby="load_data_info">
+              <thead style="border-bottom: 2px solid #2a3f54">
+                <tr role="row"><th class="sorting_desc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-sort="descending" aria-label="Client: activate to sort column ascending" style="width: 556px;">Client</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="MTM: activate to sort column ascending" style="width: 597px;">MTM</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Time: activate to sort column ascending" style="width: 616px;">Time</th></tr>
+              </thead>
+              <tbody>
+
+              <tr class="odd"><td valign="top" colspan="3" class="dataTables_empty">No data available in table</td></tr></tbody>
+            </table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

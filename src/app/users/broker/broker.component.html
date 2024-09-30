@@ -1,0 +1,133 @@
+
+<!-- Header Ti -->
+<section class="marqueeStyle-header ng-scope" ng-if="$root.userInfo.navMenu">
+          <div class="header-title" ng-show="$root.userInfo.pageTitle">
+            <p class="pageTitle ng-binding">Broker Listing</p>
+            <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+              NSE(FNO), NIFTY &amp; GIFT NIFTY ALL WILL EXPIRES TODAY(26SEP,THU)...
+            </marquee>
+          </div>
+</section>
+
+<!-- Client Listing section  -->
+<section class="content ng-scope" >
+  <div class="row">
+    <!-- Top Bar Section  -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="display: block;" *ngIf="isShow">
+      <div class="panel panel-bd lobidisable bg-lobidisable filter-section  ">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                <div class="col-lg-2 col-sm-4 col-xs-4">
+                  <label class="change-label-color">User</label>
+                  <select name="" id="" class="form-control ng-pristine ng-untouched ng-valid" ng-model="selectDirect">
+                    <option value="1" selected="">My user</option>
+                    <option value="0">All&nbsp;user</option>
+                  </select>
+                </div>
+                <div class="col-lg-2 col-sm-4 col-xs-4">
+                  <label class="change-label-color">Master</label>
+                          <div class="input-group mb-3">
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Select master"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+
+                      <div  class="absolute w-full  shadow rounded mt-1 p-2 text-gray-700">
+                          Please enter 1 more character
+                      </div>
+               </div>
+
+                <div class="col-lg-2 col-sm-4 col-xs-4">
+                  <label class="change-label-color">Broker</label>
+                          <div class="input-group mb-3">
+                            <input
+                              type="text"
+                              class="form-control"
+                              placeholder="Select Broker"
+                              aria-describedby="basic-addon2"
+                            />
+                          </div>
+
+
+                      <div  class="absolute w-full shadow rounded mt-1 p-2 text-gray-700">
+                          Please enter 1 more character
+                      </div>
+               </div>
+
+                <div class="col-lg-2 col-sm-4 col-xs-4">
+                  <label class="change-label-color">Join After</label>
+
+                  <input ng-change="dateChanged()" onkeydown="preventDatePickerOnEnter(event)" ng-model="joinAfter" id="joinAfter" type="date" value="" class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-lg-2 col-sm-4 col-xs-4">
+                  <label class="change-label-color">Join Before</label>
+
+                  <input ng-change="dateChanged()" onkeydown="preventDatePickerOnEnter(event)" ng-model="joinBefore" id="joinBefore" type="date" value="" class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-lg-2 col-sm-4 col-xs-4" style="margin-top: 22px">
+                  <button class="btn btn-rounded btn-block" tabindex="6">
+                    Search
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Toggle Section -->
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="panel panel-bd lobidisable">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <div class="">
+              <button class="btn btn-sm " style="background-color: #ffff;" (click)="toggleShow()">
+                <i class="bi bi-menu-button"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      <!-- Data Table Section -->
+        <div class="panel-body">
+          <div class="table-responsive" style="margin: 10px">
+            <div id="load_data_filter" class="dataTables_filter">
+              <table data-dsd="1" style="text-align: center; width: 100%;" id="example" class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
+              <thead>
+                <tr >
+                  <th>Name</th>
+                  <th >Login ID</th>
+                  <th >Broker</th>
+                  <th>Master</th>
+                  <th>Only Position</th>
+                  <th>Action</th>
+                  <th>Login Time</th>
+                  <th>Login IP</th>
+                  <th>Join Time</th>
+                </tr>
+              </thead>
+            <tbody>
+              <tr class="odd" *ngFor="let item of tableData">
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.loginID }}</td>
+                    <td>{{ item.broker }}</td>
+                    <td>{{ item.master }}</td>
+                    <td>{{ item.onlyPosition }}</td>
+                    <td>{{ item.action }}</td>
+                    <td>{{ item.loginTime }}</td>
+                    <td>{{ item.loginIP }}</td>
+                    <td>{{ item.joinTime }}</td>
+              </tr>
+              <tr class="odd" *ngIf="tableData.length == 0"><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr>
+            </tbody></table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

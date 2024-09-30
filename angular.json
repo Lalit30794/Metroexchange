@@ -30,8 +30,15 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/custom-theme.scss", "src/less/styles.less"],
-            "scripts": [],
+            "styles": [
+              "src/custom-theme.scss",
+              "src/less/styles.less",
+              "src/assets/plugins/lobipanel/lobipanel.min.css"
+            ],
+            "scripts": [
+              "src/assets/plugins/lobipanel/lobipanel.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": false
@@ -88,8 +95,15 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/less/styles.less"],
-            "scripts": []
+            "styles": [
+              "src/custom-theme.scss",
+              "src/less/styles.less",
+              "src/assets/plugins/lobipanel/lobipanel.min.css"
+            ],
+            "scripts": [
+              "src/assets/plugins/lobipanel/lobipanel.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           }
         }
       }

@@ -1,0 +1,106 @@
+<section class="marqueeStyle-header ng-scope">
+  <div class="header-title">
+    <p class="pageTitle ng-binding">JV broker list</p>
+
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+      MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
+      CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
+    </marquee>
+  </div>
+</section>
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="ucZtJAT0FV">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="ucZtJAT0FV" data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Old_Query">
+                <div class="col-12 col-md-2" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+                  <label>Broker</label>
+                  <div class="select2-container form-control ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_broker" style="width: 100%;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Broker</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen119"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input style="float: left;" type="hidden" id="broker" class="form-control ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" ui-select2="select2Options" ng-model="broker" data-placeholder="Broker" tabindex="-1">
+                </div>
+
+                <div class="col-12 col-md-2" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+                  <label>Date</label>
+                  <input type="date" name="fromDate" id="fromDate" ng-modal="fromDate" class="form-control">
+                </div>
+
+                <div class="col-12 col-md-1 btn_class_cnt" ng-show="$root.userInfo.userType != 1">
+                  <button ng-click="selectBroker()" type="button" class="common_buttonn " style="padding: 9px; border-radius: 3px; margin-top: 22px">
+                    GET
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="9QTVRgVpMJ">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="9QTVRgVpMJ" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="" style="color: #eae6e6;">
+              <!-- <button
+                class="btn btn-success btn-sm"
+                ng-click="filterPopup = true"
+                onclick="$('.filter-section-mobile').toggle();"
+              >
+                <i class="hvr-buzz-out fa fa-reorder"></i>
+              </button> -->
+              JV BROKER LIST
+            </div>
+          </div>
+        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+        <div class="panel-body">
+          <div class="col-12 col-lg-12 col-xl-12" style="max-height: 300px; overflow-y: auto">
+            <table class="table table-bordered table-stripped" style="margin-top: 15px; color: #eae6e6">
+              <thead style="border-bottom: 2px solid #2a3f54">
+                <tr>
+                  <th>From User</th>
+                  <th>To User</th>
+                  <th>Remark</th>
+                  <th style="text-align: right">Amount</th>
+                  <th style="text-align: center">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- ngRepeat: item in items -->
+                <!-- ngIf: items.length == 0 --><tr ng-if="items.length == 0" class="ng-scope">
+                  <td colspan="100%" style="text-align: center">
+                    NO DATA AVAILABLE IN TABLE
+                  </td>
+                </tr><!-- end ngIf: items.length == 0 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="smallsizemodal" ng-show="deleteJvBrokerEntryPopup" class="modal fade show ng-hide" style="display: block; background-color: rgba(0, 0, 0, 0.5)" aria-modal="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content" style="background-color: #1e2226; color: #d6d4d4">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Entry</h5>
+          <button ng-click="deleteJvBrokerEntryCancel()" type="button" data-dismiss="modal" aria-label="Close" class="close" style="color: red">
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete entry?</p>
+        </div>
+        <div class="modal-footer">
+          <button ng-click="deleteJvBrokerEntryCancel()" type="button" data-dismiss="modal" class="btn btn-danger btn-sm">
+            No
+          </button>
+          <button ng-click="deleteJvBrokerEntryConf()" type="button" class="btn btn-success btn-sm">
+            Yes
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,107 @@
+@import '../../../less/varibale.less';
+
+.submit-btn{
+  background-color: @white;
+  width: 150px;
+  height: 40px;
+  border-bottom: 3px solid @green-color;
+  border-radius: 4px;
+  color: #2a3f54;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+//* Toggle Container */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hide the default checkbox */
+.toggle-checkbox {
+  display: none;
+}
+
+/* Toggle Label */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  width: 60px; /* Width of the toggle */
+  height: 30px; /* Height of the toggle */
+  background-color: #ff3a3a; /* Background color when off */
+  border-radius: 30px; /* Rounded corners */
+  transition: background-color 0.3s;
+}
+
+/* Toggle Text */
+.toggle-text {
+  position: absolute;
+  width: 50%;
+  text-align: center;
+  line-height: 30px; /* Center text vertically */
+  color: white; /* Default text color */
+  font-weight: bold;
+  left: 3px;
+  font-size: 12px;
+}
+
+/* Red color for 'No' */
+.toggle-text.no {
+  color: red; /* Text color for "No" */
+}
+
+/* Slider */
+.toggle-slider {
+  position: absolute;
+  top: 2px; /* Position slider */
+  left: 2px; /* Position slider */
+  width: 26px; /* Width of the slider */
+  height: 26px; /* Height of the slider */
+  background-color: white; /* Slider color */
+  border-radius: 50%; /* Make it round */
+  transition: transform 0.3s;
+  color: #ff3a3a;/* Animation for slider */
+}
+
+/* Toggle On */
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #4caf50; /* Background color when on */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-slider {
+  transform: translateX(30px); /* Move slider to the right */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-text:first-child {
+  opacity: 0; /* Hide "No" text */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-text:last-child {
+  opacity: 1; /* Show "Yes" text */
+}
+
+/* Initial State */
+.toggle-label .toggle-text:first-child {
+  opacity: 1; /* Show "No" text */
+  left: 25px;
+}
+
+.toggle-label .toggle-text:last-child {
+  opacity: 0; /* Hide "Yes" text */
+}
+
+.form-horizontal{
+  width: 100% !important;
+}
+
+.radioGroupSection {
+  width: 100% !important;
+    margin-left: 16px !important;
+    gap: 19px !important;
+}

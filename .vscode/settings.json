@@ -1,0 +1,9 @@
+{
+  "explorer.compactFolders": false,
+  "cSpell.words": ["allowfullscreen"],
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  }
+
+}

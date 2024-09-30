@@ -1,0 +1,471 @@
+<!-- Header Ti -->
+<section class="marqueeStyle-header ng-scope" ng-if="$root.userInfo.navMenu">
+  <div class="header-title" ng-show="$root.userInfo.pageTitle">
+    <p class="pageTitle ng-binding">Quantity Setting</p>
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
+      NSE(FNO), NIFTY &amp; GIFT NIFTY ALL WILL EXPIRES TODAY(26SEP,THU)...
+    </marquee>
+  </div>
+</section>
+
+
+
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="YodcsbBpeq">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="YodcsbBpeq"
+        data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Overlay_class">
+                <!-- Client -->
+                <div class="col-md-1 col-sm-2 col-xs-3" style="margin: 10px 0 0 0">
+                  <div style="display: flex; justify-content: space-evenly">
+                    <label class="" for="is_client">Client </label>
+                    <input ng-model="is_master" id="is_client" ng-click="addUserKeyword=''" name="is_master"
+                      type="radio" value="1" checked="" style="margin: 0px -2px 0px"
+                      class="m-0 p-0 pt-1 ng-pristine ng-untouched ng-valid">
+                  </div>
+                </div>
+                <!-- Select Client -->
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <label class="change-label-color">Select Client</label>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Select master"
+                      aria-describedby="basic-addon2" />
+                  </div>
+                </div>
+
+                <!-- Market Name -->
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <div class="form-group">
+                    <label for="marketSelect">Market Name</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- Script Name -->
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <label class="change-label-color">Script Name</label>
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Select master"
+                      aria-describedby="basic-addon2" />
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-3 ng-hide" ng-show="selectMarket ==3">
+                  <label class="change-label-color"> Per Strike Position</label>
+                  <input ng-model="perStrike" id="rangeMin" type="number" data-placeholder="Per Strike"
+                    placeholder="Per Strike" value="0" class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-md-1 col-sm-2 col-xs-3 ng-hide" style="
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    margin-top: 12px;
+                  " ng-show="(selectMarket ==2 || selectMarket ==10) &amp;&amp; !selectScript">
+                  <label class="" for="is_range">Range</label>
+                  <input ng-model="is_range" id="is_range" type="checkbox" value="1"
+                    ng-disabled="selectScript ? true :false" class="ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-3 ng-hide"
+                  ng-show="(selectMarket ==2 || selectMarket ==10) &amp;&amp; !selectScript">
+                  <label class="change-label-color" for="is_range">
+                    Start Range</label>
+                  <input ng-model="rangeMin" id="rangeMin" type="number" value="0"
+                    ng-disabled="selectScript ? true :false" ng-readonly="!is_range"
+                    class="form-control ng-pristine ng-untouched ng-valid" readonly="readonly">
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-3 ng-hide"
+                  ng-show="(selectMarket ==2 || selectMarket ==10) &amp;&amp; !selectScript">
+                  <label class="change-label-color" for="is_range">End Range</label>
+                  <input ng-model="rangeMax" id="rangeMax" type="number" value="0"
+                    ng-disabled="selectScript ? true :false" ng-readonly="!is_range"
+                    class="form-control ng-pristine ng-untouched ng-valid" readonly="readonly">
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <label class="change-label-color">Qty Setting</label>
+                  <select ng-model="qtyType" id="qtyType" class="form-control ng-pristine ng-untouched ng-valid">
+                    <!-- ngIf: selectMarket!=1 && selectMarket!=3 -->
+                    <option value="qty" ng-if="selectMarket!=1 &amp;&amp; selectMarket!=3" class="ng-scope">
+                      Qty
+                    </option><!-- end ngIf: selectMarket!=1 && selectMarket!=3 -->
+                    <option value="lot" selected="">Lot</option>
+                    <!-- ngIf: selectMarket== 2 -->
+                    <!-- <option
+                      value="value"
+                      ng-if="selectMarket!=1 && selectMarket!=3"
+                    >
+                      Value
+                    </option> -->
+                  </select>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                  <label class="change-label-color" for="minOrder">Min Order</label>
+                  <input ng-model="minOrder" id="minOrder" type="number" value="0"
+                    class="form-control ng-pristine ng-untouched ng-valid">
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-md-2 col-sm-2 col-xs-4">
+                    <label class="change-label-color" for="maxOrder">Max Order</label>
+                    <input ng-model="maxOrder" id="maxOrder" type="number" value="0"
+                      class="form-control ng-pristine ng-untouched ng-valid">
+                  </div>
+
+                  <div class="col-md-2 col-sm-2 col-xs-4">
+                    <label class="change-label-color" for="positionLimit">Position Limit</label>
+                    <input ng-model="positionLimit" id="positionLimit" type="number" value="0"
+                      class="form-control ng-pristine ng-untouched ng-valid">
+                  </div>
+                  <!-- Button section -->
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                    <button style="
+                      margin-top: 22px;
+
+                      padding: 5px 36px !important;
+                    " ng-click="addRange()" type="button" ng-disabled="addRangeButton"
+                      class="btn common_buttonn button_height mr-2">
+                      Add
+                    </button>
+
+                    <button style="
+                      margin-top: 22px;
+
+                      border-bottom: 3px solid red;
+                    " ng-click="clearFilter()" type="button" ng-disabled="addRangeButton"
+                      class="btn common_buttonn button_height mr-2">
+                      Reset
+                    </button>
+                    <button style="
+                      margin-top: 22px;
+
+                      padding: 5px 36px !important;
+                    " ng-click="transferSetting()" type="button" class="btn common_buttonn button_height mr-2">
+                      Transfer
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="xNFCWJ8icv">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="xNFCWJ8icv" data-index="0">
+        <div class="panel-heading ui-sortable-handle">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <div class="" style="color: #ffffff">
+              <button class="btn btn-success btn-sm ng-hide" ng-click="logDataPop = true" ng-show="addUserKeyword">
+                <span style="font-weight: 700;">
+                  Quantity Setting Log
+                </span>
+
+              </button>
+              <span style="font-weight: 700;" ng-show="!addUserKeyword">
+                Quantity Setting
+              </span>
+            </div>
+          </div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
+        <!-- Data Table Section -->
+        <div class="panel-body">
+          <div class="table-responsive" style="margin: 10px">
+            <div id="load_data_filter" class="dataTables_filter">
+              <table data-dsd="1" style="text-align: center; width: 100%;" id="example" class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
+              <thead >
+                    <tr>
+                    <th style="width: 170px">Client</th>
+                    <th>Market</th>
+                    <th>Script</th>
+                    <th>Start Range</th>
+                    <th>End Range</th>
+                    <th>Limit Type</th>
+                    <th>Per Strike</th>
+                    <th>Min Order</th>
+                    <th>Max Order</th>
+                    <th>Position Limit</th>
+                    <th>Log Type</th>
+                    <th>Log IP</th>
+
+                    <th>Log Time</th>
+                    <th>Log Added</th>
+
+                  </tr>
+              </thead>
+            <tbody>
+              <tr class="odd" *ngFor="let item of tableData">
+
+              </tr>
+              <tr class="odd" *ngIf="tableData.length == 0"><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr>
+            </tbody></table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div ng-show="transferOpen" class="modal fade show ng-hide" style="display: block; background: #00000087"
+      aria-modal="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Transfer Range Setting</h5>
+            <button ng-click="transferOpen=false" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <label class="ontrol-label align-label-center">From Client</label>
+              <div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client"
+                style="width: 100%;"><a href="javascript:void(0)" onclick="return false;"
+                  class="select2-choice select2-default" tabindex="-1"> <span>Select Client</span><abbr
+                    class="select2-search-choice-close"></abbr>
+                  <div><b></b></div>
+                </a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen19">
+                <div class="select2-drop select2-display-none">
+                  <div class="select2-search select2-search-hidden select2-offscreen"> <input type="text"
+                      autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false"
+                      class="select2-input"> </div>
+                  <ul class="select2-results"> </ul>
+                </div>
+              </div><input type="hidden" id="client" style="width: 100%" ui-select2="select2Options1"
+                ng-model="addUserKeyword1" data-placeholder="Select Client"
+                class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1">
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 NotAll" style="width: 100%">
+              <label class="control-label align-label-center">To Client</label>
+              <div class="select2-container select2-container-multi ng-untouched ng-valid ng-valid-required ng-pristine"
+                id="s2id_client" style="width: 0px;">
+                <ul class="select2-choices">
+                  <li class="select2-search-field"> <input type="text" autocomplete="off" autocorrect="off"
+                      autocapitilize="off" spellcheck="false" class="select2-input select2-default" id="s2id_autogen20"
+                      style="width: 110%;"> </li>
+                </ul>
+                <div class="select2-drop select2-drop-multi select2-display-none">
+                  <ul class="select2-results">
+                    <li class="select2-no-results">No matches found</li>
+                    <li class="select2-no-results">No matches found</li>
+                    <li class="select2-no-results">No matches found</li>
+                  </ul>
+                </div>
+              </div><input type="hidden" id="client" multiple="" ui-select2="select2Options1"
+                ng-model="addUserKeyword123" data-placeholder="Select Client"
+                class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1" value=""
+                style="">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button ng-click="transferOpen=false" type="button" data-dismiss="modal"
+              style="border-bottom: 3px solid red" class="btn common_buttonn btn-sm">
+              Close
+            </button>
+            <button ng-click="transferRangeSetting()" type="button" class="btn common_buttonn btn-sm">
+              Submit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="smallsizemodal" ng-show="deleteEntryPopup" class="modal fade show ng-hide"
+      style="display: block; background: #00000087" aria-modal="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete Range Setting</h5>
+            <button ng-click="deleteEntryPopup = false" type="button" data-dismiss="modal" aria-label="Close"
+              class="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to delete this Range Setting?</p>
+          </div>
+          <div class="modal-footer">
+            <button ng-click="deleteEntryPopup = false" type="button" data-dismiss="modal"
+              class="btn common_buttonn btn-sm">
+              Close
+            </button>
+            <button ng-click="deleteEntryConf()" type="button" style="border-bottom: 3px solid red"
+              class="btn common_buttonn btn-sm">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="smallsizemodal1" ng-show="modifyEntryPopup" class="modal fade show ng-hide"
+      style="display: block; background: #00000087" aria-modal="true">
+      <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modify Range Setting</h5>
+            <button ng-click="modifyEntryPopup = false" type="button" data-dismiss="modal" aria-label="Close"
+              class="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="col-md-6 ng-hide" ng-show="selectMarket1 ==3">
+              <label class="change-label-color"> Per Strike Position</label>
+              <input ng-model="perStrike1" id="rangeMin1" type="number" data-placeholder="Per Strike"
+                placeholder="Per Strike" value="0" class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+            <div class="col-md-6 ng-hide" style="
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin-top: 12px;
+              " ng-show="(selectMarket1 ==2 || selectMarket1 ==10 ) &amp;&amp; (!selectScript1 || selectScript1==0)">
+              <label class="" for="is_range1">Range</label>
+              <input ng-model="is_range1" id="is_range1" style="width: 28px; height: 28px" type="checkbox"
+                ng-disabled="selectScript1 &amp;&amp; selectScript1 !='0' ? true :false"
+                class="ng-pristine ng-untouched ng-valid">
+            </div>
+            <div class="col-md-6 ng-hide"
+              ng-show="(selectMarket1 ==2 || selectMarket1 ==10 ) &amp;&amp; (!selectScript1 || selectScript1==0)">
+              <label class="change-label-color"> Start Range</label>
+              <input ng-model="rangeMin1" id="rangeMin1" type="number" value="0"
+                ng-disabled="selectScript1 &amp;&amp; selectScript1 !='0' ? true :false" ng-readonly="!is_range1"
+                class="form-control ng-pristine ng-untouched ng-valid" readonly="readonly">
+            </div>
+            <div class="col-md-6 ng-hide"
+              ng-show="(selectMarket1 ==2 || selectMarket1 ==10 ) &amp;&amp; (!selectScript1 || selectScript1==0)">
+              <label class="change-label-color ng-binding">End Range </label>
+              <input ng-model="rangeMax1" id="rangeMax1" type="number" value="0"
+                ng-disabled="selectScript1 &amp;&amp; selectScript1 != '0' ? true :false" ng-readonly="!is_range1"
+                class="form-control ng-pristine ng-untouched ng-valid" readonly="readonly">
+            </div>
+
+            <div class="col-md-6">
+              <label class="change-label-color">Qty Setting</label>
+              <select ng-model="qtyType1" id="qtyType1" class="form-control ng-pristine ng-untouched ng-valid">
+                <option value="? undefined:undefined ?"></option>
+                <!-- ngIf: selectMarket1 !=1 && selectMarket1 !=3 -->
+                <option value="qty" ng-if="selectMarket1 !=1 &amp;&amp; selectMarket1 !=3" class="ng-scope">
+                  Qty
+                </option><!-- end ngIf: selectMarket1 !=1 && selectMarket1 !=3 -->
+                <option value="lot" selected="">Lot</option>
+                <!-- ngIf: selectMarket1 == 2 -->
+                <!-- <option
+                  value="value"
+                  ng-if="selectMarket!=1 && selectMarket!=3"
+                >
+                  Value
+                </option> -->
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="change-label-color">Min Order</label>
+              <input ng-model="minOrder1" id="minOrder1" type="number" value="0"
+                class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+            <div class="col-md-6">
+              <label class="change-label-color">Max Order</label>
+              <input ng-model="maxOrder1" id="maxOrder1" type="number" value="0"
+                class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+
+            <div class="col-md-6">
+              <label class="change-label-color">Position Limit</label>
+              <input ng-model="positionLimit1" id="positionLimit1" type="number" value="0"
+                class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button ng-click="modifyEntryPopup = false" type="button" data-dismiss="modal"
+              style="border-bottom: 3px solid red" class="btn common_buttonn btn-sm">
+              Close
+            </button>
+            <button ng-click="modifyEntryConf()" type="button" class="btn common_buttonn btn-sm">
+              <span ng-show="!EditRangeButton"> Edit </span>
+              <span class="loader12 ng-hide" ng-show="EditRangeButton"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="smallsizemodal1" ng-show="logDataPop" class="modal fade show ng-hide"
+      style="display: block; background: #00000087" aria-modal="true">
+      <div class="modal-dialog modal-xl  modal-dialog-centered" style="max-width: 95%;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Quantity Log</h5>
+            <button ng-click="logDataPop = false" type="button" data-dismiss="modal" aria-label="Close" class="close">
+              <span aria-hidden="true">x</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+        <!-- Data Table Section -->
+        <div class="panel-body">
+          <div class="table-responsive" style="margin: 10px">
+            <div id="load_data_filter" class="dataTables_filter">
+              <table data-dsd="1" style="text-align: center; width: 100%;" id="example" class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
+              <thead>
+                    <tr>
+                    <th style="width: 170px">Client</th>
+                    <th>Market</th>
+                    <th>Script</th>
+                    <th>Start Range</th>
+                    <th>End Range</th>
+                    <th>Limit Type</th>
+                    <th>Per Strike</th>
+                    <th>Min Order</th>
+                    <th>Max Order</th>
+                    <th>Position Limit</th>
+                    <th>Log Type</th>
+                    <th>Log IP</th>
+
+                    <th>Log Time</th>
+                    <th>Log Added</th>
+
+                  </tr>
+              </thead>
+            <tbody>
+              <tr class="odd" *ngFor="let item of tableData">
+
+              </tr>
+              <tr class="odd" *ngIf="tableData.length == 0"><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr>
+            </tbody></table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

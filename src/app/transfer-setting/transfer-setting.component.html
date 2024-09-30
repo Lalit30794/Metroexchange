@@ -1,0 +1,133 @@
+<!-- Header Ti -->
+<section class="marqueeStyle-header ng-scope" ng-if="$root.userInfo.navMenu">
+  <div class="header-title" ng-show="$root.userInfo.pageTitle">
+    <p class="pageTitle ng-binding">Transfer Setting</p>
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
+      NSE(FNO), NIFTY &amp; GIFT NIFTY ALL WILL EXPIRES TODAY(26SEP,THU)...
+    </marquee>
+  </div>
+</section>
+
+<!-- Transfer Setting Start -->
+<section class="content ng-scope">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="K8tXHatdUG">
+      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="K8tXHatdUG"
+        data-index="0">
+        <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
+          <div class="Workslist">
+            <div class="worklistdate">
+              <div class="Overlay_class">
+                <div class="col-md-1 col-sm-2 col-xs-3" style="margin: 10px 0 0 0">
+                  <div style="display: flex; justify-content: space-evenly">
+                    <label class="" for="is_client">Client </label>
+                    <input ng-model="is_master" id="is_client" ng-click="addUserKeyword=''" name="is_master"
+                      type="radio" value="1" checked="" style="margin: 0px -2px 0px"
+                      class="m-0 p-0 pt-1 ng-pristine ng-untouched ng-valid">
+                  </div>
+                  <div ng-show="$root.userInfo.userType != 5 &amp;&amp; $root.userInfo.userType != 2"
+                    style="display: flex; justify-content: space-evenly">
+                    <label class="" for="is_master">Master</label>
+                    <input ng-model="is_master" id="is_master" ng-click="addUserKeyword=''" name="is_master"
+                      type="radio" value="4" style="margin: 0px 2px 0px"
+                      class="m-0 p-0 pt-1 ng-pristine ng-untouched ng-valid">
+                  </div>
+                </div>
+                <!-- From Client -->
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                    <div class="form-group">
+                    <label for="marketSelect">From Client</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-3 NotAll">
+                    <div class="form-group">
+                    <label for="marketSelect">To Client</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                    </div>
+                  </div>
+                <!-- Market Name -->
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <div class="form-group">
+                    <label for="marketSelect">Market Name</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- Tranfer Type -->
+                <div class="col-md-2 col-sm-2 col-xs-3">
+                  <label class="change-label-color"> Transfer Type</label>
+                  <select ng-model="TransferType" id="TransferType"
+                    class="form-control ng-pristine ng-untouched ng-valid">
+                    <option value="">
+
+                    </option>
+                    <option value="1">
+                      Script Block-Allow
+                    </option>
+
+                  </select>
+                </div>
+
+                <div class="col-md-3 col-sm-4 col-xs-12">
+                  <button style="
+                      margin-top: 22px;
+                      padding: 5px 36px !important;
+                    " ng-click="addTransferType()" type="button" ng-disabled="addRangeButton"
+                    class="btn common_buttonn button_height">
+
+                    <!-- ngIf: !addRangeButton --><span ng-if="!addRangeButton"
+                      class="ng-scope">Submit</span><!-- end ngIf: !addRangeButton -->
+                    <!-- ngIf: addRangeButton -->
+                  </button>
+
+                  <button style="
+                      margin-top: 22px;
+                      border-bottom: 3px solid red;
+                    " ng-click="clearFilter()" type="button" ng-disabled="addRangeButton"
+                    class="btn common_buttonn button_height">
+                    Reset
+                  </button>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
