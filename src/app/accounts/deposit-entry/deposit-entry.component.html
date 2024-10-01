@@ -1,241 +1,360 @@
-
-
-
-
-
 <section class="marqueeStyle-header ng-scope">
   <div class="header-title">
     <p class="pageTitle ng-binding">Deposit Entry</p>
 
-    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
       MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
       CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
     </marquee>
   </div>
 </section>
 <section class="content ng-scope">
-<div class="row">
-<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="PJqwnRjarX">
-	<div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="PJqwnRjarX" data-index="0">
-		<div class="panel-heading ui-sortable-handle" style="padding: 5px">
-			<div class="panel-title" style="max-width: calc(100% - 90px);">
-			  <p class="headingGoldTableBox" style="line-height: 30px !important;">Deposit Entry</p>
-			</div>
-		  <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
-		  <div class="panel-body">
-			<div class="Workslist">
-				<div class="worklistdate overflow-auto">
-<div class="col-md-12" style="padding: 0px;">
-	<div class="col-12 col-sm-12 col-lg-12 col-xl-6">
-		<div class="">
-			<label class="col-sm-3 col-form-label">User Type</label>
-			<div class="col-sm-7">
-				<select ng-model="addUserType" id="addUserType" class="form-control clienttype ng-pristine ng-untouched ng-valid"><option value="? undefined:undefined ?"></option>
-					<!-- ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 --><option ng-if="$root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2" value="1" class="ng-scope">Customer</option><!-- end ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 -->
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="PJqwnRjarX">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="PJqwnRjarX" data-index="0">
+        <div class="panel-heading ui-sortable-handle" style="padding: 5px">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <p class="headingGoldTableBox" style="line-height: 30px !important;">Deposit Entry</p>
+          </div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="Workslist">
+            <div class="worklistdate overflow-auto">
+              <div class="col-md-12" style="padding: 0px;">
+                <div class="col-12 col-sm-12 col-lg-12 col-xl-12">
+                  <div class="">
+                    <label class="col-sm-3 col-form-label">User Type</label>
+                    <div class="col-sm-7">
+                      <select ng-model="addUserType" id="addUserType"
+                        class="form-control clienttype ng-pristine ng-untouched ng-valid">
+                        <option value="? undefined:undefined ?"></option>
+                        <!-- ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 -->
+                        <option
+                          ng-if="$root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2"
+                          value="1" class="ng-scope">Customer</option>
+                        <!-- end ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 -->
 
-					<!-- ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 --><option ng-if="$root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 " value="2" class="ng-scope">Master</option><!-- end ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 -->
-					<!-- ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 -->
-					<!-- ngIf: $root.userInfo.userType == 7 -->
-					<!-- ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType == 8 -->
-					<!-- ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 --><option ng-if="$root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType&nbsp;!=&nbsp;8" value="5" class="ng-scope">Broker</option><!-- end ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 -->
-				</select>
-			</div>
-		</div>
-	</div>
-</div>
+                        <!-- ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 -->
+                        <option
+                          ng-if="$root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 "
+                          value="2" class="ng-scope">Master</option>
+                        <!-- end ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 -->
+                        <!-- ngIf: $root.userInfo.userType == 7 || $root.userInfo.userType == 4 -->
+                        <!-- ngIf: $root.userInfo.userType == 7 -->
+                        <!-- ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType == 8 -->
+                        <!-- ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 -->
+                        <option ng-if="$root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType&nbsp;!=&nbsp;8"
+                          value="5" class="ng-scope">Broker</option>
+                        <!-- end ngIf: $root.userInfo.userType != 6 && $root.userInfo.userType != 8 -->
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-<div class="col-12  col-lg-12 col-xl-6">
-	<div class="">
+              <div class="col-12  col-lg-12 col-xl-12 mt-2">
+                <div class="">
 
-		<label class="col-sm-3 col-form-label ng-binding">Select</label>
-		<div class="col-sm-7">
-			<input tabindex="5" type="text" id="addUserKeyword" name="addUserKeyword" ng-model="addUserKeyword" data-placeholder="Select Client" ng-change="clientChanged()" ui-autocomplete="jqueryUiOptions" class="form-control ng-pristine ng-untouched ng-valid ui-autocomplete-input" autocomplete="off">
-		</div>
+                  <label class="col-sm-3 col-form-label ng-binding">Select</label>
+                  <div class="col-sm-7">
+                    <input tabindex="5" type="text" id="addUserKeyword" name="addUserKeyword" ng-model="addUserKeyword"
+                      data-placeholder="Select Client" ng-change="clientChanged()" ui-autocomplete="jqueryUiOptions"
+                      class="form-control ng-pristine ng-untouched ng-valid ui-autocomplete-input" autocomplete="off">
+                  </div>
 
-	</div>
-</div>
+                </div>
+              </div>
 
-<div class="col-12 col-lg-12 col-xl-12">
-	<label class="col-sm-10 col-form-label text-align-right ng-binding" ></label>
-</div>
+              <div class="col-12 col-lg-12 col-xl-12">
+                <label class="col-sm-10 col-form-label text-align-right ng-binding"></label>
+              </div>
 
-<div class="col-12 col-lg-12 col-sm-12 col-xl-6">
+              <div class="col-12 col-lg-12 col-sm-12 col-xl-12 mt-2">
 
-	<div class="">
+                <div class="">
 
-		<label class="col-sm-3 col-form-label">Type</label>
-		<div class="col-sm-7">
-			<div class=" custom-radio d-block float-left">
-				<input ng-model="balanceTypeA" type="radio" value="1" id="gross_partnership1" name="net_gross_partner1" class="custom-control-input ng-pristine ng-untouched ng-valid" checked="checked">
-				<label for="gross_partnership1" class="custom-control-label">Deposit</label>
+                  <label class="col-sm-3 col-form-label">Type</label>
+                  <div class="col-sm-7 col-12">
+                    <div class="custom-radio ">
+                      <div class="form-group ml-5">
+                      <input ng-model="balanceTypeA" type="radio" value="1" id="gross_partnership1"
+                        name="net_gross_partner1" class="custom-control-input ng-pristine ng-untouched ng-valid"
+                        checked="checked">
+                      <label for="gross_partnership1" class="custom-control-label">Deposit</label>
+                     </div>
+                     <div class="form-group ml-5">
+                      <input ng-model="balanceTypeA" type="radio" value="2"
+                        id="net_partnership1" name="net_gross_partner1"
+                        class="custom-control-input ng-pristine ng-untouched ng-valid">
+                      <label for="net_partnership1" class="custom-control-label">Withdraw</label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-				<input style="margin-left: 10px;" ng-model="balanceTypeA" type="radio" value="2" id="net_partnership1" name="net_gross_partner1" class="custom-control-input ng-pristine ng-untouched ng-valid">
-				<label for="net_partnership1" class="custom-control-label">Withdraw</label>
-			</div>
-		</div>
-	</div>
+                <div class="form-group">
+                  <label class="col-sm-3 col-form-label">Date</label>
+                  <div class="col-sm-7">
+                    <input style="font-weight:bold;" tabindex="2" ng-model="date1"
+                      onkeydown="preventDatePickerOnEnter(event)" type="date" id="date1"
+                      class="form-control ng-pristine ng-untouched ng-valid">
+                  </div>
+                </div>
 
-	<div class="">
+                <div class="form-group mt-2">
+                  <label class="col-sm-3 col-form-label">Amount</label>
+                  <div class="col-sm-7 mt-2">
+                    <input tabindex="4" style="font-weight:bold;" ng-model="amountA" id="amount" type="number"
+                      class="form-control ng-pristine ng-untouched ng-valid">
+                    <p class="digitToLetter ng-binding"></p>
+                  </div>
+                </div>
 
-		<label class="col-sm-3 col-form-label">Date</label>
-		<div class="col-sm-7">
-			<input style="font-weight:bold;" tabindex="2" ng-model="date1" onkeydown="preventDatePickerOnEnter(event)" type="date" id="date1" class="form-control ng-pristine ng-untouched ng-valid">
-		</div>
-	</div>
+                <div class="">
 
-	<div class="">
+                  <label class="col-sm-3 col-form-label">Remarks</label>
+                  <div class="col-sm-7">
+                    <input type="text" tabindex="5" rows="2" ng-model="remarksA" id="remarksA"
+                      class="form-control ng-pristine ng-untouched ng-valid">
+                  </div>
+                </div>
+                <div class="col-12  col-sm-12 col-lg-12 col-xl-12 mt-3 ml-5">
 
-		<label class="col-sm-3 col-form-label">Amount</label>
-		<div class="col-sm-7">
-			<input tabindex="4" style="font-weight:bold;" ng-model="amountA" id="amount" type="number" class="form-control ng-pristine ng-untouched ng-valid">
-			<p class="digitToLetter ng-binding"></p>
-		</div>
-	</div>
-
-	<div class="">
-
-		<label class="col-sm-3 col-form-label">Remarks</label>
-		<div class="col-sm-7">
-			<input type="text" tabindex="5" rows="2" ng-model="remarksA" id="remarksA" class="form-control ng-pristine ng-untouched ng-valid">
-		</div>
-	</div>
-	<div class="col-12  col-sm-12 col-lg-12 " style="margin-bottom: 15px;">
-
-		<label class="col-3 col-lg-3 col-md-3 col-form-label d-sm-none"></label>
-		<div class="col-7 col-lg-7 col-md-7 col-sm-12">
-			<span class="col-sm-12" style="text-align: start;">
-				<button tabindex="6" id="saveB" ng-disabled="disableActions" ng-click="addRemarkText('Point In')" type="button" class="common_buttonn width_remove" style="border-radius: 2px;padding: 11px 20px;     height: 27px;width: 100px;
+                  <label class="col-3 col-lg-3 col-md-3 col-form-label d-sm-none  "></label>
+                  <div class="col-7 col-lg-12 col-md-7 col-sm-12">
+                    <span class="col-sm-12" style="text-align: start;">
+                      <button tabindex="6" id="saveB" ng-disabled="disableActions" ng-click="addRemarkText('Point In')"
+                        type="button" class="common_buttonn width_remove" style="border-radius: 2px;padding: 11px 20px;     height: 27px;width: 100px;
 					">Point In</button>
-				<button id="clearB" tabindex="7" ng-click="addRemarkText('Point Out')" type="reset" class="common_buttonn width_remove" style="border-radius: 2px;padding: 11px 20px;border-bottom: 3px solid red;height: 27px;margin-left:10px ; width: 100px;
+                      <button id="clearB" tabindex="7" ng-click="addRemarkText('Point Out')" type="reset"
+                        class="common_buttonn width_remove" style="border-radius: 2px;padding: 11px 20px;border-bottom: 3px solid red;height: 27px;margin-left:10px ; width: 100px;
 					">Point Out</button>
-			</span>
-		</div>
-	</div>
-	<div class="">
-		<div class="col-sm-12" style="text-align: center;">
-			<button tabindex="6" id="saveB" ng-disabled="disableActions" ng-click="addEntryConf()" type="button" class="common_buttonn" style="border-radius: 2px;padding: 11px 20px; height: 34px;     width: 90px;">Save</button>
-			<button id="clearB" tabindex="8" ng-click="clearEntry()" type="reset" class="common_buttonn" style="border-radius: 2px;padding: 11px 20px; height: 34px; border-bottom: 3px solid red;    width: 90px;">Clear</button>
-		</div>
-	</div>
+                    </span>
+                  </div>
+                </div>
+                <div class="">
+                  <div class="col-sm-12" style="text-align: center;">
+                    <button tabindex="6" id="saveB" ng-disabled="disableActions" ng-click="addEntryConf()" type="button"
+                      class="common_buttonn"
+                      style="border-radius: 2px;padding: 11px 20px; height: 34px;     width: 90px;">Save</button>
+                    <button id="clearB" tabindex="8" ng-click="clearEntry()" type="reset" class="common_buttonn"
+                      style="border-radius: 2px;padding: 11px 20px; height: 34px; border-bottom: 3px solid red;    width: 90px;">Clear</button>
+                  </div>
+                </div>
 
-</div>
-</div>
-</div>
-		  </div>
-</div>
-</div>
-<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="AbLyhcSfQl">
-	<div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="AbLyhcSfQl" data-index="0">
-		<div class="panel-heading ui-sortable-handle" style="padding: 5px">
-			<div class="panel-title" style="max-width: calc(100% - 90px);">
-			  <p class="headingGoldTableBox" style="line-height: 30px !important;">Deposit Ledger</p>
-			</div>
-		  <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
-		  <div class="panel-body">
-			<div class="Workslist">
-			  <div class="worklistdate overflow-auto">
-				<div class="">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="AbLyhcSfQl">
+      <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="AbLyhcSfQl" data-index="0">
+        <div class="panel-heading ui-sortable-handle" style="padding: 5px">
+          <div class="panel-title" style="max-width: calc(100% - 90px);">
+            <p class="headingGoldTableBox" style="line-height: 30px !important;">Deposit Ledger</p>
+          </div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="Workslist">
+            <div class="worklistdate overflow-auto">
+              <div class="">
 
-				  <div class="Overlay_class">
-					<div class="col-6 col-md-3" style="">
-						<label class="change-label-color">Select</label>
-						<div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_client" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Select</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen116"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input type="hidden" id="client" ui-select2="select2Options" ng-model="addUserKeyword1" data-placeholder="Select" style="height: 34px !important;" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1">
-					</div>
-					<div class="col-6 col-md-3" style="">
-						<label class="change-label-color">Entry After</label>
-						<input ng-model="entryAfter" id="entryAfter" type="date" value="" class="form-control ng-pristine ng-untouched ng-valid" style="     height: 34px !important;">
-					</div>
-					<div class="col-6 col-md-3" style="">
-						<label class="change-label-color">Entry Before</label>
-						<input ng-model="entryBefore" id="entryBefore" type="date" value="" class="form-control ng-pristine ng-untouched ng-valid" style="     height: 34px !important;">
-					</div>
-					<div class="col-6 col-md-3 btn_class_cnt">
-						<button ng-click="findLedger()" type="button" class="common_buttonn" style="padding: 11px; border-radius: 3px; height: 34px; ">Submit</button>
-					</div>
+                <div class="Overlay_class">
+                  <div class="col-6 col-md-3" style="">
+                  <div class="form-group">
+                    <label for="marketSelect"> Select</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-6 col-md-3" style="">
+                    <label class="change-label-color">Entry After</label>
+                    <input ng-model="entryAfter" id="entryAfter" type="date" value=""
+                      class="form-control ng-pristine ng-untouched ng-valid" style="     height: 34px !important;">
+                  </div>
+                  <div class="col-6 col-md-3" style="">
+                    <label class="change-label-color">Entry Before</label>
+                    <input ng-model="entryBefore" id="entryBefore" type="date" value=""
+                      class="form-control ng-pristine ng-untouched ng-valid" style="     height: 34px !important;">
+                  </div>
+                  <div class="col-6 col-md-3 btn_class_cnt form-group mt-4">
+                    <button ng-click="findLedger()" type="button" class="common_buttonn"
+                      style="padding: 11px; border-radius: 3px; height: 34px; ">Submit</button>
+                  </div>
 
-				</div>
-				</div>
-				<div class="table-responsive">
-					<div id="load_data_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length" aria-controls="load_data" class=""><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="200">200</option></select> entries</label></div><div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data"></label></div><table style="text-align: left; width: 887px;" id="load_data" class="table table-bordered table-hover table-striped table-condensed reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
-											  <thead style="border-bottom: 2px solid #2a3f54;">
-						<tr role="row"><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 141px;">Name</th><th class="sorting_desc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-sort="descending" aria-label="Date: activate to sort column ascending" style="width: 99px;">Date</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Debit" style="width: 109px;">Debit</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Credit" style="width: 124px;">Credit</th><th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Remark: activate to sort column ascending" style="width: 172px;">Remark</th><th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Action" style="width: 130px;">Action</th></tr>
-						</thead>
-						<tbody>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <div id="load_data_wrapper" class="dataTables_wrapper no-footer">
+                  <div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length"
+                        aria-controls="load_data" class="">
+                        <option value="15">15</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                        <option value="200">200</option>
+                      </select> entries</label></div>
+                  <div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class=""
+                        placeholder="" aria-controls="load_data"></label></div>
+                  <table style="text-align: left; width: 887px;" id="load_data"
+                    class="table table-bordered table-hover table-striped table-condensed reports-table dataTable no-footer ng-scope"
+                    role="grid" aria-describedby="load_data_info">
+                    <thead style="border-bottom: 2px solid #2a3f54;">
+                      <tr role="row">
+                        <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                          aria-label="Name: activate to sort column ascending" style="width: 141px;">Name</th>
+                        <th class="sorting_desc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                          aria-sort="descending" aria-label="Date: activate to sort column ascending"
+                          style="width: 99px;">Date</th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Debit" style="width: 109px;">
+                          Debit</th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Credit" style="width: 124px;">
+                          Credit</th>
+                        <th class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1"
+                          aria-label="Remark: activate to sort column ascending" style="width: 172px;">Remark</th>
+                        <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Action" style="width: 130px;">
+                          Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
 
-						<tr class="odd"><td valign="top" colspan="6" class="dataTables_empty">No data available in table</td></tr></tbody>
-					</table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
-				</div>
-				</div>
-				</div>
-				</div>
+                      <tr class="odd">
+                        <td valign="top" colspan="6" class="dataTables_empty">No data available in table</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0
+                    entries</div>
+                  <div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a
+                      class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1"
+                      id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled"
+                      aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-		</div>
-		</div>
+      </div>
+    </div>
 
-</div>
-<div id="smallsizemodal" ng-show="deleteLedgerEntryPopup" class="modal fade show ng-hide" style="display: block; background: #00000087" aria-modal="true">
-<div class="modal-dialog modal-sm modal-dialog-centered">
-<div class="modal-content">
-  <div class="modal-header">
-	<h5 class="modal-title">Delete Ledger Entry</h5>
-	<button ng-click="deleteEntryCancel()" type="button" data-dismiss="modal" aria-label="Close" class="close">
-	  <span aria-hidden="true">x</span>
-	</button>
   </div>
-  <div class="modal-body">
-	<p>Are you sure you want to delete this Ledger Entry?</p>
+  <div id="smallsizemodal" ng-show="deleteLedgerEntryPopup" class="modal fade show ng-hide"
+    style="display: block; background: #00000087" aria-modal="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete Ledger Entry</h5>
+          <button ng-click="deleteEntryCancel()" type="button" data-dismiss="modal" aria-label="Close" class="close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this Ledger Entry?</p>
+        </div>
+        <div class="modal-footer">
+          <button ng-click="deleteEntryCancel()" type="button" data-dismiss="modal" class="common_buttonn btn-sm">
+            Close</button><button style="border-bottom: 3px solid red;" ng-click="deleteEntryConf()" type="button"
+            class="common_buttonn btn-sm">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="modal-footer">
-	<button ng-click="deleteEntryCancel()" type="button" data-dismiss="modal" class="common_buttonn btn-sm">
-	  Close</button><button style="border-bottom: 3px solid red;" ng-click="deleteEntryConf()" type="button" class="common_buttonn btn-sm">
-	  Delete
-	</button>
-  </div>
-</div>
-</div>
-</div>
-<div id="formemodal" ng-show="editLedgerEntryPopup" class="modal fade show ng-hide" aria-modal="true" style="display: block; padding-left: 0px; background: #00000087">
-<div class="modal-dialog modal-sm modal-dialog-centered">
-<div class="modal-content">
-  <div class="modal-header">
-	<h5 class="modal-title">Edit Ledger Entry</h5>
-	<button type="button" ng-click="editEntryCancel()" data-dismiss="modal" aria-label="Close" class="close">
-	  <span aria-hidden="true">x</span>
-	</button>
-  </div>
-  <div class="modal-body">
-	<label ng-show="$root.userInfo.userType != 1" class="ng-binding">Name :
-	</label>
-	<form novalidate="" class="ng-untouched ng-pristine ng-valid">
-	  <div class="">
-		<div class=" custom-radio d-block float-left">
-		  <input ng-model="editLedgerEntryType" type="radio" value="1" id="checbox_deposit" name="net_gross_partner1" class="custom-control-input ng-pristine ng-untouched ng-valid" checked="checked">
-		  <label for="checbox_deposit" class="custom-control-label">Deposit</label>
+  <div id="formemodal" ng-show="editLedgerEntryPopup" class="modal fade show ng-hide" aria-modal="true"
+    style="display: block; padding-left: 0px; background: #00000087">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Ledger Entry</h5>
+          <button type="button" ng-click="editEntryCancel()" data-dismiss="modal" aria-label="Close" class="close">
+            <span aria-hidden="true">x</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <label ng-show="$root.userInfo.userType != 1" class="ng-binding">Name :
+          </label>
+          <form novalidate="" class="ng-untouched ng-pristine ng-valid">
+            <div class="">
+              <div class=" custom-radio d-block float-left">
+                <input ng-model="editLedgerEntryType" type="radio" value="1" id="checbox_deposit"
+                  name="net_gross_partner1" class="custom-control-input ng-pristine ng-untouched ng-valid"
+                  checked="checked">
+                <label for="checbox_deposit" class="custom-control-label">Deposit</label>
 
-		  <input ng-model="editLedgerEntryType" type="radio" value="2" id="checbox_withdraw" name="net_gross_partner1" class="custom-control-input ng-pristine ng-untouched ng-valid" style="margin-left: 10px;">
-		  <label for="checbox_withdraw" class="custom-control-label">Withdraw</label>
-		</div>
-	  </div>
-	  <div class="form-group">
-		<label style="width: 100%; margin-top: 13px" for="input-2">Date</label>
-		<input ng-model="editLedgerDate" type="date" id="date2" class="form-control ng-pristine ng-untouched ng-valid">
-	  </div>
-	  <div class="form-group">
-		<label style="width: 100%" for="input-2">Amount</label>
-		<input ng-model="editLedgerEntryAmount" type="number" id="input-2" class="form-control ng-pristine ng-untouched ng-valid">
-	  </div>
-	  <div class="form-group">
-		<label style="width: 100%" for="input-2">Remarks</label>
-		<textarea ng-model="editLedgerEntryRemarks" type="text" rows="2" id="input-2" class="form-control ng-pristine ng-untouched ng-valid"></textarea>
-	  </div>
-	  <div style="display: flex;justify-content: end;">
-		<button ng-click="editEntryConf()" style="float: right; padding: 10px 14px; border-radius: 3px" type="submit" class="common_buttonn m-1">
-		Submit
-	  </button>
-	  </div>
-	</form>
+                <input ng-model="editLedgerEntryType" type="radio" value="2" id="checbox_withdraw"
+                  name="net_gross_partner1" class="custom-control-input ng-pristine ng-untouched ng-valid"
+                  style="margin-left: 10px;">
+                <label for="checbox_withdraw" class="custom-control-label">Withdraw</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label style="width: 100%; margin-top: 13px" for="input-2">Date</label>
+              <input ng-model="editLedgerDate" type="date" id="date2"
+                class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+            <div class="form-group">
+              <label style="width: 100%" for="input-2">Amount</label>
+              <input ng-model="editLedgerEntryAmount" type="number" id="input-2"
+                class="form-control ng-pristine ng-untouched ng-valid">
+            </div>
+            <div class="form-group">
+              <label style="width: 100%" for="input-2">Remarks</label>
+              <textarea ng-model="editLedgerEntryRemarks" type="text" rows="2" id="input-2"
+                class="form-control ng-pristine ng-untouched ng-valid"></textarea>
+            </div>
+            <div style="display: flex;justify-content: end;">
+              <button ng-click="editEntryConf()" style="float: right; padding: 10px 14px; border-radius: 3px"
+                type="submit" class="common_buttonn m-1">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-</div>
 </section>

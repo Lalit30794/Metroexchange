@@ -2,7 +2,8 @@
   <div class="header-title">
     <p class="pageTitle ng-binding">Ledger Report</p>
 
-    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
       MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
       CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
     </marquee>
@@ -15,140 +16,228 @@
 
 <section class="content ng-scope">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable" data-lobipanel-child-inner-id="eBEzfW2dBU">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 lobipanel-parent-sortable ui-sortable"
+      data-lobipanel-child-inner-id="eBEzfW2dBU">
       <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="eBEzfW2dBU" data-index="0">
         <div class="panel-heading ui-sortable-handle">
           <div class="panel-title" style="max-width: calc(100% - 90px);">
             <p class="headingGoldTableBox">Ledger Report</p>
           </div>
-        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title="" aria-describedby="tooltip811116"><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title="" aria-describedby="tooltip811116"><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
         <div class="panel-body">
           <div class="Workslist">
             <div class="worklistdate overflow-auto">
-              <div class="col-lg-12">
-                <label class="icheck-custom">Display 0 Balance Account
-                  <input ng-model="zeroLedger" type="checkbox" class="market_type ng-pristine ng-untouched ng-valid" id="market_type112_" name="market_type[]">
-                  <span class="checkmark"></span>
+              <div class="col-lg-12 form-group">
+                <label class="icheck-custom mr-5">Display 0 Balance Account
+                  <input ng-model="zeroLedger" type="checkbox" class="market_type ng-pristine ng-untouched ng-valid"
+                    id="market_type112_" name="market_type[]">
+                  <span class="checkmark ng-scope"></span>
                 </label>
 
-                <button style="margin-left: 10px;" ng-disabled="disableActions" ng-click="showAccounts()" type="button" class="common_buttonn m-1">
+                <button style="margin-left: 10px;" ng-disabled="disableActions" ng-click="showAccounts()" type="button"
+                  class="common_buttonn m-1">
                   Submit
                 </button>
               </div>
 
-                <div id="load_data_wrapper" class="dataTables_wrapper no-footer"><div class="row"><div class="col-sm-4"><div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length" aria-controls="load_data" class=""><option value="-1">All</option><option value="15">15</option><option value="50">50</option><option value="100">100</option><option value="200">200</option><option value="500">500</option></select> entries</label></div></div><div class="col-sm-4 ddsdsds text-center"><div class="dt-buttons"> <button class="dt-button buttons-csv buttons-html5" tabindex="0" aria-controls="load_data"><span>CSV</span></button> <button class="dt-button buttons-pdf buttons-html5" tabindex="0" aria-controls="load_data"><span>PDF</span></button> </div></div><div class="col-sm-4"><div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class="" placeholder="" aria-controls="load_data"></label></div></div></div><table style="text-align: center;" id="load_data" class="table table-bordered table-hover table-striped table-condensed reports-table no-footer dataTable" role="grid" aria-describedby="load_data_info">
-                <thead style="border-bottom: 2px solid #2a3f54;">
-                  <tr style="background: #696969; letter-spacing: 1px" role="row"><th style="text-align: left;width:50px" class="sorting_asc" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Sr.no: activate to sort column descending" aria-sort="ascending">Sr.no</th><th style="text-align: left; width: 340px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Name</th><th style="text-align: right; width: 430px;" class="sorting" tabindex="0" aria-controls="load_data" rowspan="1" colspan="1" aria-label="Balance: activate to sort column ascending">Balance</th></tr>
-                </thead>
-                <tbody>
-                  <!-- ngRepeat: ledger in ledgers --><!-- ngIf: ledger.user_details != 'Upline' --><!-- end ngRepeat: ledger in ledgers -->
+              <div id="load_data_wrapper" class="dataTables_wrapper no-footer">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="dataTables_length" id="load_data_length"><label>Show <select name="load_data_length"
+                          aria-controls="load_data" class="">
+                          <option value="-1">All</option>
+                          <option value="15">15</option>
+                          <option value="50">50</option>
+                          <option value="100">100</option>
+                          <option value="200">200</option>
+                          <option value="500">500</option>
+                        </select> entries</label></div>
+                  </div>
+                  <div class="col-sm-4 ddsdsds text-center">
+                    <div class="dt-buttons mb-2"> <button class="dt-button buttons-csv buttons-html5" tabindex="0"
+                        aria-controls="load_data"><span>CSV</span></button> <button
+                        class="dt-button buttons-pdf buttons-html5 ml-3" tabindex="0"
+                        aria-controls="load_data"><span>PDF</span></button> </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div id="load_data_filter" class="dataTables_filter"><label>Search:<input type="search" class=""
+                          placeholder="" aria-controls="load_data"></label></div>
+                  </div>
+                </div>
+                <table style="text-align: center;" id="load_data"
+                  class="table table-bordered table-hover table-striped table-condensed reports-table no-footer dataTable"
+                  role="grid" aria-describedby="load_data_info">
+                  <thead style="border-bottom: 2px solid #2a3f54;">
+                    <tr style="background: #696969; letter-spacing: 1px" role="row">
+                      <th style="text-align: left;width:50px" class="sorting_asc" tabindex="0" aria-controls="load_data"
+                        rowspan="1" colspan="1" aria-label="Sr.no: activate to sort column descending"
+                        aria-sort="ascending">Sr.no</th>
+                      <th style="text-align: left; width: 340px;" class="sorting" tabindex="0" aria-controls="load_data"
+                        rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending">Name</th>
+                      <th style="text-align: right; width: 430px;" class="sorting" tabindex="0"
+                        aria-controls="load_data" rowspan="1" colspan="1"
+                        aria-label="Balance: activate to sort column ascending">Balance</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <!-- ngRepeat: ledger in ledgers --><!-- ngIf: ledger.user_details != 'Upline' --><!-- end ngRepeat: ledger in ledgers -->
 
-                  <!-- ngRepeat: ledger in ledgers --><!-- ngIf: ledger.user_details == 'Upline' --><!-- end ngIf: ledger.user_details == 'Upline' --><!-- end ngRepeat: ledger in ledgers -->
-                <tr ng-if="ledger.user_details == 'Upline'" style="background: rgb(180 180 208 / 73%); color: #fff" ng-repeat="ledger in ledgers" class="ng-scope odd" role="row">
-                  <td style="text-align: left" class="sorting_1"></td>
-                    <td style="text-align: left">
-                      <a style="cursor: pointer" ng-click="LedgerWiseTable(ledger.user_id)" class="ng-binding">Upline</a>
-                    </td>
-                    <td style="text-align: right" class="ng-binding">0.00</td>
-                  </tr></tbody>
-              </table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 1 to 1 of 1 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span><a class="paginate_button current" aria-controls="load_data" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="2" tabindex="-1" id="load_data_next">Next</a></div></div>
+                    <!-- ngRepeat: ledger in ledgers --><!-- ngIf: ledger.user_details == 'Upline' --><!-- end ngIf: ledger.user_details == 'Upline' --><!-- end ngRepeat: ledger in ledgers -->
+                    <tr ng-if="ledger.user_details == 'Upline'" style="background: rgb(180 180 208 / 73%); color: #fff"
+                      ng-repeat="ledger in ledgers" class="ng-scope odd" role="row">
+                      <td style="text-align: left" class="sorting_1"></td>
+                      <td style="text-align: left">
+                        <a style="cursor: pointer" ng-click="LedgerWiseTable(ledger.user_id)"
+                          class="ng-binding">Upline</a>
+                      </td>
+                      <td style="text-align: right" class="ng-binding">0.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 1 to 1 of 1
+                  entries</div>
+                <div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a
+                    class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1"
+                    id="load_data_previous">Previous</a><span><a class="paginate_button current"
+                      aria-controls="load_data" data-dt-idx="1" tabindex="0">1</a></span><a
+                    class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="2" tabindex="-1"
+                    id="load_data_next">Next</a></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ng-hide lobipanel-parent-sortable ui-sortable" ng-show="showLedgerWiseTable" data-lobipanel-child-inner-id="hkLsks48ng" style="">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ng-hide lobipanel-parent-sortable ui-sortable"
+      ng-show="showLedgerWiseTable" data-lobipanel-child-inner-id="hkLsks48ng" style="">
       <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable" data-inner-id="hkLsks48ng" data-index="0">
         <div class="panel-heading ui-sortable-handle">
           <div class="panel-title" style="max-width: calc(100% + 0px);">
             <p class="headingGoldTableBox ng-binding"> - </p>
           </div>
-        <div class="dropdown"><ul class="dropdown-menu dropdown-menu-right"><li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li><li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li><li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen" data-placement="bottom" data-original-title="" title=""><i class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li></ul><div class="dropdown-toggle" data-toggle="dropdown"><span class="panel-control-icon glyphicon glyphicon-cog"></span></div></div></div>
+          <div class="dropdown">
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li><a data-func="unpin" data-tooltip="Unpin" data-toggle="tooltip" data-title="Unpin"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-move"></i><span class="control-title">Unpin</span></a></li>
+              <li><a data-func="minimize" data-tooltip="Minimize" data-toggle="tooltip" data-title="Minimize"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-minus"></i><span class="control-title">Minimize</span></a></li>
+              <li><a data-func="expand" data-tooltip="Fullscreen" data-toggle="tooltip" data-title="Fullscreen"
+                  data-placement="bottom" data-original-title="" title=""><i
+                    class="panel-control-icon ti-fullscreen"></i><span class="control-title">Fullscreen</span></a></li>
+            </ul>
+            <div class="dropdown-toggle" data-toggle="dropdown"><span
+                class="panel-control-icon glyphicon glyphicon-cog"></span></div>
+          </div>
+        </div>
         <div class="panel-body">
           <div class="Workslist">
             <div class="worklistdate overflow-auto">
               <div class="">
 
-				<div class="Overlay_class">
-					<div class="col-md-3 col-6">
-						<label class=" col-form-label">From Date</label>
-						<input ng-model="startDate" style="     height: 34px !important;" type="date" value="" placeholder="Start Date" id="start_date" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched ng-pristine ng-untouched">
-					</div>
-					<div class="col-md-3 col-6">
-						<label class=" col-form-label">Entry Type</label>
-						<select id="entryType" ng-model="entryType" class="form-control ng-pristine ng-untouched ng-valid" style="     height: 34px !important;">
-							<option value="">Both</option>
-							<option value="1">
-								Cash Entry
-							</option>
-							<option value="2">
-								Bill Entry
-							</option>
-              <option value="3">
-								JV
-							</option>
-						</select>
-					</div>
+                <div class="Overlay_class">
+                  <div class="col-md-3 col-6">
+                    <label class=" col-form-label">From Date</label>
+                    <input ng-model="startDate" style="     height: 34px !important;" type="date" value=""
+                      placeholder="Start Date" id="start_date"
+                      class="form-control ng-valid ng-dirty ng-valid-parse ng-touched ng-pristine ng-untouched">
+                  </div>
+                  <div class="col-md-3 col-6">
+                    <label class=" col-form-label">Entry Type</label>
+                    <select id="entryType" ng-model="entryType" class="form-control ng-pristine ng-untouched ng-valid"
+                      style="     height: 34px !important;">
+                      <option value="">Both</option>
+                      <option value="1">
+                        Cash Entry
+                      </option>
+                      <option value="2">
+                        Bill Entry
+                      </option>
+                      <option value="3">
+                        JV
+                      </option>
+                    </select>
+                  </div>
 
 
-					<div class="col-md-3 col-6">
-						<label class=" col-form-label">Bill Market Type</label>
-						<select id="billMarketType" ng-model="billMarketType" class="form-control ng-pristine ng-untouched ng-valid" style="     height: 34px !important;"><option value="? undefined:undefined ?"></option>
+                  <div class="col-md-3 col-6">
+                    <label class=" col-form-label">Bill Market Type</label>
+                    <select id="billMarketType" ng-model="billMarketType"
+                      class="form-control ng-pristine ng-untouched ng-valid" style="     height: 34px !important;">
+                      <option value="? undefined:undefined ?"></option>
 
-							<option value="0">
-								All In One
-							</option>
-							<option value="1">
-								Individual
-							</option>
-						</select>
-					</div>
+                      <option value="0">
+                        All In One
+                      </option>
+                      <option value="1">
+                        Individual
+                      </option>
+                    </select>
+                  </div>
 
-					<div class="col-md-3  col-6 btn_add_cnt">
-						<button style="     height: 34px;
+                  <div class="col-md-3  col-6 btn_add_cnt">
+                    <button style="     height: 34px;
             " ng-disabled="disableActions" ng-click="findLogs()" type="button" class="common_buttonn">
-							Find Logs
-						</button>
-					</div>
+                      Find Logs
+                    </button>
+                  </div>
 
-					<!-- <div class="form-group" style="margin-bottom: 4px;align-items: flex-end;display: flex;">
+                  <!-- <div class="form-group" style="margin-bottom: 4px;align-items: flex-end;display: flex;">
 						<div class="summary-card">
 							<label class="col-form-label">Total Deposit</label><br>
 							<span id="totalMTM" class="ng-binding">{{totalDeposit}}</span>
 						</div>
 					</div> -->
 
-				</div>
-              <div class="table-responsive">
+                </div>
+                <div class="table-responsive">
 
-                <div class="dataTables_wrapper">
-                  <table style="text-align: center" id="load_data1" class="table table-bordered table-hover table-striped table-condensed reports-table ">
-                                        <thead style="border-bottom: 2px solid #2a3f54;">
-                    <tr>
-                      <th style="text-align: left" class="ledgerCol1">Sr No</th>
-                      <th style="text-align: left" class="ledgerCol2">
-                        Remarks
-                      </th>
-                      <th style="text-align: left" class="ledgerCol3">Date</th>
-                      <th style="text-align: right" class="ledgerCol4">
-                        Debit
-                      </th>
-                      <th style="text-align: right" class="ledgerCol5">
-                        Credit
-                      </th>
-                      <th style="text-align: right" class="ledgerCol6">
-                        Balance
-                      </th>
-                      <th style="text-align: center" class="ledgerCol7">
-                        Download
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- ngRepeat: ledger in ledgersWise | orderBy: sortDates -->
-                    <!-- ngIf: net_amount -->
-                  </tbody>
-                </table>
+                  <div class="dataTables_wrapper">
+                    <table style="text-align: center" id="load_data1"
+                      class="table table-bordered table-hover table-striped table-condensed reports-table ">
+                      <thead style="border-bottom: 2px solid #2a3f54;">
+                        <tr>
+                          <th style="text-align: left" class="ledgerCol1">Sr No</th>
+                          <th style="text-align: left" class="ledgerCol2">
+                            Remarks
+                          </th>
+                          <th style="text-align: left" class="ledgerCol3">Date</th>
+                          <th style="text-align: right" class="ledgerCol4">
+                            Debit
+                          </th>
+                          <th style="text-align: right" class="ledgerCol5">
+                            Credit
+                          </th>
+                          <th style="text-align: right" class="ledgerCol6">
+                            Balance
+                          </th>
+                          <th style="text-align: center" class="ledgerCol7">
+                            Download
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <!-- ngRepeat: ledger in ledgersWise | orderBy: sortDates -->
+                        <!-- ngIf: net_amount -->
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             </div>
@@ -157,4 +246,4 @@
       </div>
     </div>
   </div>
-</div></section>
+</section>

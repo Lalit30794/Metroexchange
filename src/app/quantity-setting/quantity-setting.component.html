@@ -15,8 +15,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 lobipanel-parent-sortable ui-sortable"
       data-lobipanel-child-inner-id="YodcsbBpeq">
-      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="YodcsbBpeq"
-        data-index="0">
+      <div class="panel panel-bd  panel-bg lobidisable bg-lobidisable lobipanel lobipanel-sortable"
+        data-inner-id="YodcsbBpeq" data-index="0">
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
@@ -206,9 +206,11 @@
         <div class="panel-body">
           <div class="table-responsive" style="margin: 10px">
             <div id="load_data_filter" class="dataTables_filter">
-              <table data-dsd="1" style="text-align: center; width: 100%;" id="example" class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
-              <thead >
-                    <tr>
+              <table data-dsd="1" style="text-align: center; width: 100%;" id="example"
+                class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid"
+                aria-describedby="load_data_info">
+                <thead>
+                  <tr>
                     <th style="width: 170px">Client</th>
                     <th>Market</th>
                     <th>Script</th>
@@ -226,13 +228,23 @@
                     <th>Log Added</th>
 
                   </tr>
-              </thead>
-            <tbody>
-              <tr class="odd" *ngFor="let item of tableData">
+                </thead>
+                <tbody>
+                  <tr class="odd" *ngFor="let item of tableData">
 
-              </tr>
-              <tr class="odd" *ngIf="tableData.length == 0"><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr>
-            </tbody></table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
+                  </tr>
+                  <tr class="odd" *ngIf="tableData.length == 0">
+                    <td valign="top" colspan="9" class="dataTables_empty">No data available in table</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0
+                entries</div>
+              <div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a
+                  class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1"
+                  id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled"
+                  aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div>
+            </div>
           </div>
         </div>
       </div>
@@ -430,39 +442,51 @@
           </div>
           <div class="modal-body">
 
-        <!-- Data Table Section -->
-        <div class="panel-body">
-          <div class="table-responsive" style="margin: 10px">
-            <div id="load_data_filter" class="dataTables_filter">
-              <table data-dsd="1" style="text-align: center; width: 100%;" id="example" class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid" aria-describedby="load_data_info">
-              <thead>
-                    <tr>
-                    <th style="width: 170px">Client</th>
-                    <th>Market</th>
-                    <th>Script</th>
-                    <th>Start Range</th>
-                    <th>End Range</th>
-                    <th>Limit Type</th>
-                    <th>Per Strike</th>
-                    <th>Min Order</th>
-                    <th>Max Order</th>
-                    <th>Position Limit</th>
-                    <th>Log Type</th>
-                    <th>Log IP</th>
+            <!-- Data Table Section -->
+            <div class="panel-body">
+              <div class="table-responsive" style="margin: 10px">
+                <div id="load_data_filter" class="dataTables_filter">
+                  <table data-dsd="1" style="text-align: center; width: 100%;" id="example"
+                    class="table table-hover display reports-table dataTable no-footer ng-scope" role="grid"
+                    aria-describedby="load_data_info">
+                    <thead>
+                      <tr>
+                        <th style="width: 170px">Client</th>
+                        <th>Market</th>
+                        <th>Script</th>
+                        <th>Start Range</th>
+                        <th>End Range</th>
+                        <th>Limit Type</th>
+                        <th>Per Strike</th>
+                        <th>Min Order</th>
+                        <th>Max Order</th>
+                        <th>Position Limit</th>
+                        <th>Log Type</th>
+                        <th>Log IP</th>
 
-                    <th>Log Time</th>
-                    <th>Log Added</th>
+                        <th>Log Time</th>
+                        <th>Log Added</th>
 
-                  </tr>
-              </thead>
-            <tbody>
-              <tr class="odd" *ngFor="let item of tableData">
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="odd" *ngFor="let item of tableData">
 
-              </tr>
-              <tr class="odd" *ngIf="tableData.length == 0"><td valign="top" colspan="9" class="dataTables_empty">No data available in table</td></tr>
-            </tbody></table><div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1" id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled" aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div></div>
-          </div>
-        </div>
+                      </tr>
+                      <tr class="odd" *ngIf="tableData.length == 0">
+                        <td valign="top" colspan="9" class="dataTables_empty">No data available in table</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <div class="dataTables_info" id="load_data_info" role="status" aria-live="polite">Showing 0 to 0 of 0
+                    entries</div>
+                  <div class="dataTables_paginate paging_simple_numbers" id="load_data_paginate"><a
+                      class="paginate_button previous disabled" aria-controls="load_data" data-dt-idx="0" tabindex="-1"
+                      id="load_data_previous">Previous</a><span></span><a class="paginate_button next disabled"
+                      aria-controls="load_data" data-dt-idx="1" tabindex="-1" id="load_data_next">Next</a></div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

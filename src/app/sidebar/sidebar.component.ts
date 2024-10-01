@@ -7,7 +7,7 @@ import { TrialBalanceComponent } from '../accounts/trial-balance/trial-balance.c
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [NgFor, NgClass, NgIf],
+  imports: [NgFor, NgClass, NgIf, TrialBalanceComponent],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.less',
 })
@@ -103,7 +103,7 @@ export class SidebarComponent {
   ];
   readonly dialog = inject(MatDialog);
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   change(page: string) {
     // Logic to navigate or handle page changes
@@ -131,4 +131,8 @@ export class SidebarComponent {
       exitAnimationDuration,
     });
   }
+
+
+
+
 }
