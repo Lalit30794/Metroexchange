@@ -1,9 +1,9 @@
-
 <section class="marqueeStyle-header ng-scope">
   <div class="header-title">
     <p class="pageTitle ng-binding">JV Broker</p>
 
-    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
       MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
       CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
     </marquee>
@@ -13,18 +13,32 @@
 <section class="content ng-scope">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
-      <div class=" panel-bd lobidisable bg-lobidisable">
+      <div class=" panel panel-bd panel-bg lobidisable bg-lobidisable">
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
               <div class="Old_Query">
-                <div class="col-6 custom-col-size" ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
-                  <label>Broker</label>
-                  <div class="select2-container ng-untouched ng-valid ng-valid-required ng-pristine" id="s2id_broker" style="width: 0px;"><a href="javascript:void(0)" onclick="return false;" class="select2-choice select2-default" tabindex="-1">   <span>Broker</span><abbr class="select2-search-choice-close"></abbr>   <div><b></b></div></a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen118"><div class="select2-drop select2-display-none">   <div class="select2-search select2-search-hidden select2-offscreen">       <input type="text" autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false" class="select2-input">   </div>   <ul class="select2-results">   </ul></div></div><input style="float: left;" type="hidden" id="broker" ui-select2="select2Options" ng-model="broker" data-placeholder="Broker" class="ng-pristine ng-untouched ng-valid select2-offscreen ng-valid-parse" tabindex="-1">
+                <div class="col-6 custom-col-size"
+                  ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+                  <div class="form-group">
+                    <label for="marketSelect">Broker</label>
+                    <div class="dropdown">
+                      <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
+                        (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
+                        aria-expanded="false" data-bs-toggle="dropdown" />
+                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                        aria-labelledby="marketSelect">
+                        <li *ngFor="let market of filteredMarkets">
+                          <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
 
-                <div class="col-6 custom-col-size btn_class_cnt" ng-show="$root.userInfo.userType != 1">
-                  <button ng-click="selectBroker()" type="button" class="common_buttonn button_height" style="padding: 9px; border-radius: 3px">
+                <div class="col-6 custom-col-size btn_class_cnt mb-4" ng-show="$root.userInfo.userType != 1">
+                  <button ng-click="selectBroker()" type="button" class="common_buttonn button_height"
+                    style="padding: 9px; border-radius: 3px">
                     Get Broker
                   </button>
                 </div>
@@ -33,58 +47,62 @@
           </div>
         </div>
       </div>
-      </div>
+    </div>
 
 
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="panel panel-bd lobidisable">
-          <div class="panel-heading">
-            <div class="panel-title">
-              <div class="">
-                <!-- <button class="btn btn-success btn-sm" ng-click="filterPopup = true"
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="panel panel-bd lobidisable">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <div class="">
+              <!-- <button class="btn btn-success btn-sm" ng-click="filterPopup = true"
                   onclick="$('.filter-section-mobile').toggle();">
                   <i class="hvr-buzz-out fa fa-reorder"></i>
                 </button> -->
-                <button ng-disabled="disableActions" ng-click="getJvBrokerLedger()" type="button" class="common_buttonn" style="border-radius: 3px" disabled="disabled">
+              <button ng-disabled="disableActions" ng-click="getJvBrokerLedger()" type="button" class="common_buttonn"
+                style="border-radius: 3px" disabled="disabled">
                 Add JV Broker
               </button>
-              </div>
             </div>
           </div>
-          <div class="panel-body">
+        </div>
+        <div class="panel-body">
 
-            <div class="col-12 col-lg-12 col-xl-12" style="overflow-y: scroll">
-              <table class="table table-bordered table-stripped" style="margin-top: 15px; color: #eae6e6; width: 100%">
-                                      <thead style="border-bottom: 2px solid #2a3f54;">
-                  <tr>
-                    <th>
-                      <div>
-                        <input ng-change="selectAllFilteredItems()" ng-model="abl" type="checkbox" id="checkedAllCheckBox" class="ng-pristine ng-untouched ng-valid">
-                        <label for="checkedAllCheckBox">All</label>
-                      </div>
-                    </th>
-                    <th>Code</th>
-                    <th>Name</th>
-                    <th style="text-align: right">Balance</th>
-                  </tr>
-                </thead>
+          <div class="col-12 col-lg-12 col-xl-12" style="overflow-y: scroll">
+            <table class="table table-bordered table-stripped" id="example"
+              style="margin-top: 15px; color: #eae6e6; width: 100%">
+              <thead style="border-bottom: 2px solid #2a3f54;">
+                <tr>
+                  <th>
+                    <div>
+                      <input ng-change="selectAllFilteredItems()" ng-model="abl" type="checkbox" id="checkedAllCheckBox"
+                        class="ng-pristine ng-untouched ng-valid">
+                      <label for="checkedAllCheckBox">All</label>
+                    </div>
+                  </th>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th style="text-align: right">Balance</th>
+                </tr>
+              </thead>
 
-                <tbody>
-                  <!-- ngRepeat: item in items | filter: searchTerm track by item.user_id -->
-                  <tr ng-show="items.length != 0" class="ng-hide">
-                    <td colspan="3">TOTAL:</td>
-                    <td style="text-align: right">
-                      <span ng-style="{'color': (totalAmount > 0) ? 'blue' : 'red'}" class="ng-binding" style="color: rgb(255, 0, 0);">
-                        0.00
-                      </span>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+              <tbody>
+                <!-- ngRepeat: item in items | filter: searchTerm track by item.user_id -->
+                <tr ng-show="items.length != 0" class="ng-hide">
+                  <td colspan="3">TOTAL:</td>
+                  <td style="text-align: right">
+                    <span ng-style="{'color': (totalAmount > 0) ? 'blue' : 'red'}" class="ng-binding"
+                      style="color: rgb(255, 0, 0);">
+                      0.00
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
 </section>

@@ -1,15 +1,14 @@
-
-
-
 @import '../assets/dist/css/stylecrm.css';
 @import '../assets/pe-icon-7-stroke/css/pe-icon-7-stroke.css';
 @import '../assets/bootstrap/css/bootstrap.min.css';
-
 @import '../less/varibale.less';
 @import '../less/mixins.less';
 
-*{
-  font-family: sans-serif !important;
+
+
+// Global styles
+* {
+  font-family: @font-family-default !important;
 }
 
 body {
@@ -19,44 +18,47 @@ body {
 .content-header {
     margin-bottom: 1px;
     padding: 2px 10px;
+    background-color: @white;
 }
 
 .content-header .header-title {
-    margin-left: 0px;
+    margin-left: 0;
 }
+
 .pageTitle {
-    font-weight: bold;
-    margin: 0px;
-    font-size: 16px;
+    font-weight: @font-weight-bold;
+    margin: 0;
+    font-size: @font-size-small;
     z-index: 2;
     position: absolute;
     padding-right: 10px;
-    color: #000;
-    background-color: #ffffff;
-
+    color: @black;
+    background-color: @white;
 }
 
 .main-filter {
-  background-color: aliceblue;
-  padding: 10px;
+  background-color: @background-light;
+  padding: @margin-small;
 }
+
 .filter-elementtt {
     display: flex;
-
 }
-.select2-container{
+
+.select2-container {
   width: 60px;
   background-color: bisque;
 }
 
-
 // ====================  Marquee  ======================================================================
-.marqueeStyle{
-    color: red;
-    font-weight: bold;
+.marqueeStyle {
+    color: @red-color;
+    font-weight: @font-weight-bold;
 }
+
 .marqueeStyle-header {
     margin-bottom: 1px;
+    font-size: 16px;
     padding: 2px 10px;
     border-bottom: 1px solid @light-grey;
     margin-bottom: 5px;
@@ -64,34 +66,14 @@ body {
     background-color: @white;
 }
 
-.marqueeStyle-header .header-title {
-    margin-left: 0px;
-}
-
-.pageTitle {
-    font-weight: bold;
-    margin: 0px;
-    font-size: 16px;
-    z-index: 2;
-    position: absolute;
-    padding-right: 10px;
-    color: #000;
-    background-color: #ffffff;
-
-}
-
-
 // ==================   Container Classes  ==========================================================>
-// ==================================================================================================>
-
 .content {
   min-height: 250px;
   margin-right: auto;
   margin-left: auto;
-  padding: 0 7px 10px;
+  padding: 0 @margin-medium @margin-large;
   padding-top: 3px;
 }
-
 
 .content-header {
   position: relative;
@@ -107,7 +89,6 @@ body {
 
   .header-icon {
     font-size: 48px;
-
     width: 68px;
     float: left;
     margin-top: -4px;
@@ -121,94 +102,111 @@ body {
       margin: 0;
       font-size: @font-size-medium;
       color: @dark-grey;
-      font-weight: 600;
+      font-weight: @font-weight-bold;
     }
 
     small {
       font-size: @font-size-small;
       display: inline-block;
       padding-left: 4px;
-      font-weight: 600;
+      font-weight: @font-weight-bold;
       color: @dark-grey;
     }
   }
 }
 
-
 // Panel header
+.panel-bg {
+  background-color: @primary-bg-color;
+  color: @primary-text-color;
+}
 .panel-bd > .panel-heading {
     color: @white;
-    font-weight: bold ;
-    background-color:@primary-bg-color;
+    font-weight: @font-weight-bold;
+    background-color: @primary-bg-color;
     border-color: @light-grey;
     position: relative;
 }
 
-.toolbar-app{
+.toolbar-app {
   margin-bottom: 50px;
   background-color: #e5edf3;
 }
 
-
+// Table styles
 .table tr th {
-    background-color: #696969;
-    color: #2a3f54 !important;
-  }
-  .table th,
-  .table thead th {
-    background-color: white !important;
-  }
-  tr.summary_tr:hover {
-    background: #63b2f14f !important;
-  }
-  .table-hover tbody tr:hover {
-    color: #ffffff;
-    background: #a7c5e266;
-  }
-  .Old_Query {
-    display: flex;
-    align-items: end;
-    padding-left: 5px;
-    flex-wrap: wrap;
-  }
-  .buyTradeRow2 {
-    background-color: #ccf !important ;
-  }
-  .sellTradeRow2 {
-    background-color: #ffcccc !important;
-  }
+  background-color: @table-header-bg;
+  color: @table-text-color !important;
+}
 
-  .last_updated {
-    display: contents;
-  }
-  .select2-dropdown-open .select2-choice {
-    background-color: white !important;
-  }
-  .width_full {
-    width: 100% !important;
-  }
-  .bg-lobidisable{
-    color: #ffffff;
-    background-color: #1d384f!important;
-  }
-  .common_buttonn {
-    background-color: white;
-    border: none;
-    color: #000;
-    border-bottom: 3px solid #029a19ed;
-    border-radius: 2px;
-    padding: 5px 14px !important;
-    text-align: center;
-    font-size: 12px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 26px 58px 0 rgba(0, 0, 0, 0.22), 0 5px 14px 0 rgba(0, 0, 0, 0.18);
-    margin-right: 5px;
+.table th, .table thead th {
+  background-color: @white !important;
 }
+
+tr.summary_tr:hover {
+  background: @background-light-hover !important;
+}
+
+.table-hover tbody tr:hover {
+  color: @white;
+  background: @background-light-hover;
+}
+
+// Button styles
+.common_buttonn {
+  background-color: @white;
+  border: none;
+  color: @black;
+  border-bottom: 3px solid @green-color;
+  border-radius: 2px;
+  padding: 5px 14px !important;
+  text-align: center;
+  font-size: @font-size-small;
+  font-weight: @font-weight-bold;
+  cursor: pointer;
+  box-shadow: 0 26px 58px 0 @shadow-color, 0 5px 14px 0 @button-shadow;
+  margin-right: @margin-small;
+}
+
 .button_height {
-    height: 28px !important;
+  height: 35px !important;
 }
+
 .dropdown-menu {
   max-height: 200px;
   overflow-y: auto;
+}
+
+.summary-card {
+  border: 1px solid @border-color;
+  background: @white;
+  padding: @margin-small @margin-medium;
+  border-radius: 3px;
+  font-weight: @font-weight-bold;
+  text-align: center;
+  width: 100%;
+}
+
+.fixWidthMtm {
+  display: inline-block;
+  min-width: 100px;
+  text-align: left;
+}
+
+.blueColor {
+  color: blue;
+}
+
+.buttons-html5 {
+  background-color: @white;
+  border: none;
+  color: @black;
+  border-bottom: 3px solid @primary-bg-color;
+  border-radius: 2px;
+  padding: 5px 14px !important;
+  text-align: center;
+  font-size: @font-size-small;
+  font-weight: @font-weight-bold;
+  cursor: pointer;
+  box-shadow: 0 26px 58px 0 @shadow-color, 0 5px 14px 0 @button-shadow;
 }

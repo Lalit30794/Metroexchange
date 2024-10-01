@@ -1,56 +1,49 @@
+<div class="">
+  <div class="modal-content">
 
 
-      <div class="">
-         <div class="modal-content">
-            <h2 mat-dialog-title>Trial Balance</h2>
-            <button  type="button" (click)="closeModel()" class="close">
-              <span aria-hidden="true">×</span>
-            </button>
+    <div class="modal-body">
+      <Label>Trial Balance</Label>
+      <!-- <div class="row"> -->
+      <button type="button" (click)="closeModel()" class=" btn btn-sm bg-white float-right">
+        <span aria-hidden="true">×</span>
+      </button>
 
-          <div class="modal-body">
-
-            <!-- <div class="row"> -->
-
-              <div class="col-6">
-                <label>Start Date</label>
-                <input type="date" name="startDate" class="form-control ng-pristine ng-untouched ng-valid" ng-model="startDate" id="startDate">
-              </div>
-
-              <div class="col-6">
-                <label>End Date</label>
-                <input type="date" name="endDate" class="form-control ng-pristine ng-untouched ng-valid" ng-model="endDate" id="endDate">
-              </div>
-            <!-- </div> -->
-
-
-          </div>
-
-          <div class="modal-footer">
-
-            <button ng-click="$('#trialFilter').modal('hide');" style="
-                width: 69px;
-
-                border-radius: 3px;
-
-                color: #000;
-
-                border-bottom: 3px solid red;
-              " type="button" data-dismiss="modal" class="btn common_buttonn btn-sm">
-              Close
-            </button>
-
-            <button ng-click="getfilterTrialBalance()" style="
-                width: 69px;
-
-                border-radius: 3px;
-
-                color: #000;
-
-                /* border-bottom: 3px solid red; */
-              " type="button" data-dismiss="modal" class="btn common_buttonn btn-sm">
-              Submit
-            </button>
-          </div>
-        </div>
+      <div class="col-6">
+        <label>Start Date</label>
+        <input type="date" name="startDate" class="form-control ng-pristine ng-untouched ng-valid" ng-model="startDate"
+          id="startDate">
       </div>
 
+      <div class="col-6">
+        <label>End Date</label>
+        <input type="date" name="endDate" class="form-control ng-pristine ng-untouched ng-valid" ng-model="endDate"
+          id="endDate">
+      </div>
+      <!-- </div> -->
+
+
+    </div>
+
+    <div class="modal-footer">
+
+      <button ng-click="$('#trialFilter').modal('hide');" style="
+                width: 69px;
+
+                border-radius: 3px;
+                color: #000;
+                border-bottom: 3px solid red;
+              " type="button" data-dismiss="modal" class="btn common_buttonn btn-sm">
+        Close
+      </button>
+
+      <button ng-click="getfilterTrialBalance()" style="
+                width: 69px;
+                border-radius: 3px;
+                color: #000;
+              " type="button" data-dismiss="modal" class="btn common_buttonn btn-sm">
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

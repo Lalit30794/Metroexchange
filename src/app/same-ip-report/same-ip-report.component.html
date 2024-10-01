@@ -1,11 +1,9 @@
-
-
-
 <section class="marqueeStyle-header ng-scope">
   <div class="header-title">
     <p class="pageTitle ng-binding">Sample IP Report </p>
 
-    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee" class="marqueeStyle">
+    <marquee class="marqueeStyle ng-binding" behavior="" direction="left" width="100%" id="appMarquee"
+      class="marqueeStyle">
       MCX ALUMINIUM, COPPER, LEAD &amp; ZINC ALL WILL EXPIRES TODAY(23SEP,MON), SO ROLLOVER YOUR POSITION BEFORE MARKET
       CLOSE, OTHERWISE CLOSE BY BID-ASK RATE...
     </marquee>
@@ -16,23 +14,25 @@
 <section class="content ng-scope">
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile">
-      <div class="panel panel-bd lobidisable bg-lobidisable">
+      <div class="panel panel-bd panel-bg lobidisable bg-lobidisable">
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
               <div class="Old_Query">
                 <div class="col-4 col-md-3">
                   <label for="cmbValan" class="change-label-color">Valan</label>
-                    <select id="valan" [(ngModel)]="selectedValan" class="form-select form-control" data-placeholder="Valan">
-                      <option value="" disabled></option>
-                      <option *ngFor="let valan of valans" [value]="valan.value">{{ valan.label }}</option>
-                    </select>
+                  <select id="valan" [(ngModel)]="selectedValan" class="form-select form-control"
+                    data-placeholder="Valan">
+                    <option value="" disabled></option>
+                    <option *ngFor="let valan of valans" [value]="valan.value">{{ valan.label }}</option>
+                  </select>
 
                 </div>
-                <div class="col-4 col-md-1 mt_center">
+                <div class="col-4 col-md-1 mt_center mt-5">
                   <label class="change-label-color"></label>
 
-                  <button ng-click="getSameIPDifferentUserFun()" class="common_buttonn button_height btn" style="height: 35px !important;" tabindex="6">
+                  <button ng-click="getSameIPDifferentUserFun()" class="common_buttonn button_height btn"
+                    style="height: 35px !important;" tabindex="6">
                     Search
                   </button>
                 </div>
@@ -47,15 +47,17 @@
         <div class="panel-heading">
           <div class="panel-title">
             <div class="">
-              <button class="btn btn-success btn-sm" ng-click="filterPopup = true" onclick="$('.filter-section-mobile').toggle();">
-               <i class="bi bi-menu-button"></i>
+              <button class="btn btn-success btn-sm" ng-click="filterPopup = true"
+                onclick="$('.filter-section-mobile').toggle();">
+                <i class="bi bi-menu-button"></i>
               </button>
             </div>
           </div>
         </div>
         <div class="panel-body" style="padding: 10px">
           <div class="table-responsive">
-            <table style="width: 99%" id="example" class="table table-hover table-striped table-condensed reports-table">
+            <table style="width: 99%" id="example"
+              class="table table-hover table-striped table-condensed reports-table">
               <thead>
                 <tr>
                   <th style="text-align: left">User Name</th>
@@ -79,7 +81,8 @@
       </div>
     </div>
   </div>
-  <div ng-show="ClientUplineDatapop" class="modal fade show ng-hide" style="display: block; z-index: 9999" aria-modal="true">
+  <div ng-show="ClientUplineDatapop" class="modal fade show ng-hide" style="display: block; z-index: 9999"
+    aria-modal="true">
     <div style="max-width: 95% !important" class="modal-dialog modal-sm modal-dialog-centered">
       <div class="modal-content" style="
           height: auto;
@@ -95,7 +98,8 @@
             Client Tree
           </h5>
 
-          <button ng-click="ClientUplineDatapop=false" type="button" data-dismiss="modal" aria-label="Close" class="close">
+          <button ng-click="ClientUplineDatapop=false" type="button" data-dismiss="modal" aria-label="Close"
+            class="close">
             <span aria-hidden="true">×</span>
           </button>
         </div>

@@ -14,8 +14,8 @@
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filter-section-mobile lobipanel-parent-sortable ui-sortable"
       data-lobipanel-child-inner-id="cN80WBPXbL">
-      <div class="panel panel-bd lobidisable bg-lobidisable lobipanel lobipanel-sortable" data-inner-id="cN80WBPXbL"
-        data-index="0">
+      <div class="panel panel-bd panel-bg lobidisable bg-lobidisable lobipanel lobipanel-sortable"
+        data-inner-id="cN80WBPXbL" data-index="0">
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
@@ -53,10 +53,11 @@
                 </div>
                 <div class="col-12 col-lg-2">
                   <label for="cmbValan" class="change-label-color">Valan</label>
-                    <select id="valan" [(ngModel)]="selectedValan" class="form-select form-control" data-placeholder="Valan">
-                      <option value="" >Select Valan</option>
-                      <option *ngFor="let valan of valans" [value]="valan.value">{{ valan.label }}</option>
-                    </select>
+                  <select id="valan" [(ngModel)]="selectedValan" class="form-select form-control"
+                    data-placeholder="Valan">
+                    <option value="">Select Valan</option>
+                    <option *ngFor="let valan of valans" [value]="valan.value">{{ valan.label }}</option>
+                  </select>
 
                 </div>
                 <div class="col-12 col-lg-2">
