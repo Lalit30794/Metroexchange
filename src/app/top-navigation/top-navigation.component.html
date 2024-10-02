@@ -1,1 +1,23 @@
-<p>top-navigation works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light top-navigation">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+    <ul class="sidebar-menu navbar-nav">
+      <li *ngFor="let menu of menus nav-item active" class="treeview">
+        <!-- Main navigation link (e.g., Dashboard) -->
+        <a (click)="toggleDropdown(menu)" class=" nav-link" (click)="change(menu.path)">
+          <span class="nav-label">{{ menu.name }}</span>
+          <!-- Icon for submenu indicator -->
+          <span class="submenu-icon ml-5" *ngIf="menu.submenus">
+            <i [ngClass]="!menu.open ? 'bi bi-chevron-down' : 'bi bi-chevron-up'"></i>
+          </span>
+        </a>
+        <!-- Submenu -->
+        <ul *ngIf="menu.submenus && menu.open" [ngClass]="{'open': menu.open}" class="treeview-menu">
+          <li *ngFor="let menuItems of menu.submenus" class="treeList" (click)="change(menuItems.path)">
+            <a class="submenu-links">{{ menuItems.name }}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

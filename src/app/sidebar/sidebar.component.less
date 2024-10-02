@@ -8,12 +8,13 @@ aside {
   /* Full-width sidebar when expanded */
   &.sidebar-expanded {
     width: 250px;
-
+    transition: width 0.3s ease, transform 0.3s ease;
   }
 
   /* Collapsed sidebar */
   &.sidebar-collapsed {
     width: 90px;
+     transform: translateX(180px);
   /* Sliding out of view */
   }
 }
