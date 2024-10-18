@@ -23,7 +23,7 @@
           <div class="Workslist">
             <div class="worklistdate">
               <div class="Old_Query">
-                <div class="col-4 col-md-1 form-group">
+                <div class="col-4  col-sm-6 col-md-1 form-group">
                   <label>From Date</label>
                   <input type="date" ng-model="tradeAfter" name="start_date"
                     class="form-control width_full ng-pristine ng-untouched ng-valid" id="start_date">
@@ -98,22 +98,21 @@
                     </div>
                   </div>
                 </div>
-                <div class="last_updated">
-                  <div class="col-4 col-md-1 mt-4">
-                    <button ng-click="getRejectionLogs()" style="width: 86px; padding: 10px"
-                      class="common_buttonn button_height" tabindex="6">
-                      Search
-                    </button>
-                  </div>
-                  <div class="col-4 col-md-1 mt-4">
-                    <button ng-click="clearFilter()" style="
+
+                <div class="col-4 col-md-1 mt-4">
+                  <button ng-click="getRejectionLogs()" style="width: 86px; padding: 10px"
+                    class="common_buttonn button_height" tabindex="6">
+                    Search
+                  </button>
+                </div>
+                <div class="col-4 col-md-1 mt-4">
+                  <button ng-click="clearFilter()" style="
                         width: 86px;
                         padding: 10px;
                         border-bottom: 3px solid red;
                       " class="common_buttonn button_height" tabindex="7">
-                      Reset
-                    </button>
-                  </div>
+                    Reset
+                  </button>
                 </div>
               </div>
             </div>

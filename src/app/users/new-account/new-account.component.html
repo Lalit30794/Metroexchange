@@ -223,15 +223,15 @@
                                   align-items: center;
                                   gap: 5px;
                                 ">
-                      <div id="button-3-90" class="button-90 " style="display: flex">
-                        <input type="checkbox" id="toggleYesNoNSE" class="toggle-checkbox"
-                          (change)="onToggle($event)" />
-                        <label for="toggleYesNoNSE" class="toggle-label">
-                          <span class="toggle-text">No</span>
-                          <span class="toggle-text">Yes</span>
-                          <div class="toggle-slider"></div>
-                        </label>
-                      </div>
+                                <div id="button-3-90" class="button-90 " style="display: flex">
+                                  <input type="checkbox" id="toggleYesNoNSE" class="toggle-checkbox"
+                                    (change)="onToggle($event)" />
+                                  <label for="toggleYesNoNSE" class="toggle-label">
+                                    <span class="toggle-text">No</span>
+                                    <span class="toggle-text">Yes</span>
+                                    <div class="toggle-slider"></div>
+                                  </label>
+                                </div>
 
                                 NSE
                               </div>
@@ -261,15 +261,15 @@
                                   align-items: center;
                                   gap: 5px;
                                 ">
-                              <div id="button-3-90" class="button-90 " style="display: flex">
-                                <input type="checkbox" id="toggleYesNoMCX"    class="toggle-checkbox"
-                                  (change)="onToggle($event)" />
-                                <label for="toggleYesNoMCX" class="toggle-label">
-                                  <span class="toggle-text">No</span>
-                                  <span class="toggle-text">Yes</span>
-                                  <div class="toggle-slider"></div>
-                                </label>
-                              </div>
+                                <div id="button-3-90" class="button-90 " style="display: flex">
+                                  <input type="checkbox" id="toggleYesNoMCX" class="toggle-checkbox"
+                                    (change)="onToggle($event)" />
+                                  <label for="toggleYesNoMCX" class="toggle-label">
+                                    <span class="toggle-text">No</span>
+                                    <span class="toggle-text">Yes</span>
+                                    <div class="toggle-slider"></div>
+                                  </label>
+                                </div>
 
                                 MCX
                               </div>
@@ -300,7 +300,8 @@
 
 
 
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  lobipanel-parent-sortable ui-sortable" *ngIf="selectedOption === '3'">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  lobipanel-parent-sortable ui-sortable"
+        *ngIf="selectedOption === '3'">
         <div class="panel panel-bd lobidisable lobipanel lobipanel-sortable">
           <div class="panel-heading ui-sortable-handle">
             <div class="panel-title" style="max-width: calc(100% + 0px);">
@@ -343,24 +344,24 @@
                 <div class="col-md-8">
                   <!-- ngRepeat: items in checkboxItems -->
 
-                    <div class="col-md-6 mb-4" style="display: flex; justify-content: space-between"
-                      *ngFor="let items of checkboxItems; let i = index">
-                      <div class="col-md-8 mb-2">
-                        <label>{{items.label}}</label>
-                      </div>
-                      <!-- Yes or No -->
-                      <div class="col-md-4">
-                        <div id="button-3-90" class="button-90" style="display: flex">
-                          <input type="checkbox" [id]="'toggleYesNo' + i"
-                            class="toggle-checkbox" (change)="onToggle($event)" />
-                          <label [for]="'toggleYesNo' + i" class="toggle-label">
-                            <span class="toggle-text">No</span>
-                            <span class="toggle-text">Yes</span>
-                            <div class="toggle-slider"></div>
-                          </label>
-                        </div>
+                  <div class="col-md-6 mb-4" style="display: flex; justify-content: space-between"
+                    *ngFor="let items of checkboxItems; let i = index">
+                    <div class="col-md-8 mb-2">
+                      <label>{{items.label}}</label>
+                    </div>
+                    <!-- Yes or No -->
+                    <div class="col-md-4">
+                      <div id="button-3-90" class="button-90" style="display: flex">
+                        <input type="checkbox" [id]="'toggleYesNo' + i" class="toggle-checkbox"
+                          (change)="onToggle($event)" />
+                        <label [for]="'toggleYesNo' + i" class="toggle-label">
+                          <span class="toggle-text">No</span>
+                          <span class="toggle-text">Yes</span>
+                          <div class="toggle-slider"></div>
+                        </label>
                       </div>
                     </div>
+                  </div>
                 </div>
 
 

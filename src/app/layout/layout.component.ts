@@ -137,4 +137,5 @@ export class LayoutComponent {
   toggleDropdown(menu: any) {
     menu.open = !menu.open; // Toggles the open state for the dropdown
   }
+
 }

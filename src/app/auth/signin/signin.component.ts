@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
 export class SigninComponent {
   loginForm: FormGroup;
   isWrongPass: boolean | undefined;
+  public showPassword: boolean = false
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -29,7 +30,7 @@ export class SigninComponent {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   submitForm(): void {
     if (
       this.loginForm.valid &&
@@ -43,5 +44,8 @@ export class SigninComponent {
       this.isWrongPass = true;
       this.router.navigate(['']);
     }
+  }
+  eyeIconToggle() {
+    this.showPassword = !this.showPassword
   }
 }

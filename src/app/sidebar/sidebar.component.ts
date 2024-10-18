@@ -108,7 +108,7 @@ export class SidebarComponent {
   change(page: string) {
     // Logic to navigate or handle page changes
     const navigationPage = page.toLowerCase();
-    if (navigationPage === 'trial-balance') this.changeUI('300ms', '150ms');
+    if (navigationPage === 'trial-balance') return this.changeUI('300ms', '150ms');
     this.router.navigate([navigationPage]);
     console.log(`Navigating to ${navigationPage}`);
   }
@@ -126,13 +126,11 @@ export class SidebarComponent {
   ): void {
     this.dialog.open(TrialBalanceComponent, {
       width: '400px',
-      height: '273px',
+      height: '279px',
+      panelClass: 'trial-balance-popup',
       enterAnimationDuration,
       exitAnimationDuration,
     });
   }
-
-
-
 
 }

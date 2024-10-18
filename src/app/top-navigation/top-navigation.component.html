@@ -1,8 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light top-navigation">
+<nav class="navbar navbar-expand-lg navbar-light bg-light top-navigation m-1">
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
     <ul class="sidebar-menu navbar-nav">
-      <li *ngFor="let menu of menus nav-item active" class="treeview">
+      <li *ngFor="let menu of menus" class="treeview">
         <!-- Main navigation link (e.g., Dashboard) -->
         <a (click)="toggleDropdown(menu)" class=" nav-link" (click)="change(menu.path)">
           <span class="nav-label">{{ menu.name }}</span>

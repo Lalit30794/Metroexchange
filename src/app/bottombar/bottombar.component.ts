@@ -20,6 +20,7 @@ export class BottombarComponent {
     this.isMobile = this.deviceService.isMobile();
   }
 
+
   navigateTo(route: string) {
     this.router.navigate([route]);
   }

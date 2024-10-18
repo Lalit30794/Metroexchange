@@ -1,15 +1,19 @@
-import { CommonModule, NgFor } from '@angular/common';
-import { Component } from '@angular/core';
+import { CommonModule, NgClass, NgFor, NgIf } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { TrialBalanceComponent } from '../accounts/trial-balance/trial-balance.component';
 
 @Component({
   selector: 'app-top-navigation',
   standalone: true,
-  imports: [CommonModule, NgFor],
+
+  imports: [CommonModule, NgFor, NgClass, NgIf],
   templateUrl: './top-navigation.component.html',
   styleUrl: './top-navigation.component.less'
 })
 export class TopNavigationComponent {
+  readonly dialog = inject(MatDialog);
   menus = [
     { tag: 'DB', name: 'Dashboard', path: 'dashboard', submenus: null },
     { tag: 'WL', name: 'Watchlist', path: 'watchlist', submenus: null },
@@ -102,12 +106,25 @@ export class TopNavigationComponent {
   change(page: string) {
     // Logic to navigate or handle page changes
     const navigationPage = page.toLowerCase();
-    //if (navigationPage === 'trial-balance') this.changeUI('300ms', '150ms');
+    console
+    if (navigationPage === 'trial-balance') return this.changeUI('300ms', '150ms');
     this.router.navigate([navigationPage]);
     console.log(`Navigating to ${navigationPage}`);
   }
 
   toggleDropdown(menu: any) {
     menu.open = !menu.open; // Toggles the open state for the dropdown
+  }
+  changeUI(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string
+  ): void {
+    this.dialog.open(TrialBalanceComponent, {
+      width: '400px',
+      height: '279px',
+      panelClass: 'trial-balance-popup',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 }

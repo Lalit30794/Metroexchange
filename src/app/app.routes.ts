@@ -8,11 +8,13 @@ import { LedgerComponent } from './accounts/ledger/ledger.component';
 import { TotalBillComponent } from './accounts/total-bill/total-bill.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { BulkTradingComponent } from './bulk-trading/bulk-trading.component';
+import { ChangePasswodComponent } from './change-passwod/change-passwod.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { QuantitySettingComponent } from './quantity-setting/quantity-setting.component';
 import { BrokerageReportComponent } from './reports/brokerage-report/brokerage-report.component';
+import { RulesComponent } from './rules/rules.component';
 import { SameIpReportComponent } from './same-ip-report/same-ip-report.component';
 import { ScriptBlockAllowComponent } from './script-block-allow/script-block-allow.component';
 import { ShortTradeReportComponent } from './short-trade-report/short-trade-report.component';
@@ -96,6 +98,14 @@ export const routes: Routes = [
       {
         path: 'reports',
         component: BrokerageReportComponent,
+      },
+      {
+        path: 'rules',
+        component: RulesComponent,
+      },
+      {
+        path: 'changePassword',
+        component: ChangePasswodComponent,
       },
     ],
   },

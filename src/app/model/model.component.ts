@@ -5,6 +5,7 @@ import { MatIcon } from '@angular/material/icon';
 import { MatListItem } from '@angular/material/list';
 import { MatToolbar } from '@angular/material/toolbar';
 import { LayoutComponent } from '../layout/layout.component';
+import { NavigationService } from '../services/navigation.service';
 
 @Component({
   selector: 'app-model',
@@ -14,8 +15,17 @@ import { LayoutComponent } from '../layout/layout.component';
   styleUrl: './model.component.less',
 })
 export class ModelComponent {
-  constructor(public dialogRef: MatDialogRef<LayoutComponent>) {}
+  selectedLayout: boolean = false;
+  constructor(public dialogRef: MatDialogRef<LayoutComponent>, private navigationService: NavigationService) { }
   closeDialog(data: string) {
     this.dialogRef.close(data);
+  }
+
+
+  // Method to change layout based on user selection
+  selectLayout() {
+    this.navigationService.isSideNavOpen$.subscribe((layout) => {
+      this.selectedLayout = layout;
+    })
   }
 }

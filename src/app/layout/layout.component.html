@@ -5,11 +5,10 @@
   <!-- Main Content Wrapper -->
   <div class="main-content">
     <!-- Side bar -->
-    <app-sidebar [ngClass]="{ 'collapsed': !isSideNavOpen }" [isSideNavOpen]="isSideNavOpen"></app-sidebar>
+    <app-sidebar [ngClass]="{ 'collapsed': !isSideNavOpen}" [isSideNavOpen]="isSideNavOpen"></app-sidebar>
 
     <!-- Content Area -->
     <div class="content-area">
-      <!-- <app-top-navigation></app-top-navigation> -->
       <router-outlet></router-outlet>
     </div>
   </div>

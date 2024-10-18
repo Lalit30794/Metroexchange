@@ -67,8 +67,7 @@ export class TopbarComponent {
       icon: 'bi bi-bell',
       modal: '#alertSettingsModal',
     },
-    { text: 'Rules & Regulation', icon: 'bi bi-megaphone', action: 'Rules' },
-    { text: 'Custom Layout ', icon: 'bi bi-grid-1x2-fill', action: 'model' },
+    { text: 'Rules & Regulation', icon: 'bi bi-megaphone', action: 'rules' },
     { text: 'Signout', icon: 'bi bi-box-arrow-in-right', action: 'logout' },
   ];
   constructor(
@@ -107,6 +106,7 @@ export class TopbarComponent {
 
   // Example action methods
   change(action: any) {
+    this.toggleProfileDropdown();
     console.log(`Change action triggered: ${action}`);
     // Handle action logic
     switch (action) {
@@ -114,9 +114,11 @@ export class TopbarComponent {
         console.log('Logging out...');
         this.logout(); // This will execute, but without a break it will continue to 'model' case
         break;
-      case 'model':
-        console.log('Opening model...');
-        this.changeUI('300ms', '150ms');
+      case 'rules':
+        this.router.navigate([action]);
+        break;
+      case 'changePassword':
+        this.router.navigate([action]);
         break;
       default:
         console.log('Unknown action');
