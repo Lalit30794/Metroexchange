@@ -14,7 +14,7 @@ import { SidebarComponent } from '../../sidebar/sidebar.component';
   styleUrl: './trial-balance.component.less',
 })
 export class TrialBalanceComponent {
-  constructor(public dialogRef: MatDialogRef<SidebarComponent>) {}
+  constructor(public dialogRef: MatDialogRef<SidebarComponent>) { }
   closeModel() {
     this.dialogRef.close();
   }

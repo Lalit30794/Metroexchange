@@ -1,0 +1,110 @@
+@import '../../less/varibale.less';
+
+.top-navigation {
+  background-color: @primary-bg-color !important;
+
+
+  .nav-link {
+    color: @primary-text-color;
+  }
+
+  .nav-link:hover {
+    color: @accent-color;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    .icon {
+      color: #1d384f;
+      font-weight: bold;
+      background-color: #fff;
+      padding: 4px;
+      border-bottom: 4px solid #009688;
+      font-size: 12px;
+    }
+
+    .nav-link {
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #082440;
+      }
+
+      .nav-label {
+        margin-left: 10px;
+      }
+
+      .submenu-icon {
+        font-size: 12px;
+      }
+    }
+  }
+
+  .is-open ul.dropdown {
+    display: block;
+  }
+
+  ul.dropdown {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+
+    li {
+      a {
+        background-color: #495057;
+
+        &:hover {
+          background-color: #082440;
+        }
+      }
+    }
+  }
+
+  .treeview-menu {
+    background-color: #1d384f;
+    font-size: 20px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    display: none; /* Hide initially */
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .treeview-menu.open {
+    max-height: 500px; /* Adjust max height based on your submenu content */
+    opacity: 1;
+    display: block; /* Show when open */
+    transition: max-height 0.4s ease, opacity 0.4s ease; /* Ensure consistency */
+  }
+
+  .treeview-menu::before {
+    background-color: #fffaafa6;
+  }
+
+  .treeList:hover {
+    background-color: #082440;
+  }
+
+  .treeList::before {
+    border: 1px solid #fffaafa6 !important;
+  }
+
+  .treeList {
+    margin-left: 33px !important;
+    cursor: pointer;
+  }
+
+  .treeList>a {
+    font-size: 15px;
+  }
+}

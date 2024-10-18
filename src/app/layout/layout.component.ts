@@ -7,6 +7,7 @@ import { BottombarComponent } from '../bottombar/bottombar.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { DataTablesComponent } from '../data-tables/data-tables.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
+import { TopNavigationComponent } from '../top-navigation/top-navigation.component';
 import { TopbarComponent } from '../topbar/topbar.component';
 import { WatchlistComponent } from '../watchlist/watchlist.component';
 
@@ -22,6 +23,7 @@ import { WatchlistComponent } from '../watchlist/watchlist.component';
     DashboardComponent,
     NgClass,
     WatchlistComponent,
+    TopNavigationComponent,
     MatMenuModule,
     MatToolbarModule,
     NgIf,
@@ -124,7 +126,7 @@ export class LayoutComponent {
     console.info('values', toggleValue);
     this.isSideNavOpen = toggleValue;
   }
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   change(page: string) {
     // Logic to navigate or handle page changes
@@ -135,4 +137,5 @@ export class LayoutComponent {
   toggleDropdown(menu: any) {
     menu.open = !menu.open; // Toggles the open state for the dropdown
   }
+
 }

@@ -62,6 +62,7 @@ export class NewAccountComponent {
 
   // Optional: This method can be used to log the selected value when it changes
   onOptionChange(event: any) {
+
     this.selectedOption = event?.target?.value;
   }
 
