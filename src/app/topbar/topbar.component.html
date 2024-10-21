@@ -95,54 +95,172 @@
     <!-- Dropdown Menu -->
     <ul class="dropdown-profile" *ngIf="isProfileDropdownOpen">
       <li *ngFor="let item of menuItems" class="dropdown-item">
-        <a type="button" data-toggle="modal" data-target="item.modal" (click)="item.action ? change(item.action) : ''">
+        <!-- Button trigger modal -->
+        <a [attr.data-toggle]="item.modal ? 'modal' : null"
+          [attr.data-target]="item.modal === 'loginMappAccountModal' ? '#loginMappAccountModal' : '#alertSettingsModal'"
+          (click)="change(item.action)">
           <i class="hvr-buzz-out fa {{ item.icon }}"></i>{{ item.text }}
         </a>
       </li>
+
+
     </ul>
   </div>
 </header>
 
 
-<!-- Modal -->
-<div class="modal fade" id="#loginMappAccountModal" tabindex="-1" role="dialog"
-  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<!-- Login map Account Modal Structure -->
+<div class="modal fade" id="loginMappAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content login-modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Login modal settings </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <h5 class="modal-title">Link Account</h5>
+        <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+          <span aria-hidden="true">×</span>
         </button>
       </div>
+
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <form [formGroup]="loginForm" (ngSubmit)="onLoginMapAccountSubmit()">
+          <div class="pl-4 pr-4">
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Username</label>
+                <div class="col-sm-8">
+                  <input formControlName="username" type="text" placeholder="Enter Username" class="form-control"
+                    autocomplete="off">
+                  <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+                    <small *ngIf="loginForm.get('username')?.errors?.['required']">Username is required</small>
+                    <small *ngIf="loginForm.get('username')?.errors?.['minlength']">Minimum 3 characters
+                      required</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Password</label>
+                <div class="col-sm-8">
+                  <input formControlName="password" type="password" placeholder="Enter Password" class="form-control"
+                    autocomplete="off">
+                  <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+                    <small *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</small>
+                    <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Minimum 6 characters
+                      required</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-close common_buttonn btn-sm">
+              Close
+            </button>
+
+            <button type="submit" [disabled]="loginForm.invalid" class="btn-link-account common_buttonn">
+              Link Account
+            </button>
+
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Modal -->
-<div class="modal fade" id="#alertSettingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+
+
+<!-- Alert map Account Modal Structure -->
+<!-- Alert Settings Modal Structure -->
+<div class="modal fade" id="alertSettingsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
+    <div class="modal-content alert-modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Alert Settings </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <h5 class="modal-title">Alert Settings</h5>
+        <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+          <span aria-hidden="true">×</span>
         </button>
       </div>
+
       <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <form [formGroup]="alertSettingsForm" (ngSubmit)="onAlertSettingsSubmit()">
+          <div class="pl-4 pr-4">
+
+            <!-- Trade Sound -->
+            <div class="col-md-12">
+              <label class="label-flex ">
+                Trade Sound
+                <div class="toggle-button">
+                  <input formControlName="tradeSound" type="checkbox" class="toggle-checkbox"
+                    (change)="alertSetting('tradeSound')" />
+                  <label class="toggle-label">
+                    <span class="toggle-text no">No</span>
+                    <span class="toggle-text yes">Yes</span>
+                    <div class="toggle-slider"></div>
+                  </label>
+                </div>
+              </label>
+            </div>
+
+            <!-- Auto Square Off Alert -->
+            <div class="col-md-12">
+              <label class="label-flex">
+                Auto Square Off Alert
+                <div class="toggle-button">
+                  <input formControlName="autoSquareOff" type="checkbox" class="toggle-checkbox"
+                    (change)="alertSetting('autoSquareOff')" />
+                  <label class="toggle-label">
+                    <span class="toggle-text no">No</span>
+                    <span class="toggle-text yes">Yes</span>
+                    <div class="toggle-slider"></div>
+                  </label>
+                </div>
+              </label>
+            </div>
+
+            <!-- Auto Square Off Alert Sound -->
+            <div class="col-md-12">
+              <label class="label-flex">
+                Auto Square Off Alert Sound
+                <div class="toggle-button">
+                  <input formControlName="autoSquareOffSound" type="checkbox" class="toggle-checkbox"
+                    (change)="alertSetting('autoSquareOffSound')" />
+                  <label class="toggle-label">
+                    <span class="toggle-text no">No</span>
+                    <span class="toggle-text yes">Yes</span>
+                    <div class="toggle-slider"></div>
+                  </label>
+                </div>
+              </label>
+            </div>
+
+            <!-- Trade Clear Alert -->
+            <div class="col-md-12">
+              <label class="label-flex">
+                Trade Clear Alert
+                <div class="toggle-button">
+                  <input formControlName="tradeClear" type="checkbox" class="toggle-checkbox"
+                    (change)="alertSetting('tradeClear')" />
+                  <label class="toggle-label">
+                    <span class="toggle-text no">No</span>
+                    <span class="toggle-text yes">Yes</span>
+                    <div class="toggle-slider"></div>
+                  </label>
+                </div>
+              </label>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn btn-close">Close</button>
+            <button type="submit" class="btn btn-submit">Save</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

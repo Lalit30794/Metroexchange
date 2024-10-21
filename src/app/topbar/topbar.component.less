@@ -192,6 +192,7 @@ header {
       font-weight: bold;
       text-decoration: none;
       color: #333;
+      cursor: pointer;
 
       i {
         font-weight: bold;
@@ -343,4 +344,128 @@ header {
       display: none !important;
     }
   }
+}
+
+
+.login-modal-content .alert-modal-content{
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.btn-close {
+  width: 69px;
+  border-radius: 3px;
+  color: #000;
+  border-bottom: 3px solid red;
+}
+
+.btn-link-account {
+  width: 124px;
+  padding: 5px 7px !important;
+}
+
+.modal-title{
+  font-weight: bold;
+}
+
+
+.modal-header h5 {
+  color: #000;
+}
+
+.label-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 21px;
+  color: #000;
+}
+
+
+.modal-footer .btn-close {
+  width: 69px;
+  border-radius: 3px;
+  color: #000;
+  border-bottom: 3px solid red;
+}
+
+.modal-footer .btn-submit {
+  width: 113px;
+  border-radius: 3px;
+  color: #000;
+}
+
+.label-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 21px;
+
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggle-checkbox {
+   /* Hide the actual checkbox */
+display: none;
+
+}
+
+.toggle-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  height: 30px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  padding: 2px;
+   background-color: #78ebff
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px;
+  height: 26px;
+  background-color: white;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+.toggle-text {
+  width: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+}
+
+.toggle-text.no {
+color: #fff;
+
+}
+
+.toggle-text.yes {
+ color: #fff;
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-slider {
+  transform: translateX(30px); /* Move the slider to the right */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-text.no {
+  color: #fff;
+  background-color: #ff3a3a;
+}
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #ff3a3a;
+}
+.toggle-checkbox:checked + .toggle-label .toggle-text.yes {
+  color: #fff;
 }
