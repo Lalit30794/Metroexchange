@@ -18,6 +18,10 @@ import {
 export class NewAccountComponent {
   selectedOption: string = '';
   accountFormGroup!: FormGroup;
+  isNseEyeIconShow: boolean = false;
+  isMcxEyeIconShow: boolean = false;
+  mcxFormSection: boolean = false;
+  nseFormSection: boolean = false;
 
   checkboxItems = [
     { id: 'onlyPosition', label: 'Only Position', checked: false },
@@ -68,5 +72,37 @@ export class NewAccountComponent {
 
   onToggle(i: any) {
     console.info(i);
+
+  }
+
+  marketToggle(type: any) {
+    console.info("Market", type);
+
+    // Handle action logic
+    switch (type) {
+      case 'NSE':
+        this.isNseEyeIconShow = true
+        break;
+      case 'MCX':
+        this.isMcxEyeIconShow = true
+        break;
+      default:
+
+    }
+  }
+  eyeIconToggle(market: string) {
+    console.info("Market12312", market);
+    // Handle action logic
+    switch (market) {
+      case 'NSE':
+        this.nseFormSection = !this.nseFormSection;
+        break;
+      case 'MCX':
+        this.mcxFormSection = !this.mcxFormSection
+        break;
+      default:
+
+    }
+
   }
 }

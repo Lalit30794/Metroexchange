@@ -1,12 +1,11 @@
-import { CommonModule, DOCUMENT, NgStyle } from '@angular/common';
-import { Component, EventEmitter, inject, Inject, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { CommonModule, DOCUMENT, NgClass, NgStyle } from '@angular/common';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
 import { DataTablesComponent } from '../data-tables/data-tables.component';
-import { ModelComponent } from '../model/model.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
@@ -20,18 +19,24 @@ import { SidebarComponent } from '../sidebar/sidebar.component';
     MatIconModule,
     MatMenuModule,
     MatToolbarModule,
+    ReactiveFormsModule,
+    NgClass
+
   ],
   templateUrl: './topbar.component.html',
   styleUrl: './topbar.component.less',
 })
-export class TopbarComponent {
+export class TopbarComponent implements OnInit {
+  loginForm!: FormGroup;
+  alertSettingsForm!: FormGroup;
   // Define an output event to send toggle changes
   @Output() toggleSideNav: EventEmitter<any> = new EventEmitter<any>();
   @Output() topNavbar: EventEmitter<any> = new EventEmitter<any>();
   isSideNavOpen: boolean = false;
   isProfileDropdownOpen: boolean = false;
   keyDropdownOpen: boolean = false;
-  user: any;
+  user: any
+
 
   indices = [
     { name: 'SENSEX', value: 845.31, change: 1359.51 },
@@ -60,19 +65,22 @@ export class TopbarComponent {
     {
       text: 'Link Account',
       icon: 'bi bi-link-45deg',
-      modal: '#loginMappAccountModal',
+      modal: 'loginMappAccountModal',
+      action: 'modal',
     },
     {
       text: 'Alert Settings',
       icon: 'bi bi-bell',
-      modal: '#alertSettingsModal',
+      modal: 'alertSettingsModal',
+      action: 'modal',
     },
     { text: 'Rules & Regulation', icon: 'bi bi-megaphone', action: 'rules' },
     { text: 'Signout', icon: 'bi bi-box-arrow-in-right', action: 'logout' },
   ];
   constructor(
     @Inject(DOCUMENT) private document: Document,
-    private router: Router
+    private router: Router,
+    private fb: FormBuilder
   ) {
     let localStorage = this.document?.defaultView?.localStorage;
     let userName = localStorage?.getItem('username');
@@ -82,9 +90,45 @@ export class TopbarComponent {
       role: 'Super Master',
     };
   }
-  isSidebarOpen = true;
-  isTopbarOpen: boolean = false;
-  readonly dialog = inject(MatDialog);
+
+
+
+  ngOnInit(): void {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+    // Initialize the reactive form with controls for each checkbox
+    this.alertSettingsForm = this.fb.group({
+      tradeSound: [false],
+      autoSquareOff: [false],
+      autoSquareOffSound: [false],
+      tradeClear: [false]
+    });
+  }
+
+  onLoginMapAccountSubmit(): void {
+    if (this.loginForm.valid) {
+      console.log('Form Data:', this.loginForm.value);
+      // Perform the form submission or call a service to handle the data
+    } else {
+      console.log('Form is invalid');
+    }
+  }
+
+  // Submit function
+  onAlertSettingsSubmit(): void {
+    if (this.alertSettingsForm.valid) {
+      console.log('Form Data:', this.alertSettingsForm.value);
+      // Handle submission or API call here
+    }
+  }
+
+  alertSetting(controlName: string): void {
+    console.log(`${controlName} toggled:`, this.alertSettingsForm.get(controlName)?.value);
+  }
+
+
 
   toggleMenu() {
     this.isSideNavOpen = !this.isSideNavOpen;
@@ -107,11 +151,9 @@ export class TopbarComponent {
   // Example action methods
   change(action: any) {
     this.toggleProfileDropdown();
-    console.log(`Change action triggered: ${action}`);
     // Handle action logic
     switch (action) {
       case 'logout':
-        console.log('Logging out...');
         this.logout(); // This will execute, but without a break it will continue to 'model' case
         break;
       case 'rules':
@@ -120,34 +162,11 @@ export class TopbarComponent {
       case 'changePassword':
         this.router.navigate([action]);
         break;
+      case 'modal':
+        console.log('Action', action);
+        break;
       default:
         console.log('Unknown action');
     }
-  }
-
-  changeUI(
-    enterAnimationDuration: string,
-    exitAnimationDuration: string
-  ): void {
-    const dialogRef = this.dialog.open(ModelComponent, {
-      width: '250px',
-      height: '200px',
-      enterAnimationDuration,
-      exitAnimationDuration,
-    });
-
-    // After dialog is closed
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result === 'sidebar') {
-        this.toggleSideNav.emit(true);
-        this.toggleSideNav.emit(false);
-        console.log('Dialog closed with result:', result); // Handle the data returned from the dialog
-      }
-      if (result === 'topbar') {
-        this.toggleSideNav.emit(false);
-        this.toggleSideNav.emit(true);
-        console.log('Dialog closed with result:', result); // Handle the data returned from the dialog
-      }
-    });
   }
 }
