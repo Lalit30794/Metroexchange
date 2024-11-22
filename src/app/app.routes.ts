@@ -8,7 +8,7 @@ import { LedgerComponent } from './accounts/ledger/ledger.component';
 import { TotalBillComponent } from './accounts/total-bill/total-bill.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { BulkTradingComponent } from './bulk-trading/bulk-trading.component';
-import { ChangePasswodComponent } from './change-passwod/change-passwod.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutComponent } from './layout/layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -105,7 +105,7 @@ export const routes: Routes = [
       },
       {
         path: 'changePassword',
-        component: ChangePasswodComponent,
+        component: ChangePasswordComponent,
       },
     ],
   },

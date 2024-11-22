@@ -18,6 +18,7 @@ export class BottombarComponent {
   ) {
     this.deviceInfo = this.deviceService.getDeviceInfo();
     this.isMobile = this.deviceService.isMobile();
+    console.info("isMobile", this.isMobile)
   }
 
 

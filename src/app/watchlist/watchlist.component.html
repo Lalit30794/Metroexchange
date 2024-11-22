@@ -21,7 +21,8 @@
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
-              <div class="filter-elementtt">
+              <div class="row d-lg-flex justify-content-lg-between align-items-lg-center">
+                <!-- Market -->
                 <div class="col-4 col-lg-1">
                   <div class="form-group">
                     <label for="marketSelect">Market</label>
@@ -39,6 +40,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- Script -->
                 <div class="col-4 col-lg-1" style="min-width: 145px !important;">
                   <div class="form-group">
                     <label for="marketSelect">Script Name</label>
@@ -55,8 +57,7 @@
                     </div>
                   </div>
                 </div>
-
-
+                <!-- Expiry -->
                 <div class="col-4 col-lg-1">
                   <div class="form-group">
                     <label for="marketSelect">Expiry</label>
@@ -73,6 +74,7 @@
                     </div>
                   </div>
                 </div>
+                <!-- CE/PE -->
                 <div class="col-4 col-lg-1">
                   <div class="form-group">
                     <label for="marketSelect">CE/PE</label>
@@ -89,7 +91,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-4 col-lg-1">
+                <!-- Strike -->
+                <div class="col-4 col-lg-1 ">
                   <div class="form-group">
                     <label for="marketSelect">Strike</label>
                     <div class="dropdown">
@@ -105,53 +108,53 @@
                     </div>
                   </div>
                 </div>
-                <div class="">
+                <!-- Add To Watchlist -->
+                <div class="col-4 col-lg-1">
+
                   <label></label>
-                  <button class="common_buttonn button_height add-script-btn mt-5" ng-disabled="disableActions"
+                  <button class="common_buttonn button_height add-script-btn mt-4 " ng-disabled="disableActions"
                     ng-click="addToMarket()" tabindex="6">
                     Add To Watchlist
                   </button>
                 </div>
+                <!-- Search -->
                 <div class="col-4 col-lg-1">
                   <div class="form-group">
                     <label for="txtFocusScript">Search</label>
-                    <input name="search" style=" height: 30px" id="txtFocusScript" type="text"
-                      class="form-control ng-pristine ng-valid ng-empty ng-touched ng-untouched" placeholder="Search..."
-                      ng-model="searchText" autocomplete="off">
+                    <input name="search" id="txtFocusScript" type="text" class="form-control" placeholder="Search..."
+                      autocomplete="off">
                   </div>
                 </div>
-                <div class="">
+                <!-- Add Expiry -->
+                <div class="col-4 col-lg-1">
                   <label></label>
-                  <button class="common_buttonn button_height add-new-expiry-btn mt-5" ng-disabled="disableExpiryAction"
+                  <button class="common_buttonn button_height add-new-expiry-btn mt-3" ng-disabled="disableExpiryAction"
                     ng-click="addNewExpiry()" tabindex="7">
                     New
                     Expiry
                   </button>
                 </div>
-                <!-- ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
-                <div class="ng-scope"
-                  ng-if="$root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8">
+                <!-- Add All -->
+                <div class="col-4 col-lg-1">
                   <label></label>
-                  <button class="common_buttonn button_height add-new-expiry-btn mt-5" ng-disabled="allDisableActions"
+                  <button class="common_buttonn button_height add-new-expiry-btn mt-3" ng-disabled="allDisableActions"
                     ng-click="addAllScriptMarket()" tabindex="7">
                     Add All Scripts
                   </button>
                 </div>
-                <!-- end ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
-                <!-- ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
-                <div class="ng-scope"
-                  ng-if="$root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8">
+                <!-- Remove All -->
+                <div class="col-4 col-lg-1">
                   <label></label>
-                  <button class="common_buttonn  button_height add-new-expiry-btn mt-5"
+                  <button class="common_buttonn  button_height add-new-expiry-btn mt-3"
                     style="border-bottom: 3px solid red" ng-disabled="allDisableActions"
                     ng-click="RemoveAllScriptMarket()" tabindex="7">
                     Remove All S.
                   </button>
                 </div>
-                <!-- end ngIf: $root.userInfo.userType == 6 || $root.userInfo.userType==8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 4 || $root.userInfo.userType == 3 || $root.userInfo.userType == 2 || $root.userInfo.userType == 8 -->
-                <div class="">
+                <!-- Column -->
+                <div class="col-4 col-lg-1">
                   <label></label>
-                  <button class="common_buttonn button_height add-new-expiry-btn mt-5" ng-click="closeColumn()">
+                  <button class="common_buttonn button_height add-new-expiry-btn mt-3" ng-click="closeColumn()">
                     Column
                   </button>
                 </div>
