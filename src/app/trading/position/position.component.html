@@ -105,12 +105,14 @@
                 ">
                 <div class="col-md-6 col-lg-12">
                   <div class="flex-gap-px">
-                    <div class="col-6 col-md-2 col-lg-1" style="display: flex; flex-direction: column; gap: 5px">
+                    <div class="col-6 col-md-2 col-lg-2 form-group"
+                      style="display: flex; flex-direction: column; gap: 5px">
                       <label style="margin: 0" class="lable-for-radio">
                         <input ng-model="filterDataType" name="customRadio" type="radio" value="1"
                           class="ng-pristine ng-untouched ng-valid">
                         All
                       </label>
+
                       <label style="margin: 0" class="lable-for-radio">
                         <input ng-model="filterDataType" name="customRadio" type="radio" value="0"
                           class="ng-pristine ng-untouched ng-valid">
@@ -118,7 +120,7 @@
                       </label>
                     </div>
 
-                    <div class="col-6 col-md-2 col-lg-1" style="display: flex; flex-direction: column; gap: 5px">
+                    <div class="col-6 col-md-2 col-lg-2" style="display: flex; flex-direction: column; gap: 5px">
                       <label style="margin: 0" class="lable-for-radio">
                         <input ng-model="reportType" type="radio" name="client_day_wise" value="0"
                           class="ng-pristine ng-untouched ng-valid">
@@ -130,8 +132,7 @@
                         Script Wise
                       </label>
                     </div>
-                    <div class="col-6 col-md-2 col-lg-1"
-                      ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 6 &amp;&amp; $root.userInfo.userType != 5 &amp;&amp; $root.userInfo.userType != 8">
+                    <div class="col-6 col-md-2 col-lg-2">
                       <div>
                         <label>User</label>
                         <select class="form-control ng-pristine ng-untouched ng-valid" style="height: 33px !important;"
@@ -146,7 +147,7 @@
                         </select>
                       </div>
                     </div>
-                    <div class="col-6 col-md-3 col-lg-1">
+                    <div class="col-6 col-md-3 col-lg-2">
                       <div class="form-group">
                         <label for="marketSelect">Market </label>
                         <div class="dropdown">
@@ -164,7 +165,7 @@
                     </div>
 
 
-                    <div class="col-6 col-md-3 col-lg-1">
+                    <div class="col-6 col-md-3 col-lg-2">
                       <div class="form-group">
                         <label for="marketSelect">Script</label>
                         <div class="dropdown">
@@ -183,7 +184,7 @@
 
 
 
-                    <div class="col-6 col-md-3 col-lg-1" ng-show="$root.userInfo.userType != 1">
+                    <div class="col-6 col-md-3 col-lg-2" ng-show="$root.userInfo.userType != 1">
                       <div class="form-group">
                         <label for="marketSelect">Client</label>
                         <div class="dropdown">
@@ -201,7 +202,7 @@
 
                     </div>
 
-                    <div class="col-6 col-md-3 col-lg-1"
+                    <div class="col-6 col-md-3 col-lg-2"
                       ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
                       <div class="form-group">
                         <label for="marketSelect">Broker</label>
@@ -219,14 +220,14 @@
                       </div>
                     </div>
 
-                    <div class="col-6 col-md-3 col-lg-1">
+                    <div class="col-6 col-md-3 col-lg-2">
                       <label>Expiry Date</label>
                       <input ng-model="expiryDate" id="expiryDate" type="date" value=""
                         class="form-control ng-pristine ng-untouched ng-valid custom-form-control"
                         style="padding: 4px; border-radius: 2px">
                     </div>
 
-                    <div class="col-6 col-md-3 col-lg-1">
+                    <div class="col-6 col-md-3 col-lg-2">
                       <div ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
                         <div class="form-group">
                           <label for="marketSelect">Master</label>

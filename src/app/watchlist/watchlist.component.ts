@@ -1,7 +1,6 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-watchlist',
@@ -70,8 +69,8 @@ export class WatchlistComponent {
     }
   }
   filterMarketOptions() {
-    this.filteredMarket = this.company.filter((market: Data) =>
-      console.info('market', market)
+    this.filteredMarket = this.company.filter((market: any) =>
+      market?.name.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
     if (this.filteredMarket.length > 0) {
       this.dropdownVisible = true; // Show the dropdown if matches found

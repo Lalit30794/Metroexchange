@@ -15,7 +15,7 @@
       </a>
       <!-- Submenu -->
       <ul *ngIf="menu.submenus && menu.open" class="treeview-menu" style="display: block;">
-        <li *ngFor="let menuItems of menu.submenus" class="treeList" (click)="change(menuItems.path)">
+        <li *ngFor="let menuItems of menu.submenus" class="treeLis" (click)="change(menuItems.path)">
           <a class="submenu-links">{{ menuItems.name }}</a>
         </li>
       </ul>

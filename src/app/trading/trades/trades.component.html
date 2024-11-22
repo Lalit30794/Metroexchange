@@ -22,59 +22,22 @@
         <div class="panel-body" style="padding-top: 8px; padding-bottom: 10px">
           <div class="Workslist">
             <div class="worklistdate">
-              <div style="
-								  display: flex;
-								  align-items: center;
-								  padding-left: 5px;
-								  flex-wrap: wrap;
-								">
+              <div class="row">
 
-                <div class="col-4 col-xl-1 col-xs-12">
+                <div class="col-2">
                   <label class="col-12 col-md-12 m-0 p-0 pt-1" style="white-space: nowrap;">
                     <input type="checkbox" class="pendingTrades" id="pendingTrades" value="1"> Pending Orders
                   </label>
                   <label class="col-12 col-md-12 m-0 p-0 pt-1" style="white-space: nowrap;">
                     <input type="checkbox" class="executedTrades" id="executedTrades" value="1"> Executed Orders
                   </label>
-
                 </div>
-                <div class="col-4 col-xl-1 col-xs-12"
-                  ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5 ">
 
-                  <label class="col-12 col-md-12 m-0 p-0 pt-1" style="white-space: nowrap;"
-                    ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
-                    <input type="checkbox" class="admindeletedTrades" id="admindeletedTrades" value="1">Admin Delete
+                <div class="col-2">
+                  <label class="col-12 col-md-12 m-0 p-0 pt-1" style="white-space: nowrap;">
+                    <input type="checkbox" class="admindeletedTrades" id="admindeletedTrades" value="1"> Admin Delete
                     Trade
                   </label>
-
-                  <label class="col-12 col-md-12 m-0 p-0 pt-1 ng-hide" style="white-space: nowrap;"
-                    ng-show="$root.userInfo.userType == 6 || $root.userInfo.userType&nbsp;==&nbsp;8 || $root.userInfo.userType == 7 || $root.userInfo.userType == 8">
-                    <input type="checkbox" class="manualTradeOrders" id="manualTradeOrders" value="1"> Manual Trade
-                  </label>
-                </div>
-                <div class="col-4 col-xl-1 col-xs-4 col-md-3 ng-hide "
-                  ng-show="$root.userInfo.userType == 6 || $root.userInfo.userType&nbsp;==&nbsp;8 ">
-                  <label>Recode From</label>
-                  <div class="select2-container ng-untouched ng-valid ng-dirty ng-valid-parse" id="s2id_script"
-                    style="width: 0px;"><a href="javascript:void(0)" onclick="return false;"
-                      class="select2-choice select2-default" tabindex="-1"> <span>Order Type</span><abbr
-                        class="select2-search-choice-close"></abbr>
-                      <div><b></b></div>
-                    </a><input class="select2-focusser select2-offscreen" type="text" id="s2id_autogen63">
-                    <div class="select2-drop select2-display-none">
-                      <div class="select2-search select2-search-hidden select2-offscreen"> <input type="text"
-                          autocomplete="off" autocorrect="off" autocapitilize="off" spellcheck="false"
-                          class="select2-input"> </div>
-                      <ul class="select2-results"> </ul>
-                    </div>
-                  </div><select id="script" ui-select2="{ allowClear: true}" data-placeholder="Order Type"
-                    ng-model="BackupData" class="ng-untouched ng-valid select2-offscreen ng-dirty ng-valid-parse"
-                    tabindex="-1">
-                    <option value=""></option>
-                    <option value="1">Backup Data</option>
-                    <option value="0">Live Data</option>
-
-                  </select>
                 </div>
                 <div class="col-4 col-xl-2 col-xs-4 form-group">
                   <label>Trade After</label>
@@ -156,8 +119,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-4 col-xl-2 col-xs-4"
-                  ng-show="$root.userInfo.userType != 1 &amp;&amp; $root.userInfo.userType != 5">
+                <div class="col-4 col-xl-2 col-xs-4">
                   <div class="form-group">
                     <label for="marketSelect">Master </label>
                     <div class="dropdown">
@@ -174,14 +136,14 @@
                   </div>
                 </div>
 
-                <div class="col-4 col-xl-1 col-xs-4">
+                <div class="col-4 col-xl-2 col-xs-4">
                   <div class="form-group">
                     <label for="marketSelect">Order Type</label>
                     <div class="dropdown">
                       <input type="text" class="form-control" placeholder="Select" [(ngModel)]="searchTerm"
                         (focus)="showDropdown()" (blur)="hideDropdown()" (input)="filterOptions()" id="marketSelect"
                         aria-expanded="false" data-bs-toggle="dropdown" />
-                      <ul class="dropdown-menu w-100" *ngIf="dropdownVisible && filteredMarkets.length > 0"
+                      <ul class="dropdown-menu " *ngIf="dropdownVisible && filteredMarkets.length > 0"
                         aria-labelledby="marketSelect">
                         <li *ngFor="let market of filteredMarkets">
                           <a class="dropdown-item" href="#" (mousedown)="selectMarket(market)">{{ market }}</a>
@@ -191,7 +153,7 @@
                   </div>
                 </div>
 
-                <div class="pl-2  filterBtn" style="width: auto;display: flex;gap: 6px; margin-top: 10px;">
+                <div class="pl-2 ml-3  filterBtn d-flex gap-2 mt-3 justify-content-center align-items-center">
                   <button style="min-width: 58px;padding: 0px;
    " ng-click="findOrders()" class="btn common_buttonn button_height" tabindex="6" title="Search Trades"><i
                       class="bi bi-search"></i></button>
